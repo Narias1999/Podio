@@ -5,13 +5,15 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { loadOwnedRace } from "@/lib/races";
 import { validateStagePayload, type StagePayload } from "@/lib/stages";
 
-// PATCH /api/races/[slug]/stages/[stageId] — edits name/date/distance/type of
+// PATCH /api/races/[slug]/stages/[stage] — edits name/date/distance/type of
 // a stage owned by the session user (single- and multi-stage races).
-// DELETE /api/races/[slug]/stages/[stageId] — deletes a stage, blocked if the
+// DELETE /api/races/[slug]/stages/[stage] — deletes a stage, blocked if the
 // stage has results or if it is the race's only stage; remaining stages are
 // renumbered to stay contiguous.
 // Both authenticate the session, confirm `races.organizer_id` matches, then
 // write with the service-role client (RLS is off — Story 01).
+// The [stage] dynamic segment carries the stage id (UUID), matching the URL
+// built by components/stages-manager.tsx (`/stages/${stage.id}`).
 
 async function loadOwnedStage(
   admin: ReturnType<typeof createAdminClient>,
@@ -36,14 +38,14 @@ async function loadOwnedStage(
 
 export async function PATCH(
   request: Request,
-  { params }: { params: Promise<{ slug: string; stageId: string }> },
+  { params }: { params: Promise<{ slug: string; stage: string }> },
 ) {
   const user = await getCurrentUser();
   if (!user) {
     return NextResponse.json({ error: "No autenticado." }, { status: 401 });
   }
 
-  const { slug, stageId } = await params;
+  const { slug, stage: stageId } = await params;
   const admin = createAdminClient();
   const { race, stage } = await loadOwnedStage(admin, slug, stageId, user.id);
 
@@ -93,14 +95,14 @@ export async function PATCH(
 
 export async function DELETE(
   _request: Request,
-  { params }: { params: Promise<{ slug: string; stageId: string }> },
+  { params }: { params: Promise<{ slug: string; stage: string }> },
 ) {
   const user = await getCurrentUser();
   if (!user) {
     return NextResponse.json({ error: "No autenticado." }, { status: 401 });
   }
 
-  const { slug, stageId } = await params;
+  const { slug, stage: stageId } = await params;
   const admin = createAdminClient();
   const { race, stage } = await loadOwnedStage(admin, slug, stageId, user.id);
 
