@@ -1,0 +1,81 @@
+document_number,first_name,last_name,sex,date_of_birth,category,team,nationality,eps,phone
+1010000001,Santiago,Gómez,male,2015-01-01,Infantil Masculina,Liga de Antioquia,Colombia,Sanitas,3030000012
+1010000002,Mateo,Rodríguez,male,2015-02-03,Infantil Masculina,Pedal Caldas,Colombia,Compensar,3030000013
+1010000003,Sebastián,Martínez,male,2015-03-05,Infantil Masculina,Valle Élite,Colombia,Salud Total,3030000014
+1010000004,Samuel,García,male,2015-04-07,Infantil Masculina,,Colombia,Sanitas,3030000015
+1010000005,Nicolás,López,male,2015-05-09,Infantil Masculina,Liga de Antioquia,Colombia,Compensar,3030000016
+1010000006,Andrés,Hernández,male,2015-06-11,Infantil Masculina,Pedal Caldas,Colombia,Salud Total,3030000017
+1010000007,Tomás,González,male,2015-07-13,Infantil Masculina,Valle Élite,Colombia,Sanitas,3030000018
+1010000008,Daniel,Ramírez,male,2015-08-15,Infantil Masculina,,Colombia,Compensar,3030000019
+1010000009,Juan,Torres,male,2015-09-17,Infantil Masculina,Liga de Antioquia,Colombia,Salud Total,3030000020
+1010000010,Diego,Vargas,male,2015-10-19,Infantil Masculina,Pedal Caldas,Colombia,Sanitas,3030000021
+1010000011,Felipe,Castro,male,2016-11-21,Infantil Masculina,Valle Élite,Colombia,Compensar,3030000022
+1010000012,Gabriel,Rojas,male,2016-12-23,Infantil Masculina,,Colombia,Salud Total,3030000023
+1010000013,David,Moreno,male,2016-01-25,Infantil Masculina,Liga de Antioquia,Colombia,Sanitas,3030000024
+1010000014,Emiliano,Muñoz,male,2016-02-27,Infantil Masculina,Pedal Caldas,Colombia,Compensar,3030000025
+1010000015,Martín,Ortiz,male,2016-03-01,Infantil Masculina,Valle Élite,Colombia,Salud Total,3030000026
+1010000016,Simón,Suárez,male,2016-04-03,Infantil Masculina,,Colombia,Sanitas,3030000027
+1010000017,Alejandro,Jiménez,male,2016-05-05,Infantil Masculina,Liga de Antioquia,Colombia,Compensar,3030000028
+1010000018,Esteban,Díaz,male,2016-06-07,Infantil Masculina,Pedal Caldas,Colombia,Salud Total,3030000029
+1010000019,Miguel,Cárdenas,male,2016-07-09,Infantil Masculina,Valle Élite,Colombia,Sanitas,3030000030
+1010000020,Carlos,Restrepo,male,2016-12-31,Infantil Masculina,,Colombia,Compensar,3030000031
+1010000021,Sofía,Quintero,female,2015-01-01,Infantil Femenina,Valle Élite,Colombia,Compensar,3030000032
+1010000022,Isabella,Mejía,female,2015-02-03,Infantil Femenina,,Colombia,Salud Total,3030000033
+1010000023,Valentina,Arias,female,2015-03-05,Infantil Femenina,Liga de Antioquia,Colombia,Sanitas,3030000034
+1010000024,Mariana,Patiño,female,2015-04-07,Infantil Femenina,Pedal Caldas,Colombia,Compensar,3030000035
+1010000025,Salomé,Bedoya,female,2015-05-09,Infantil Femenina,Valle Élite,Colombia,Salud Total,3030000036
+1010000026,Luciana,Ospina,female,2015-06-11,Infantil Femenina,,Colombia,Sanitas,3030000037
+1010000027,Gabriela,Zapata,female,2015-07-13,Infantil Femenina,Liga de Antioquia,Colombia,Compensar,3030000038
+1010000028,Sara,Cardona,female,2015-08-15,Infantil Femenina,Pedal Caldas,Colombia,Salud Total,3030000039
+1010000029,Antonia,Agudelo,female,2015-09-17,Infantil Femenina,Valle Élite,Colombia,Sanitas,3030000040
+1010000030,María,Velásquez,female,2015-10-19,Infantil Femenina,,Colombia,Compensar,3030000041
+1010000031,Camila,Gómez,female,2016-11-21,Infantil Femenina,Liga de Antioquia,Colombia,Salud Total,3030000042
+1010000032,Daniela,Rodríguez,female,2016-12-23,Infantil Femenina,Pedal Caldas,Colombia,Sanitas,3030000043
+1010000033,Valeria,Martínez,female,2016-01-25,Infantil Femenina,Valle Élite,Colombia,Compensar,3030000044
+1010000034,Juliana,García,female,2016-02-27,Infantil Femenina,,Colombia,Salud Total,3030000045
+1010000035,Manuela,López,female,2016-03-01,Infantil Femenina,Liga de Antioquia,Colombia,Sanitas,3030000046
+1010000036,Emma,Hernández,female,2016-04-03,Infantil Femenina,Pedal Caldas,Colombia,Compensar,3030000047
+1010000037,Laura,González,female,2016-05-05,Infantil Femenina,Valle Élite,Colombia,Salud Total,3030000048
+1010000038,Paula,Ramírez,female,2016-06-07,Infantil Femenina,,Colombia,Sanitas,3030000049
+1010000039,Andrea,Torres,female,2016-07-09,Infantil Femenina,Liga de Antioquia,Colombia,Compensar,3030000050
+1010000040,Catalina,Vargas,female,2016-12-31,Infantil Femenina,Pedal Caldas,Colombia,Salud Total,3030000051
+1010000041,Santiago,Castro,male,2013-01-01,Pre Juvenil,Liga de Antioquia,Colombia,Salud Total,3030000052
+1010000042,Mateo,Rojas,male,2013-02-03,Pre Juvenil,Pedal Caldas,Colombia,Sanitas,3030000053
+1010000043,Sebastián,Moreno,male,2013-03-05,Pre Juvenil,Valle Élite,Colombia,Compensar,3030000054
+1010000044,Samuel,Muñoz,male,2013-04-07,Pre Juvenil,,Colombia,Salud Total,3030000055
+1010000045,Nicolás,Ortiz,male,2013-05-09,Pre Juvenil,Liga de Antioquia,Colombia,Sanitas,3030000056
+1010000046,Andrés,Suárez,male,2013-06-11,Pre Juvenil,Pedal Caldas,Colombia,Compensar,3030000057
+1010000047,Tomás,Jiménez,male,2013-07-13,Pre Juvenil,Valle Élite,Colombia,Salud Total,3030000058
+1010000048,Daniel,Díaz,male,2013-08-15,Pre Juvenil,,Colombia,Sanitas,3030000059
+1010000049,Juan,Cárdenas,male,2013-09-17,Pre Juvenil,Liga de Antioquia,Colombia,Compensar,3030000060
+1010000050,Diego,Restrepo,male,2013-10-19,Pre Juvenil,Pedal Caldas,Colombia,Salud Total,3030000061
+1010000051,Felipe,Quintero,male,2014-11-21,Pre Juvenil,Valle Élite,Colombia,Sanitas,3030000062
+1010000052,Gabriel,Mejía,male,2014-12-23,Pre Juvenil,,Colombia,Compensar,3030000063
+1010000053,David,Arias,male,2014-01-25,Pre Juvenil,Liga de Antioquia,Colombia,Salud Total,3030000064
+1010000054,Emiliano,Patiño,male,2014-02-27,Pre Juvenil,Pedal Caldas,Colombia,Sanitas,3030000065
+1010000055,Martín,Bedoya,male,2014-03-01,Pre Juvenil,Valle Élite,Colombia,Compensar,3030000066
+1010000056,Simón,Ospina,male,2014-04-03,Pre Juvenil,,Colombia,Salud Total,3030000067
+1010000057,Alejandro,Zapata,male,2014-05-05,Pre Juvenil,Liga de Antioquia,Colombia,Sanitas,3030000068
+1010000058,Esteban,Cardona,male,2014-06-07,Pre Juvenil,Pedal Caldas,Colombia,Compensar,3030000069
+1010000059,Miguel,Agudelo,male,2014-07-09,Pre Juvenil,Valle Élite,Colombia,Salud Total,3030000070
+1010000060,Carlos,Velásquez,male,2014-12-31,Pre Juvenil,,Colombia,Sanitas,3030000071
+1010000061,Sofía,Gómez,female,2013-01-01,Pre Juvenil Femenina,Valle Élite,Colombia,Sanitas,3030000072
+1010000062,Isabella,Rodríguez,female,2013-02-03,Pre Juvenil Femenina,,Colombia,Compensar,3030000073
+1010000063,Valentina,Martínez,female,2013-03-05,Pre Juvenil Femenina,Liga de Antioquia,Colombia,Salud Total,3030000074
+1010000064,Mariana,García,female,2013-04-07,Pre Juvenil Femenina,Pedal Caldas,Colombia,Sanitas,3030000075
+1010000065,Salomé,López,female,2013-05-09,Pre Juvenil Femenina,Valle Élite,Colombia,Compensar,3030000076
+1010000066,Luciana,Hernández,female,2013-06-11,Pre Juvenil Femenina,,Colombia,Salud Total,3030000077
+1010000067,Gabriela,González,female,2013-07-13,Pre Juvenil Femenina,Liga de Antioquia,Colombia,Sanitas,3030000078
+1010000068,Sara,Ramírez,female,2013-08-15,Pre Juvenil Femenina,Pedal Caldas,Colombia,Compensar,3030000079
+1010000069,Antonia,Torres,female,2013-09-17,Pre Juvenil Femenina,Valle Élite,Colombia,Salud Total,3030000080
+1010000070,María,Vargas,female,2013-10-19,Pre Juvenil Femenina,,Colombia,Sanitas,3030000081
+1010000071,Camila,Castro,female,2014-11-21,Pre Juvenil Femenina,Liga de Antioquia,Colombia,Compensar,3030000082
+1010000072,Daniela,Rojas,female,2014-12-23,Pre Juvenil Femenina,Pedal Caldas,Colombia,Salud Total,3030000083
+1010000073,Valeria,Moreno,female,2014-01-25,Pre Juvenil Femenina,Valle Élite,Colombia,Sanitas,3030000084
+1010000074,Juliana,Muñoz,female,2014-02-27,Pre Juvenil Femenina,,Colombia,Compensar,3030000085
+1010000075,Manuela,Ortiz,female,2014-03-01,Pre Juvenil Femenina,Liga de Antioquia,Colombia,Salud Total,3030000086
+1010000076,Emma,Suárez,female,2014-04-03,Pre Juvenil Femenina,Pedal Caldas,Colombia,Sanitas,3030000087
+1010000077,Laura,Jiménez,female,2014-05-05,Pre Juvenil Femenina,Valle Élite,Colombia,Compensar,3030000088
+1010000078,Paula,Díaz,female,2014-06-07,Pre Juvenil Femenina,,Colombia,Salud Total,3030000089
+1010000079,Andrea,Cárdenas,female,2014-07-09,Pre Juvenil Femenina,Liga de Antioquia,Colombia,Sanitas,3030000090
+1010000080,Catalina,Restrepo,female,2014-12-31,Pre Juvenil Femenina,Pedal Caldas,Colombia,Compensar,3030000091

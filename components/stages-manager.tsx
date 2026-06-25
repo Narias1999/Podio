@@ -336,15 +336,16 @@ export function StagesManager({
                 dragIndex === index && "opacity-60",
               )}
             >
-              <div className="flex items-start gap-3">
-                {isMultiStage && (
-                  <div
-                    className="mt-1 flex cursor-grab items-center text-muted-foreground active:cursor-grabbing"
-                    aria-label="Reordenar etapa"
-                  >
-                    <GripVertical className="size-5" />
-                  </div>
-                )}
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
+                <div className="flex flex-1 items-start gap-3">
+                  {isMultiStage && (
+                    <div
+                      className="mt-1 flex cursor-grab items-center text-muted-foreground active:cursor-grabbing"
+                      aria-label="Reordenar etapa"
+                    >
+                      <GripVertical className="size-5" />
+                    </div>
+                  )}
 
                 <div className="flex flex-1 flex-col gap-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -386,9 +387,10 @@ export function StagesManager({
                       </Badge>
                     </div>
                   )}
+                  </div>
                 </div>
 
-                <div className="flex items-center gap-1">
+                <div className="flex flex-wrap items-center gap-1 sm:justify-end">
                   {isEditing ? (
                     <>
                       <Button

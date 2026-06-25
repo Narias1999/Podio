@@ -402,14 +402,6 @@ export function RaceWizard({
             <div className="flex gap-3">
               <Button
                 type="button"
-                variant="outline"
-                onClick={() => submit("draft")}
-                disabled={pending}
-              >
-                Guardar como borrador
-              </Button>
-              <Button
-                type="button"
                 onClick={() => submit("published")}
                 disabled={pending}
               >
