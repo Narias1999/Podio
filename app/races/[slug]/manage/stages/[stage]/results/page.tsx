@@ -84,6 +84,14 @@ export default async function StageResultsPage({
         ? "dns"
         : (result?.status as ResultStatus | undefined) ?? "finished";
 
+      // Story 22: a group-stage finish saved without a net time (the rider's
+      // category never recorded a start) is a `finished` row with null
+      // `net_seconds`. Flag it so the screen warns the organizer.
+      const missingStart =
+        !isDns &&
+        result?.status === "finished" &&
+        result.net_seconds == null;
+
       return {
         registration_id: r.id,
         bib_number: r.bib_number,
@@ -104,6 +112,7 @@ export default async function StageResultsPage({
         dnf_reason: !isDns && result?.dnf_reason ? result.dnf_reason : "",
         dsq_reason: !isDns && result?.dsq_reason ? result.dsq_reason : "",
         saved: isDns ? false : result != null,
+        missingStart,
       };
     });
 

@@ -2,7 +2,7 @@
 
 import { useMemo, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { Check } from "lucide-react";
+import { Check, TriangleAlert } from "lucide-react";
 import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
@@ -65,6 +65,11 @@ export type ResultRow = {
   dnf_reason: string;
   dsq_reason: string;
   saved: boolean;
+  /**
+   * Group-stage result saved without a net time because the rider's category
+   * never recorded a start (Story 22). Surfaces a warning on this row.
+   */
+  missingStart?: boolean;
 };
 
 type Props = {
@@ -473,6 +478,21 @@ export function ResultsManager({
                           {!rowError && hasDuplicate && (
                             <p className="mt-1 text-xs text-destructive" role="alert">
                               Posición duplicada en la categoría.
+                            </p>
+                          )}
+                          {row.missingStart && (
+                            <p
+                              className="mt-1 flex items-start gap-1 text-xs text-amber-700 dark:text-amber-500"
+                              role="alert"
+                            >
+                              <TriangleAlert
+                                className="mt-0.5 size-3.5 shrink-0"
+                                aria-hidden="true"
+                              />
+                              <span>
+                                No se registró la hora de salida de esta
+                                categoría — no se puede calcular el tiempo neto.
+                              </span>
                             </p>
                           )}
                         </TableCell>
