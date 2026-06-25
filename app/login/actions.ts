@@ -1,5 +1,6 @@
 "use server";
 
+import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
@@ -31,4 +32,25 @@ export async function login(
   }
 
   redirect("/dashboard");
+}
+
+export async function loginWithGoogle() {
+  const supabase = await createClient();
+
+  const headerStore = await headers();
+  const origin =
+    headerStore.get("origin") ?? `https://${headerStore.get("host")}`;
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: `${origin}/auth/callback`,
+    },
+  });
+
+  if (error || !data.url) {
+    redirect("/login?error=auth");
+  }
+
+  redirect(data.url);
 }

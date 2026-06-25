@@ -14,7 +14,13 @@ export const metadata: Metadata = {
   description: "Inicia sesión para gestionar tus carreras en Podio.",
 };
 
-export default function LoginPage() {
+export default async function LoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string }>;
+}) {
+  const { error } = await searchParams;
+
   return (
     <main className="flex min-h-screen items-center justify-center p-4">
       <Card className="w-full max-w-sm">
@@ -25,7 +31,7 @@ export default function LoginPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <LoginForm />
+          <LoginForm oauthError={error === "auth"} />
         </CardContent>
       </Card>
     </main>

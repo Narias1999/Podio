@@ -5,6 +5,7 @@ import { NextResponse, type NextRequest } from "next/server";
 // match a protected pattern below (e.g. results pages live under /races/...).
 const PUBLIC_ROUTE_PATTERNS = [
   /^\/login$/,
+  /^\/auth\/callback$/,
   /^\/races\/[^/]+\/results$/,
   /^\/races\/[^/]+\/stages\/[^/]+\/results$/,
   /^\/races\/[^/]+\/stages\/[^/]+\/startlist$/,
