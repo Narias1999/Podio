@@ -1,5 +1,5 @@
 import type { createAdminClient } from "@/lib/supabase/admin";
-import { ageAt, suggestCategory } from "@/lib/categories";
+import { categoryAge, suggestCategory } from "@/lib/categories";
 import type { Category, Registration, Rider, Sex } from "@/types/app";
 
 /**
@@ -90,7 +90,7 @@ export function suggestCategoryFor(
   raceStartsAt: string,
 ): Category | null {
   return suggestCategory(categories, {
-    age: ageAt(rider.date_of_birth, raceStartsAt),
+    age: categoryAge(rider.date_of_birth, raceStartsAt),
     sex: rider.sex,
   });
 }

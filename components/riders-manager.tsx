@@ -51,7 +51,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { RiderImportDialog } from "@/components/rider-import-dialog";
-import { ageAt, suggestCategory } from "@/lib/categories";
+import { categoryAge, suggestCategory } from "@/lib/categories";
 import {
   validateRiderRegistrationPayload,
   type CategoryBibRange,
@@ -213,7 +213,7 @@ export function RidersManager({
     if (!next.sex || !/^\d{4}-\d{2}-\d{2}$/.test(next.date_of_birth)) return next;
     if (next.category_id) return next;
     const suggestion = suggestCategory(categories, {
-      age: ageAt(next.date_of_birth, raceStartsAt),
+      age: categoryAge(next.date_of_birth, raceStartsAt),
       sex: next.sex,
     });
     return suggestion ? { ...next, category_id: suggestion.id } : next;

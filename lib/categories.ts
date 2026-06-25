@@ -84,23 +84,27 @@ export function validateReorderCategoriesPayload(
 }
 
 /**
- * Computes a rider's age in whole years at a given reference date (the
- * race's `starts_at`, per Story 01's auto-assignment rule).
+ * Computes a rider's **category age**: the age they reach during the race's
+ * calendar year, i.e. race year minus birth year — NOT their exact age on
+ * race day. Categories are defined by the age a rider turns that year, so a
+ * rider born 2016-12-31 counts as 10 for the whole of a 2026 race even though
+ * they are still 9 on a June race day.
+ *
+ * Both inputs are ISO strings (`date_of_birth` is `YYYY-MM-DD`, `raceStartsAt`
+ * is the race's `starts_at`). The year is read from the string prefix rather
+ * than via `new Date(...).getFullYear()` to avoid a UTC→local shift moving a
+ * Jan-1 or Dec-31 date into the wrong year.
  */
-export function ageAt(dateOfBirth: string, referenceDate: string): number {
-  const dob = new Date(dateOfBirth);
-  const ref = new Date(referenceDate);
-  let age = ref.getFullYear() - dob.getFullYear();
-  const hadBirthdayYet =
-    ref.getMonth() > dob.getMonth() ||
-    (ref.getMonth() === dob.getMonth() && ref.getDate() >= dob.getDate());
-  if (!hadBirthdayYet) age -= 1;
-  return age;
+export function categoryAge(dateOfBirth: string, raceStartsAt: string): number {
+  const birthYear = Number(dateOfBirth.slice(0, 4));
+  const raceYear = Number(raceStartsAt.slice(0, 4));
+  return raceYear - birthYear;
 }
 
 /**
- * Suggests a category for a rider given their age (in years, at the race's
- * `starts_at` date) and sex, per Story 01's auto-assignment rule: a category
+ * Suggests a category for a rider given their category age (the age they turn
+ * in the race's calendar year, see `categoryAge`) and sex, per Story 01's
+ * auto-assignment rule: a category
  * matches when the rider's age falls within its inclusive age_min/age_max
  * bounds (when set) and the rider's sex matches its sex restriction (when
  * set). Categories with no age/sex rules at all (manual-only) never match

@@ -6,6 +6,8 @@ import { NextResponse, type NextRequest } from "next/server";
 const PUBLIC_ROUTE_PATTERNS = [
   /^\/login$/,
   /^\/auth\/callback$/,
+  /^\/auth\/forgot-password$/,
+  /^\/auth\/reset-password$/,
   /^\/races\/[^/]+\/results$/,
   /^\/races\/[^/]+\/stages\/[^/]+\/results$/,
   /^\/races\/[^/]+\/stages\/[^/]+\/startlist$/,
