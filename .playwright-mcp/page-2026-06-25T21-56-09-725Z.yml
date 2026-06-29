@@ -1,0 +1,14 @@
+- generic [active] [ref=e1]:
+  - main [ref=e35]:
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]: Recuperar contraseña
+        - generic [ref=e39]: Ingresa tu correo y te enviaremos un enlace para crear una nueva contraseña.
+      - generic [ref=e47]:
+        - paragraph [ref=e48]: Si existe una cuenta con ese correo, te enviamos un enlace para restablecer tu contraseña. Revisa tu bandeja de entrada.
+        - link "Volver a iniciar sesión" [ref=e49] [cursor=pointer]:
+          - /url: /login
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert [ref=e34]: Recuperar contraseña — Podio

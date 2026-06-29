@@ -1,0 +1,27 @@
+- generic [active] [ref=e1]:
+  - main [ref=e35]:
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]: Iniciar sesión
+        - generic [ref=e39]: Ingresa con tu correo y contraseña de organizador.
+      - generic [ref=e41]:
+        - button "Continuar con Google" [ref=e43]:
+          - img
+          - text: Continuar con Google
+        - generic [ref=e46]: o
+        - generic [ref=e48]:
+          - generic [ref=e49]:
+            - generic [ref=e50]: Correo electrónico
+            - textbox "Correo electrónico" [ref=e51]:
+              - /placeholder: organizador@correo.com
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - generic [ref=e54]: Contraseña
+              - link "¿Olvidaste tu contraseña?" [ref=e55] [cursor=pointer]:
+                - /url: /auth/forgot-password
+            - textbox "Contraseña" [ref=e56]
+          - button "Ingresar" [ref=e57]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert [ref=e34]: Iniciar sesión — Podio

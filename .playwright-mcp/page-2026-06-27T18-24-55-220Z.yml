@@ -1,0 +1,18 @@
+- generic [active] [ref=e1]:
+  - status [ref=e2]:
+    - img [ref=e3]
+    - generic [ref=e7]: Conectado
+  - main [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]: Etapa 3 – CRI Final
+        - generic "Tiempo transcurrido" [ref=e12]: 27:53:36
+      - generic [ref=e13]:
+        - button "En pista (3)" [ref=e14]
+        - button "Finalizar sesión" [ref=e15]
+    - button "STOP" [ref=e16]
+    - region "Llegadas por asignar" [ref=e17]:
+      - paragraph [ref=e18]: No hay llegadas por asignar. Presiona STOP cuando un corredor cruce la meta.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e24] [cursor=pointer]:
+    - img [ref=e25]

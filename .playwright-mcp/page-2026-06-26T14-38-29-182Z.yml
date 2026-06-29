@@ -1,0 +1,35 @@
+- generic:
+  - status:
+    - img
+    - generic: Conectado
+  - main:
+    - generic:
+      - generic:
+        - heading [level=1]: Etapa 4 – CRI Undo
+        - paragraph: sábado 4 de julio de 2026
+      - generic:
+        - generic:
+          - generic: Configuración de salida
+          - generic: Cuando salga el primer corredor, presiona Iniciar contrarreloj.
+        - generic:
+          - generic:
+            - generic: Salida del primer corredor
+            - generic: 10:00:00
+          - generic:
+            - generic: Intervalo entre corredores
+            - generic: —
+          - generic:
+            - generic: Intervalo entre categorías
+            - generic: —
+      - button: Iniciar contrarreloj
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e33] [cursor=pointer]:
+    - img [ref=e34]
+  - alert
+  - alertdialog "¿Iniciar la contrarreloj?" [ref=e39]:
+    - generic [ref=e40]:
+      - heading "¿Iniciar la contrarreloj?" [level=2] [ref=e41]
+      - paragraph [ref=e42]: El cronómetro se anclará a este momento y definirá las horas de salida de todos los corredores. Hazlo cuando salga el primer corredor.
+    - generic [ref=e43]:
+      - button "Cancelar" [active] [ref=e44]
+      - button "Iniciar" [ref=e45]

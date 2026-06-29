@@ -1,0 +1,273 @@
+- generic [ref=e1]:
+  - main [ref=e52]:
+    - generic [ref=e53]:
+      - generic [ref=e54]:
+        - generic [ref=e55]: Crear carrera
+        - generic [ref=e56]: "Paso 3 de 4: Categorías"
+      - generic [ref=e62]:
+        - generic [ref=e207]:
+          - paragraph [ref=e208]: "El orden de la lista define el orden de salida en las contrarreloj: la categoría de arriba sale primero."
+          - generic [ref=e209]:
+            - generic [ref=e210]:
+              - generic "Reordenar categoría" [ref=e211]:
+                - img [ref=e212]
+              - generic [ref=e219]:
+                - generic [ref=e220]: Nombre
+                - textbox "Nombre" [ref=e221]:
+                  - /placeholder: "Ej: Elite Masculino"
+                  - text: Infantil
+              - generic [ref=e222]:
+                - generic [ref=e223]: Edad mín.
+                - spinbutton "Edad mín." [ref=e224]
+              - generic [ref=e225]:
+                - generic [ref=e226]: Edad máx.
+                - spinbutton "Edad máx." [ref=e227]: "12"
+              - generic [ref=e228]:
+                - generic [ref=e229]: Sexo
+                - combobox [ref=e230]:
+                  - generic: Cualquiera
+                  - img
+              - button "Eliminar categoría" [ref=e231]:
+                - img
+            - generic [ref=e232]:
+              - generic "Reordenar categoría" [ref=e233]:
+                - img [ref=e234]
+              - generic [ref=e241]:
+                - generic [ref=e242]: Nombre
+                - textbox "Nombre" [ref=e243]:
+                  - /placeholder: "Ej: Elite Masculino"
+                  - text: Prejuvenil
+              - generic [ref=e244]:
+                - generic [ref=e245]: Edad mín.
+                - spinbutton "Edad mín." [ref=e246]: "13"
+              - generic [ref=e247]:
+                - generic [ref=e248]: Edad máx.
+                - spinbutton "Edad máx." [ref=e249]: "14"
+              - generic [ref=e250]:
+                - generic [ref=e251]: Sexo
+                - combobox [ref=e252]:
+                  - generic: Cualquiera
+                  - img
+              - button "Eliminar categoría" [ref=e253]:
+                - img
+            - generic [ref=e254]:
+              - generic "Reordenar categoría" [ref=e255]:
+                - img [ref=e256]
+              - generic [ref=e263]:
+                - generic [ref=e264]: Nombre
+                - textbox "Nombre" [ref=e265]:
+                  - /placeholder: "Ej: Elite Masculino"
+                  - text: Juvenil
+              - generic [ref=e266]:
+                - generic [ref=e267]: Edad mín.
+                - spinbutton "Edad mín." [ref=e268]: "15"
+              - generic [ref=e269]:
+                - generic [ref=e270]: Edad máx.
+                - spinbutton "Edad máx." [ref=e271]: "16"
+              - generic [ref=e272]:
+                - generic [ref=e273]: Sexo
+                - combobox [ref=e274]:
+                  - generic: Cualquiera
+                  - img
+              - button "Eliminar categoría" [ref=e275]:
+                - img
+            - generic [ref=e276]:
+              - generic "Reordenar categoría" [ref=e277]:
+                - img [ref=e278]
+              - generic [ref=e285]:
+                - generic [ref=e286]: Nombre
+                - textbox "Nombre" [ref=e287]:
+                  - /placeholder: "Ej: Elite Masculino"
+                  - text: Sub-23 Masculino
+              - generic [ref=e288]:
+                - generic [ref=e289]: Edad mín.
+                - spinbutton "Edad mín." [ref=e290]: "17"
+              - generic [ref=e291]:
+                - generic [ref=e292]: Edad máx.
+                - spinbutton "Edad máx." [ref=e293]: "22"
+              - generic [ref=e294]:
+                - generic [ref=e295]: Sexo
+                - combobox [ref=e296]:
+                  - generic: Masculino
+                  - img
+              - button "Eliminar categoría" [ref=e297]:
+                - img
+            - generic [ref=e298]:
+              - generic "Reordenar categoría" [ref=e299]:
+                - img [ref=e300]
+              - generic [ref=e307]:
+                - generic [ref=e308]: Nombre
+                - textbox "Nombre" [ref=e309]:
+                  - /placeholder: "Ej: Elite Masculino"
+                  - text: Sub-23 Femenino
+              - generic [ref=e310]:
+                - generic [ref=e311]: Edad mín.
+                - spinbutton "Edad mín." [ref=e312]: "17"
+              - generic [ref=e313]:
+                - generic [ref=e314]: Edad máx.
+                - spinbutton "Edad máx." [ref=e315]: "22"
+              - generic [ref=e316]:
+                - generic [ref=e317]: Sexo
+                - combobox [ref=e318]:
+                  - generic: Femenino
+                  - img
+              - button "Eliminar categoría" [ref=e319]:
+                - img
+            - generic [ref=e320]:
+              - generic "Reordenar categoría" [ref=e321]:
+                - img [ref=e322]
+              - generic [ref=e329]:
+                - generic [ref=e330]: Nombre
+                - textbox "Nombre" [ref=e331]:
+                  - /placeholder: "Ej: Elite Masculino"
+                  - text: Elite Masculino
+              - generic [ref=e332]:
+                - generic [ref=e333]: Edad mín.
+                - spinbutton "Edad mín." [ref=e334]: "23"
+              - generic [ref=e335]:
+                - generic [ref=e336]: Edad máx.
+                - spinbutton "Edad máx." [ref=e337]: "29"
+              - generic [ref=e338]:
+                - generic [ref=e339]: Sexo
+                - combobox [ref=e340]:
+                  - generic: Masculino
+                  - img
+              - button "Eliminar categoría" [ref=e341]:
+                - img
+            - generic [ref=e342]:
+              - generic "Reordenar categoría" [ref=e343]:
+                - img [ref=e344]
+              - generic [ref=e351]:
+                - generic [ref=e352]: Nombre
+                - textbox "Nombre" [ref=e353]:
+                  - /placeholder: "Ej: Elite Masculino"
+                  - text: Elite Femenino
+              - generic [ref=e354]:
+                - generic [ref=e355]: Edad mín.
+                - spinbutton "Edad mín." [ref=e356]: "23"
+              - generic [ref=e357]:
+                - generic [ref=e358]: Edad máx.
+                - spinbutton "Edad máx." [ref=e359]: "29"
+              - generic [ref=e360]:
+                - generic [ref=e361]: Sexo
+                - combobox [ref=e362]:
+                  - generic: Femenino
+                  - img
+              - button "Eliminar categoría" [ref=e363]:
+                - img
+            - generic [ref=e364]:
+              - generic "Reordenar categoría" [ref=e365]:
+                - img [ref=e366]
+              - generic [ref=e373]:
+                - generic [ref=e374]: Nombre
+                - textbox "Nombre" [ref=e375]:
+                  - /placeholder: "Ej: Elite Masculino"
+                  - text: Master 30+
+              - generic [ref=e376]:
+                - generic [ref=e377]: Edad mín.
+                - spinbutton "Edad mín." [ref=e378]: "30"
+              - generic [ref=e379]:
+                - generic [ref=e380]: Edad máx.
+                - spinbutton "Edad máx." [ref=e381]: "39"
+              - generic [ref=e382]:
+                - generic [ref=e383]: Sexo
+                - combobox [ref=e384]:
+                  - generic: Cualquiera
+                  - img
+              - button "Eliminar categoría" [ref=e385]:
+                - img
+            - generic [ref=e386]:
+              - generic "Reordenar categoría" [ref=e387]:
+                - img [ref=e388]
+              - generic [ref=e395]:
+                - generic [ref=e396]: Nombre
+                - textbox "Nombre" [ref=e397]:
+                  - /placeholder: "Ej: Elite Masculino"
+                  - text: Master 40+
+              - generic [ref=e398]:
+                - generic [ref=e399]: Edad mín.
+                - spinbutton "Edad mín." [ref=e400]: "40"
+              - generic [ref=e401]:
+                - generic [ref=e402]: Edad máx.
+                - spinbutton "Edad máx." [ref=e403]: "49"
+              - generic [ref=e404]:
+                - generic [ref=e405]: Sexo
+                - combobox [ref=e406]:
+                  - generic: Cualquiera
+                  - img
+              - button "Eliminar categoría" [ref=e407]:
+                - img
+            - generic [ref=e408]:
+              - generic "Reordenar categoría" [ref=e409]:
+                - img [ref=e410]
+              - generic [ref=e417]:
+                - generic [ref=e418]: Nombre
+                - textbox "Nombre" [ref=e419]:
+                  - /placeholder: "Ej: Elite Masculino"
+                  - text: Master 50+
+              - generic [ref=e420]:
+                - generic [ref=e421]: Edad mín.
+                - spinbutton "Edad mín." [ref=e422]: "50"
+              - generic [ref=e423]:
+                - generic [ref=e424]: Edad máx.
+                - spinbutton "Edad máx." [ref=e425]
+              - generic [ref=e426]:
+                - generic [ref=e427]: Sexo
+                - combobox [ref=e428]:
+                  - generic: Cualquiera
+                  - img
+              - button "Eliminar categoría" [ref=e429]:
+                - img
+          - button "Agregar categoría" [ref=e430]:
+            - img
+            - text: Agregar categoría
+          - generic [ref=e431]:
+            - paragraph [ref=e432]: Accesos rápidos
+            - generic [ref=e433]:
+              - button "Infantil" [ref=e434] [cursor=pointer]:
+                - generic [ref=e435]:
+                  - img
+                  - text: Infantil
+              - button "Prejuvenil" [ref=e436] [cursor=pointer]:
+                - generic [ref=e437]:
+                  - img
+                  - text: Prejuvenil
+              - button "Juvenil" [ref=e438] [cursor=pointer]:
+                - generic [ref=e439]:
+                  - img
+                  - text: Juvenil
+              - button "Sub-23 Masculino" [ref=e440] [cursor=pointer]:
+                - generic [ref=e441]:
+                  - img
+                  - text: Sub-23 Masculino
+              - button "Sub-23 Femenino" [ref=e442] [cursor=pointer]:
+                - generic [ref=e443]:
+                  - img
+                  - text: Sub-23 Femenino
+              - button "Elite Masculino" [ref=e444] [cursor=pointer]:
+                - generic [ref=e445]:
+                  - img
+                  - text: Elite Masculino
+              - button "Elite Femenino" [ref=e446] [cursor=pointer]:
+                - generic [ref=e447]:
+                  - img
+                  - text: Elite Femenino
+              - button "Master 30+" [ref=e448] [cursor=pointer]:
+                - generic [ref=e449]:
+                  - img
+                  - text: Master 30+
+              - button "Master 40+" [ref=e450] [cursor=pointer]:
+                - generic [ref=e451]:
+                  - img
+                  - text: Master 40+
+              - button "Master 50+" [ref=e452] [cursor=pointer]:
+                - generic [ref=e453]:
+                  - img
+                  - text: Master 50+
+        - generic [ref=e88]:
+          - button "Atrás" [ref=e206]
+          - button "Siguiente" [active] [ref=e89]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert [ref=e34]: Crear carrera — Podio

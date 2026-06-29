@@ -1,0 +1,92 @@
+- generic:
+  - main:
+    - generic:
+      - link:
+        - /url: /races/clasica-de-prueba-qa/manage
+        - text: ← Gestionar carrera
+    - generic:
+      - heading [level=1]: Corredores
+      - paragraph: Clásica de Prueba QA
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Inscripciones
+            - generic: 0 corredores en 0 categorías
+          - generic:
+            - button:
+              - img
+              - text: Importar CSV
+            - button:
+              - img
+              - text: Agregar corredor
+      - generic:
+        - generic:
+          - textbox:
+            - /placeholder: Buscar por nombre, documento o dorsal
+          - combobox:
+            - generic: Todas las categorías
+            - img
+        - generic:
+          - table:
+            - rowgroup:
+              - row:
+                - columnheader: Dorsal
+                - columnheader: Nombre
+                - columnheader: Equipo
+                - columnheader: Categoría
+                - columnheader: Estado
+                - columnheader: Acciones
+            - rowgroup:
+              - row:
+                - cell: No hay corredores que coincidan.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert: Corredores — Podio
+  - dialog:
+    - generic:
+      - heading [level=2]: Agregar corredor
+      - paragraph: El dorsal se asigna al cerrar la inscripción.
+    - generic:
+      - generic:
+        - generic: Número de documento
+        - textbox: "1001"
+      - generic:
+        - generic: Nombre completo
+        - textbox: Juan Pérez
+      - generic:
+        - generic:
+          - generic: Sexo
+          - combobox [expanded]:
+            - generic: Selecciona
+            - img
+        - generic:
+          - generic: Fecha de nacimiento
+          - textbox
+      - generic:
+        - generic: Categoría
+        - combobox:
+          - img
+      - generic:
+        - generic: Equipo / club (opcional)
+        - textbox
+      - generic:
+        - generic: Nacionalidad (opcional)
+        - textbox
+      - generic:
+        - generic: EPS (opcional)
+        - textbox
+      - generic:
+        - generic: Teléfono (opcional)
+        - textbox
+    - generic:
+      - button: Inscribir corredor
+    - button:
+      - img
+      - generic: Close
+  - listbox [ref=e1009]:
+    - option "Masculino" [active] [ref=e1010]:
+      - generic [ref=e1011]: Masculino
+    - option "Femenino" [ref=e1012]:
+      - generic [ref=e1013]: Femenino

@@ -1,0 +1,26 @@
+- generic [active] [ref=e1]:
+  - status [ref=e2]:
+    - img [ref=e3]
+    - generic [ref=e7]: Conectado
+  - main [ref=e8]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]: Próxima salida en
+        - generic [ref=e41]: 5:56
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]: "2"
+            - generic [ref=e45]: Laura Restrepo
+          - generic [ref=e46]: Elite Femenino · salida 17:22:00
+      - generic [ref=e47]:
+        - heading "A continuación" [level=2] [ref=e48]
+        - list [ref=e49]:
+          - listitem [ref=e50]:
+            - generic [ref=e51]: 17:28:00
+            - generic [ref=e52]: "3"
+            - generic [ref=e53]: Carlos Gómez
+            - generic [ref=e54]: Master 30+
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e33] [cursor=pointer]:
+    - img [ref=e34]
+  - alert [ref=e37]

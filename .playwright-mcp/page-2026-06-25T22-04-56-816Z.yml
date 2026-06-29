@@ -1,0 +1,85 @@
+- generic:
+  - main:
+    - generic:
+      - link:
+        - /url: /races/clasica-de-prueba-qa/manage
+        - text: ← Gestionar carrera
+    - generic:
+      - heading [level=1]: Corredores
+      - paragraph: Clásica de Prueba QA
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Inscripciones
+            - generic: 3 corredores en 3 categorías
+          - generic:
+            - button:
+              - img
+              - text: Importar CSV
+            - button: Cerrar inscripción y asignar dorsales
+            - button:
+              - img
+              - text: Agregar corredor
+      - generic:
+        - generic:
+          - textbox:
+            - /placeholder: Buscar por nombre, documento o dorsal
+          - combobox:
+            - generic: Todas las categorías
+            - img
+        - generic:
+          - table:
+            - rowgroup:
+              - row:
+                - columnheader: Dorsal
+                - columnheader: Nombre
+                - columnheader: Equipo
+                - columnheader: Categoría
+                - columnheader: Estado
+                - columnheader: Acciones
+            - rowgroup:
+              - row:
+                - cell: —
+                - cell: Juan Pérez
+                - cell: —
+                - cell: Elite Masculino
+                - cell:
+                  - generic: Confirmado
+                - cell:
+                  - button: Marcar DNS
+              - row:
+                - cell: —
+                - cell: Carlos Gómez
+                - cell: —
+                - cell: Master 30+
+                - cell:
+                  - generic: Confirmado
+                - cell:
+                  - button: Marcar DNS
+              - row:
+                - cell: —
+                - cell: Laura Restrepo
+                - cell: —
+                - cell: Elite Femenino
+                - cell:
+                  - generic: Confirmado
+                - cell:
+                  - button: Marcar DNS
+  - region "Notifications alt+T":
+    - list:
+      - listitem:
+        - generic:
+          - img
+        - generic:
+          - generic: Corredor inscrito.
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert: Corredores — Podio
+  - alertdialog "¿Cerrar inscripción y asignar dorsales?" [ref=e1150]:
+    - generic [ref=e1151]:
+      - heading "¿Cerrar inscripción y asignar dorsales?" [level=2] [ref=e1152]
+      - paragraph [ref=e1153]: Se asignará a cada categoría un rango de dorsales según su número de corredores confirmados y se asignarán al azar dentro del rango. Los corredores DNS no reciben dorsal.
+    - generic [ref=e1154]:
+      - button "Cancelar" [active] [ref=e1155]
+      - button "Cerrar y asignar" [ref=e1156]

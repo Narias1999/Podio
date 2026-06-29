@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { getCurrentUser } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getOrganizationId } from "@/lib/organizations";
 import { loadOwnedRace } from "@/lib/races";
 import {
   findDuplicatePositions,
@@ -12,9 +13,9 @@ import {
 
 // PUT /api/races/[slug]/stages/[stage]/results/[registrationId] — saves a
 // single rider's result on blur or via the per-row Save button (Story 08).
-// Authenticates the session, confirms `races.organizer_id` matches, blocks
-// writes when the stage's results are locked, then upserts with the
-// service-role client (RLS is off — Story 01).
+// Authenticates the session, confirms the race belongs to the caller's
+// organization, blocks writes when the stage's results are locked, then upserts
+// with the service-role client (RLS is off — Story 01).
 
 export async function PUT(
   request: Request,
@@ -34,7 +35,11 @@ export async function PUT(
   }
 
   const admin = createAdminClient();
-  const race = await loadOwnedRace(admin, slug, user.id);
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
+  const race = await loadOwnedRace(admin, slug, organizationId);
   if (!race) {
     return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
   }

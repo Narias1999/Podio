@@ -85,6 +85,20 @@ export type EnqueueInput = {
 const STORAGE_KEY = "race_write_queue";
 const RETRY_INTERVAL_MS = 60_000;
 
+// Fast-retry backoff for entries left in `error` after a flush. Live group saves
+// enqueue several writes that flush concurrently and POST to the same endpoint;
+// the server's per-rider upsert + per-category re-rank can transiently conflict
+// (e.g. Postgres serialization/deadlock surfaced as a 500), marking one entry
+// `error`. Without this, that entry would only be retried by the 60s
+// `useWriteQueueSync` interval, leaving a rider unsynced for up to a minute. We
+// instead schedule a few quick, exponentially-spaced retries so a transient
+// failure recovers in a couple of seconds. Capped attempts/delay keep us from
+// hammering the server on a genuine, persistent failure (the 60s loop still
+// covers that long tail).
+const FAST_RETRY_BASE_MS = 750;
+const FAST_RETRY_MAX_DELAY_MS = 6_000;
+const FAST_RETRY_MAX_ATTEMPTS = 5;
+
 /** Spanish (es-CO) native beforeunload warning shown with unsynced entries. */
 const BEFOREUNLOAD_MESSAGE =
   "Tienes cambios sin guardar. ¿Seguro que quieres salir?";
@@ -137,6 +151,9 @@ let queue: QueueEntry[] = [];
 let isSyncing = false;
 let lastSyncAt: string | null = null;
 let flushInFlight: Promise<void> | null = null;
+// Pending fast-retry timer id (browser `setTimeout`). At most one is armed at a
+// time; it is cleared/re-armed after every flush based on the remaining errors.
+let fastRetryTimer: ReturnType<typeof setTimeout> | null = null;
 
 const listeners = new Set<(state: QueueState) => void>();
 
@@ -180,16 +197,40 @@ function isOnline(): boolean {
   return navigator.onLine;
 }
 
+// Cached snapshot so `getState` returns a referentially-stable value when
+// nothing has changed. This is required by `useSyncExternalStore`, whose
+// `getSnapshot` must not return a fresh object on every call (otherwise React
+// detects a new snapshot each render and loops infinitely).
+let cachedState: QueueState = {
+  pendingCount: 0,
+  isSyncing: false,
+  isOnline: true,
+  lastSyncAt: null,
+};
+
 function getState(): QueueState {
   const pendingCount = queue.filter(
     (entry) => entry.status === "pending" || entry.status === "error",
   ).length;
-  return {
-    pendingCount,
-    isSyncing,
-    isOnline: isOnline(),
-    lastSyncAt,
-  };
+  const online = isOnline();
+
+  // Only allocate a new object (and break referential equality) when a value
+  // actually changed; otherwise return the previous snapshot.
+  if (
+    cachedState.pendingCount !== pendingCount ||
+    cachedState.isSyncing !== isSyncing ||
+    cachedState.isOnline !== online ||
+    cachedState.lastSyncAt !== lastSyncAt
+  ) {
+    cachedState = {
+      pendingCount,
+      isSyncing,
+      isOnline: online,
+      lastSyncAt,
+    };
+  }
+
+  return cachedState;
 }
 
 function notify(): void {
@@ -338,6 +379,53 @@ async function runFlush(): Promise<void> {
 
   persist();
   notify();
+
+  // If any entry is still in `error`, schedule a quick retry instead of waiting
+  // for the slow 60s loop — this is what makes a transient conflict on one of
+  // several concurrent group writes recover in seconds.
+  scheduleFastRetry();
+}
+
+/**
+ * Arm a single short, exponentially-backed-off retry for entries still in
+ * `error`. Re-armed after each flush; backoff grows with the lowest remaining
+ * attempt count so repeated failures space out. Stops fast-retrying once an
+ * entry has exhausted `FAST_RETRY_MAX_ATTEMPTS` — the 60s `useWriteQueueSync`
+ * loop remains the safety net for genuinely persistent failures, so we never
+ * busy-loop against the server.
+ */
+function scheduleFastRetry(): void {
+  if (!isBrowser()) return;
+
+  // Clear any previously-armed retry so we don't stack timers.
+  if (fastRetryTimer !== null) {
+    clearTimeout(fastRetryTimer);
+    fastRetryTimer = null;
+  }
+
+  // Only consider entries that have failed but are still within the fast-retry
+  // budget; beyond that the slow loop takes over.
+  const retryable = queue.filter(
+    (entry) =>
+      entry.status === "error" && entry.attempts < FAST_RETRY_MAX_ATTEMPTS,
+  );
+  if (retryable.length === 0) return;
+
+  // Back off based on the fewest attempts among retryable entries so a freshly
+  // failed entry retries soon while older repeat-failures wait longer.
+  const minAttempts = retryable.reduce(
+    (min, entry) => Math.min(min, entry.attempts),
+    Number.POSITIVE_INFINITY,
+  );
+  const delay = Math.min(
+    FAST_RETRY_BASE_MS * 2 ** Math.max(0, minAttempts - 1),
+    FAST_RETRY_MAX_DELAY_MS,
+  );
+
+  fastRetryTimer = setTimeout(() => {
+    fastRetryTimer = null;
+    void flush();
+  }, delay);
 }
 
 async function sendEntry(entry: QueueEntry): Promise<boolean> {

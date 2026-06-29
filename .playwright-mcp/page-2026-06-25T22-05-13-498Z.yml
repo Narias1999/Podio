@@ -1,0 +1,82 @@
+- generic [active]:
+  - main:
+    - generic:
+      - link:
+        - /url: /races/clasica-de-prueba-qa/manage
+        - text: ← Gestionar carrera
+    - generic:
+      - heading [level=1]: Corredores
+      - paragraph: Clásica de Prueba QA
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Inscripciones
+            - generic: 3 corredores en 3 categorías
+          - generic:
+            - button:
+              - img
+              - text: Agregar corredor
+      - generic:
+        - generic:
+          - textbox:
+            - /placeholder: Buscar por nombre, documento o dorsal
+          - combobox:
+            - generic: Todas las categorías
+            - img
+        - generic:
+          - table:
+            - rowgroup:
+              - row:
+                - columnheader: Dorsal
+                - columnheader: Nombre
+                - columnheader: Equipo
+                - columnheader: Categoría
+                - columnheader: Estado
+                - columnheader: Acciones
+            - rowgroup:
+              - row:
+                - cell: "1"
+                - cell: Juan Pérez
+                - cell: —
+                - cell: Elite Masculino
+                - cell:
+                  - generic: Confirmado
+                - cell:
+                  - button: Marcar DNS
+              - row:
+                - cell: "3"
+                - cell: Carlos Gómez
+                - cell: —
+                - cell: Master 30+
+                - cell:
+                  - generic: Confirmado
+                - cell:
+                  - button: Marcar DNS
+              - row:
+                - cell: "2"
+                - cell: Laura Restrepo
+                - cell: —
+                - cell: Elite Femenino
+                - cell:
+                  - generic: Confirmado
+                - cell:
+                  - button: Marcar DNS
+  - region "Notifications alt+T":
+    - list:
+      - listitem:
+        - generic:
+          - img
+        - generic:
+          - generic: Inscripción cerrada y dorsales asignados.
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert: Corredores — Podio
+  - alertdialog "Dorsales asignados" [ref=e1158]:
+    - generic [ref=e1159]:
+      - heading "Dorsales asignados" [level=2] [ref=e1160]
+      - list [ref=e1161]:
+        - listitem [ref=e1162]: "Elite Masculino: 1–1 (1)"
+        - listitem [ref=e1163]: "Elite Femenino: 2–2 (1)"
+        - listitem [ref=e1164]: "Master 30+: 3–3 (1)"
+    - button "Entendido" [ref=e1166]

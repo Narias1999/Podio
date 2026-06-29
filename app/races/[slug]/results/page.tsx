@@ -278,11 +278,14 @@ function formatStageDate(date: string): string {
 }
 
 function formatRaceDates(startsAt: string, endsAt: string | null): string {
-  const start = new Date(startsAt);
+  // `starts_at` / `ends_at` are date-only (yyyy-MM-dd) strings. Parse them at
+  // local midnight; `new Date("yyyy-MM-dd")` would parse as UTC and shift the
+  // displayed day back one in negative-offset zones (e.g. es-CO, UTC-5).
+  const start = new Date(`${startsAt}T00:00:00`);
   if (Number.isNaN(start.getTime())) return "";
   const startLabel = format(start, "d 'de' MMMM 'de' yyyy", { locale: es });
   if (!endsAt) return startLabel;
-  const end = new Date(endsAt);
+  const end = new Date(`${endsAt}T00:00:00`);
   if (Number.isNaN(end.getTime())) return startLabel;
   if (start.toDateString() === end.toDateString()) return startLabel;
   return `${format(start, "d 'de' MMMM", { locale: es })} – ${format(

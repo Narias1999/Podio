@@ -1,0 +1,71 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Podio" [level=1] [ref=e4]
+      - link "Volver al panel" [ref=e5] [cursor=pointer]:
+        - /url: /dashboard
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - heading "Organización - Nicolás Arias" [level=2] [ref=e8]
+        - paragraph [ref=e9]: 2 / 5 usuarios
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - generic [ref=e12]: Miembros
+          - generic [ref=e13]: Todos los miembros pueden crear y gestionar las carreras de la organización.
+        - table [ref=e16]:
+          - rowgroup [ref=e17]:
+            - row "Correo electrónico Rol" [ref=e18]:
+              - columnheader "Correo electrónico" [ref=e19]
+              - columnheader "Rol" [ref=e20]
+          - rowgroup [ref=e21]:
+            - row "nicolasarias870@gmail.com Super administrador" [ref=e22]:
+              - cell "nicolasarias870@gmail.com" [ref=e23]
+              - cell "Super administrador" [ref=e24]:
+                - generic [ref=e25]: Super administrador
+            - row "nicolasarias870+podiotest@gmail.com Operador" [ref=e26]:
+              - cell "nicolasarias870+podiotest@gmail.com" [ref=e27]
+              - cell "Operador" [ref=e28]:
+                - generic [ref=e29]: Operador
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e32]: Invitar usuario
+          - generic [ref=e33]: Envía una invitación por correo para que un nuevo usuario se una a tu organización.
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - generic [ref=e37]: Correo electrónico
+            - textbox "Correo electrónico" [ref=e38]:
+              - /placeholder: usuario@correo.com
+          - generic [ref=e39]:
+            - generic [ref=e40]: Rol
+            - combobox "Rol" [ref=e41]:
+              - generic: Operador
+              - img
+            - combobox [ref=e42]
+          - button "Invitar usuario" [ref=e43]
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]: Crear organización
+          - generic [ref=e47]: Crea una nueva organización e invita a su administrador.
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - generic [ref=e51]: Nombre de la organización
+            - textbox "Nombre de la organización" [ref=e52]:
+              - /placeholder: Liga de Ciclismo
+          - generic [ref=e53]:
+            - generic [ref=e54]: Correo del administrador
+            - textbox "Correo del administrador" [ref=e55]:
+              - /placeholder: admin@correo.com
+          - button "Crear organización" [ref=e56]
+  - region "Notifications alt+T":
+    - list:
+      - listitem [ref=e67]:
+        - img [ref=e69]
+        - generic [ref=e73]: Organización creada e invitación enviada.
+  - button "Open Next.js Dev Tools" [ref=e74] [cursor=pointer]:
+    - generic [ref=e77]:
+      - text: Rendering
+      - generic [ref=e78]:
+        - generic [ref=e79]: .
+        - generic [ref=e80]: .
+        - generic [ref=e81]: .
+  - alert [ref=e66]

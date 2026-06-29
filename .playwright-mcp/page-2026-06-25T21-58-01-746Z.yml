@@ -1,0 +1,30 @@
+- generic [ref=e1]:
+  - main [ref=e52]:
+    - generic [ref=e53]:
+      - generic [ref=e54]:
+        - generic [ref=e55]: Crear carrera
+        - generic [ref=e56]: "Paso 2 de 4: Disciplina y formato"
+      - generic [ref=e62]:
+        - generic [ref=e186]:
+          - generic [ref=e187]:
+            - generic [ref=e188]: Disciplina
+            - generic [ref=e189]:
+              - button "Ciclismo" [ref=e190] [cursor=pointer]:
+                - img [ref=e191]
+                - text: Ciclismo
+              - button "Atletismo" [ref=e196] [cursor=pointer]:
+                - img [ref=e197]
+                - text: Atletismo
+          - generic [ref=e200]:
+            - generic [ref=e201]: Formato
+            - generic [ref=e202]:
+              - button "Etapa única" [ref=e203] [cursor=pointer]
+              - button "Por etapas" [ref=e204] [cursor=pointer]
+            - paragraph [ref=e205]: Las carreras por etapas permiten registrar resultados a lo largo de varios días y mostrar una Clasificación General (GC).
+        - generic [ref=e88]:
+          - button "Atrás" [ref=e206]
+          - button "Siguiente" [active] [ref=e89]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert [ref=e34]: Crear carrera — Podio

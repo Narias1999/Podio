@@ -1,0 +1,53 @@
+- generic [active] [ref=e1]:
+  - main [ref=e939]:
+    - link "← Gestionar carrera" [ref=e941] [cursor=pointer]:
+      - /url: /races/clasica-de-prueba-qa/manage
+    - generic [ref=e942]:
+      - heading "Corredores" [level=1] [ref=e943]
+      - paragraph [ref=e944]: Clásica de Prueba QA
+    - generic [ref=e945]:
+      - generic [ref=e947]:
+        - generic [ref=e948]:
+          - generic [ref=e949]: Inscripciones
+          - generic [ref=e950]: 1 corredores en 1 categoría
+        - generic [ref=e951]:
+          - button "Importar CSV" [ref=e952]:
+            - img
+            - text: Importar CSV
+          - button "Cerrar inscripción y asignar dorsales" [ref=e1014]
+          - button "Agregar corredor" [ref=e953]:
+            - img
+            - text: Agregar corredor
+      - generic [ref=e954]:
+        - generic [ref=e955]:
+          - textbox "Buscar por nombre, documento o dorsal" [ref=e956]
+          - combobox [ref=e957]:
+            - generic: Todas las categorías
+            - img
+        - table [ref=e959]:
+          - rowgroup [ref=e960]:
+            - row "Dorsal Nombre Equipo Categoría Estado Acciones" [ref=e961]:
+              - columnheader "Dorsal" [ref=e962]
+              - columnheader "Nombre" [ref=e963]
+              - columnheader "Equipo" [ref=e964]
+              - columnheader "Categoría" [ref=e965]
+              - columnheader "Estado" [ref=e966]
+              - columnheader "Acciones" [ref=e967]
+          - rowgroup [ref=e968]:
+            - row "— Juan Pérez — Elite Masculino Confirmado Marcar DNS" [ref=e1015] [cursor=pointer]:
+              - cell "—" [ref=e1016]
+              - cell "Juan Pérez" [ref=e1017]
+              - cell "—" [ref=e1018]
+              - cell "Elite Masculino" [ref=e1019]
+              - cell "Confirmado" [ref=e1020]:
+                - generic [ref=e1021]: Confirmado
+              - cell "Marcar DNS" [ref=e1022]:
+                - button "Marcar DNS" [ref=e1023]
+  - region "Notifications alt+T":
+    - list:
+      - listitem [ref=e1024]:
+        - img [ref=e1026]
+        - generic [ref=e1030]: Corredor inscrito.
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert [ref=e34]: Corredores — Podio

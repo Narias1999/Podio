@@ -1,0 +1,48 @@
+- generic:
+  - status:
+    - img
+    - generic: Conectado
+  - main:
+    - generic:
+      - generic:
+        - generic: Etapa 3 – CRI Final
+        - generic: 27:53:49
+      - generic:
+        - button [expanded]: En pista (3)
+        - button: Finalizar sesión
+    - button: STOP
+    - region:
+      - paragraph: No hay llegadas por asignar. Presiona STOP cuando un corredor cruce la meta.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e24] [cursor=pointer]:
+    - img [ref=e25]
+  - alert
+  - dialog "Corredores en pista" [ref=e30]:
+    - generic [ref=e31]:
+      - heading "Corredores en pista" [level=2] [ref=e32]
+      - paragraph [ref=e33]: Corredores que ya salieron y aún no tienen tiempo registrado, en orden de salida.
+    - list [ref=e35]:
+      - listitem [ref=e36]:
+        - generic [ref=e37]: "1"
+        - generic [ref=e38]: "#1"
+        - generic [ref=e39]:
+          - generic [ref=e40]: Juan Pérez
+          - generic [ref=e41]: Elite Masculino
+        - generic [ref=e42]: 27:53:49
+      - listitem [ref=e43]:
+        - generic [ref=e44]: "2"
+        - generic [ref=e45]: "#2"
+        - generic [ref=e46]:
+          - generic [ref=e47]: Laura Restrepo
+          - generic [ref=e48]: Elite Femenino
+        - generic [ref=e49]: 27:47:49
+      - listitem [ref=e50]:
+        - generic [ref=e51]: "3"
+        - generic [ref=e52]: "#3"
+        - generic [ref=e53]:
+          - generic [ref=e54]: Carlos Gómez
+          - generic [ref=e55]: Master 30+
+        - generic [ref=e56]: 27:41:49
+    - button "Close" [active] [ref=e57]:
+      - img
+      - generic [ref=e58]: Close

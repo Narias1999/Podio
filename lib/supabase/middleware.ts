@@ -16,6 +16,7 @@ const PUBLIC_ROUTE_PATTERNS = [
 // Everything else under these patterns requires an authenticated organizer.
 const PROTECTED_ROUTE_PATTERNS = [
   /^\/dashboard(\/.*)?$/,
+  /^\/organization$/,
   /^\/races\/new$/,
   /^\/races\/[^/]+\/manage(\/.*)?$/,
   /^\/races\/[^/]+\/stages\/[^/]+\/live(\/.*)?$/,

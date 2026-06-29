@@ -39,15 +39,34 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { ConnectivityIndicator } from "@/components/connectivity-indicator";
 import { writeQueue, useWriteQueueSync } from "@/lib/write-queue";
 import { createClient } from "@/lib/supabase/client";
 import {
+  computeScheduledDepartures,
   ttSessionChannel,
   TT_STARTED_EVENT,
   type TtStartedPayload,
 } from "@/lib/tt-live";
+
+/** An in-progress (en pista) rider: started but not yet finished. */
+type InProgressRider = {
+  registration_id: string;
+  bib_number: number;
+  rider_name: string;
+  category_name: string;
+  /** Scheduled departure as ms epoch (start order). */
+  scheduledAt: number;
+};
 
 export type TtFinishLineRider = {
   registration_id: string;
@@ -184,6 +203,9 @@ export function TtFinishLineView({
     bib: number;
   } | null>(null);
 
+  // Discard confirmation dialog for a single pending entry.
+  const [discardId, setDiscardId] = useState<string | null>(null);
+
   // End-session confirmation dialog.
   const [endOpen, setEndOpen] = useState(false);
   const [ending, setEnding] = useState(false);
@@ -197,6 +219,45 @@ export function TtFinishLineView({
     }
     return map;
   }, [riders]);
+
+  // Scheduled departures, re-anchored to the live session anchor (start order).
+  const scheduled = useMemo(
+    () =>
+      anchorMs != null
+        ? computeScheduledDepartures(
+            riders.map((r) => ({
+              registration_id: r.registration_id,
+              position: r.position,
+              start_time: r.start_time,
+              bib_number: r.bib_number,
+              rider_name: r.rider_name,
+              category_id: r.category_id,
+              category_name: r.category_name,
+            })),
+            anchor!,
+          )
+        : [],
+    [anchor, anchorMs, riders],
+  );
+
+  // Riders "en pista": have started (scheduledAt <= now) but not yet finished
+  // (their bib is not in savedBibs). Kept in start order (ascending scheduledAt).
+  const inProgress = useMemo<InProgressRider[]>(() => {
+    return scheduled
+      .filter(
+        (r) =>
+          r.bib_number != null &&
+          r.scheduledAt <= nowMs &&
+          !savedBibs.has(r.bib_number),
+      )
+      .map((r) => ({
+        registration_id: r.registration_id,
+        bib_number: r.bib_number as number,
+        rider_name: r.rider_name,
+        category_name: r.category_name,
+        scheduledAt: r.scheduledAt,
+      }));
+  }, [scheduled, nowMs, savedBibs]);
 
   // ---------------------------------------------------------------------------
   // Endpoint registration (once)
@@ -380,6 +441,27 @@ export function TtFinishLineView({
     setOverwrite(null);
   }, [overwrite, pending, commitSave]);
 
+  // Discard a single pending entry — clears its inline error/saving state and
+  // removes it from `pending` (the persistence effect updates localStorage).
+  const confirmDiscard = useCallback(() => {
+    if (discardId) {
+      setPending((prev) => prev.filter((e) => e.id !== discardId));
+      setErrors((prev) => {
+        if (!(discardId in prev)) return prev;
+        const next = { ...prev };
+        delete next[discardId];
+        return next;
+      });
+      setSavingIds((prev) => {
+        if (!(discardId in prev)) return prev;
+        const next = { ...prev };
+        delete next[discardId];
+        return next;
+      });
+    }
+    setDiscardId(null);
+  }, [discardId]);
+
   // ---------------------------------------------------------------------------
   // End session → lock the stage's results (completable state)
   // ---------------------------------------------------------------------------
@@ -435,21 +517,25 @@ export function TtFinishLineView({
                 <span
                   className="text-4xl font-bold tabular-nums sm:text-5xl"
                   aria-label="Tiempo transcurrido"
+                  suppressHydrationWarning
                 >
                   {formatElapsed(elapsed)}
                 </span>
               </div>
-              <Button
-                type="button"
-                variant="outline"
-                onClick={() => {
-                  setEndError(null);
-                  setEndOpen(true);
-                }}
-                disabled={resultsLocked}
-              >
-                {resultsLocked ? "Sesión finalizada" : "Finalizar sesión"}
-              </Button>
+              <div className="flex shrink-0 items-center gap-2">
+                <InProgressSheet riders={inProgress} nowMs={nowMs} />
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => {
+                    setEndError(null);
+                    setEndOpen(true);
+                  }}
+                  disabled={resultsLocked}
+                >
+                  {resultsLocked ? "Sesión finalizada" : "Finalizar sesión"}
+                </Button>
+              </div>
             </header>
 
             {/* STOP — ≥40% of viewport height, never disabled */}
@@ -480,8 +566,10 @@ export function TtFinishLineView({
                     }
                     error={errors[entry.id] ?? null}
                     saving={savingIds[entry.id] ?? false}
+                    availableRiders={inProgress}
                     onBibChange={handleBibChange}
                     onSave={handleSave}
+                    onDiscard={(id) => setDiscardId(id)}
                   />
                 ))
               )}
@@ -514,6 +602,29 @@ export function TtFinishLineView({
             <AlertDialogCancel>Cancelar</AlertDialogCancel>
             <AlertDialogAction onClick={confirmOverwrite}>
               Confirmar
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      {/* Discard confirmation for a single pending entry */}
+      <AlertDialog
+        open={discardId !== null}
+        onOpenChange={(open) => {
+          if (!open) setDiscardId(null);
+        }}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>¿Descartar esta llegada?</AlertDialogTitle>
+            <AlertDialogDescription>
+              El tiempo capturado se perderá.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancelar</AlertDialogCancel>
+            <AlertDialogAction onClick={confirmDiscard}>
+              Descartar
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
@@ -585,16 +696,35 @@ function PendingCard({
   elapsedLabel,
   error,
   saving,
+  availableRiders,
   onBibChange,
   onSave,
+  onDiscard,
 }: {
   entry: PendingEntry;
   elapsedLabel: string;
   error: string | null;
   saving: boolean;
+  availableRiders: InProgressRider[];
   onBibChange: (id: string, value: string) => void;
   onSave: (entry: PendingEntry) => void;
+  onDiscard: (id: string) => void;
 }) {
+  // Local open state for the autocomplete dropdown.
+  const [open, setOpen] = useState(false);
+
+  // Filter the in-progress riders by what the operator has typed: prefix match
+  // on the bib number (as a string). Empty input shows all available riders.
+  const typed = entry.bibInput.trim();
+  const suggestions = useMemo(() => {
+    if (typed === "") return availableRiders;
+    return availableRiders.filter((r) =>
+      String(r.bib_number).startsWith(typed),
+    );
+  }, [availableRiders, typed]);
+
+  const showDropdown = open && suggestions.length > 0;
+
   return (
     <div
       className={cn(
@@ -603,25 +733,84 @@ function PendingCard({
       )}
     >
       <div className="flex items-center gap-3">
-        <span className="w-28 shrink-0 text-2xl font-bold tabular-nums">
+        <span
+          className="w-28 shrink-0 text-2xl font-bold tabular-nums"
+          suppressHydrationWarning
+        >
           {elapsedLabel}
         </span>
-        <Input
-          inputMode="numeric"
-          pattern="[0-9]*"
-          autoComplete="off"
-          placeholder="Dorsal"
-          aria-label="Número de dorsal"
-          value={entry.bibInput}
-          onChange={(e) => onBibChange(entry.id, e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              e.preventDefault();
-              onSave(entry);
-            }
-          }}
-          className="h-12 flex-1 text-lg"
-        />
+        {/* Relatively-positioned wrapper so the suggestion list can anchor to
+            the input directly below it. */}
+        <div className="relative flex-1">
+          <Input
+            inputMode="numeric"
+            pattern="[0-9]*"
+            autoComplete="off"
+            placeholder="Dorsal"
+            aria-label="Número de dorsal"
+            role="combobox"
+            aria-expanded={showDropdown}
+            aria-autocomplete="list"
+            value={entry.bibInput}
+            onChange={(e) => onBibChange(entry.id, e.target.value)}
+            onFocus={() => setOpen(true)}
+            onBlur={() => {
+              // Delay so a pointerdown on a suggestion still fires first.
+              window.setTimeout(() => setOpen(false), 120);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                setOpen(false);
+                onSave(entry);
+              } else if (e.key === "Escape") {
+                setOpen(false);
+              }
+            }}
+            className="h-12 w-full text-lg"
+          />
+          {showDropdown && (
+            <ul
+              role="listbox"
+              aria-label="Corredores en pista"
+              className="absolute left-0 right-0 top-full z-20 mt-1 max-h-72 overflow-auto rounded-md border border-border bg-popover py-1 shadow-lg"
+            >
+              {suggestions.map((rider) => (
+                <li key={rider.registration_id} role="option" aria-selected={false}>
+                  <button
+                    type="button"
+                    aria-label={`Dorsal ${rider.bib_number}, ${rider.rider_name}`}
+                    // Use pointerdown (not click) so selection registers BEFORE
+                    // the input's blur hides the list; preventDefault keeps focus.
+                    onPointerDown={(e) => {
+                      e.preventDefault();
+                      onBibChange(entry.id, String(rider.bib_number));
+                      setOpen(false);
+                    }}
+                    className="flex w-full items-baseline gap-2 px-3 py-2 text-left hover:bg-accent focus:bg-accent focus:outline-none"
+                  >
+                    <span className="font-bold tabular-nums">
+                      #{rider.bib_number}
+                    </span>
+                    <span className="flex-1 truncate">{rider.rider_name}</span>
+                    <span className="shrink-0 text-xs text-muted-foreground">
+                      {rider.category_name}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => onDiscard(entry.id)}
+          disabled={saving}
+          className="h-12 shrink-0 px-4 text-base"
+        >
+          Descartar
+        </Button>
         <Button
           type="button"
           onClick={() => onSave(entry)}
@@ -637,5 +826,73 @@ function PendingCard({
         </p>
       )}
     </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// "Corredores en pista" sheet — riders who have started but not yet finished
+// ---------------------------------------------------------------------------
+
+function InProgressSheet({
+  riders,
+  nowMs,
+}: {
+  riders: InProgressRider[];
+  nowMs: number;
+}) {
+  return (
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button type="button" variant="outline">
+          En pista ({riders.length})
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="bottom" className="max-h-[80vh]">
+        <SheetHeader>
+          <SheetTitle>Corredores en pista</SheetTitle>
+          <SheetDescription>
+            Corredores que ya salieron y aún no tienen tiempo registrado, en
+            orden de salida.
+          </SheetDescription>
+        </SheetHeader>
+        <div className="flex-1 overflow-auto px-4 pb-4">
+          {riders.length === 0 ? (
+            <p className="rounded-md bg-muted px-4 py-6 text-center text-sm text-muted-foreground">
+              No hay corredores en pista.
+            </p>
+          ) : (
+            <ul className="flex flex-col gap-2">
+              {riders.map((rider, index) => (
+                <li
+                  key={rider.registration_id}
+                  className="flex items-center gap-3 rounded-lg border border-border bg-card px-3 py-2"
+                >
+                  <span className="w-6 shrink-0 text-center text-sm font-medium text-muted-foreground tabular-nums">
+                    {index + 1}
+                  </span>
+                  <span className="shrink-0 text-lg font-bold tabular-nums">
+                    #{rider.bib_number}
+                  </span>
+                  <div className="flex min-w-0 flex-1 flex-col">
+                    <span className="truncate font-medium">
+                      {rider.rider_name}
+                    </span>
+                    <span className="truncate text-xs text-muted-foreground">
+                      {rider.category_name}
+                    </span>
+                  </div>
+                  <span
+                    className="shrink-0 text-xl font-bold tabular-nums"
+                    suppressHydrationWarning
+                  >
+                    {formatElapsed(nowMs - rider.scheduledAt)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 }

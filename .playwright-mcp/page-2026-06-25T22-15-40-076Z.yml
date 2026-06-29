@@ -1,0 +1,27 @@
+- generic [active] [ref=e1]:
+  - status [ref=e2]:
+    - img [ref=e3]
+    - generic [ref=e7]: Conectado
+  - main [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - heading "Etapa 1 – Contrarreloj" [level=1] [ref=e11]
+        - paragraph [ref=e12]: sábado 4 de julio de 2026
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - generic [ref=e15]: Configuración de salida
+          - generic [ref=e16]: Cuando salga el primer corredor, presiona Iniciar contrarreloj.
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - generic [ref=e19]: Salida del primer corredor
+            - generic [ref=e20]: 10:00:00
+          - generic [ref=e21]:
+            - generic [ref=e22]: Intervalo entre corredores
+            - generic [ref=e23]: —
+          - generic [ref=e24]:
+            - generic [ref=e25]: Intervalo entre categorías
+            - generic [ref=e26]: —
+      - button "Iniciar contrarreloj" [ref=e27]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e33] [cursor=pointer]:
+    - img [ref=e34]

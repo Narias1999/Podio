@@ -1,0 +1,19 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Clásica de Prueba QA" [level=1] [ref=e4]
+      - paragraph [ref=e5]: Ciclismo · Medellín, Colombia · 3 de julio de 2026
+    - generic [ref=e6]:
+      - tablist [ref=e7]:
+        - tab "Etapas" [selected] [ref=e8]
+        - tab "Clasificación general" [ref=e9]
+      - tabpanel "Etapas" [ref=e10]:
+        - generic [ref=e11]:
+          - generic [ref=e12]:
+            - generic [ref=e13]: Etapas
+            - generic [ref=e14]: Consulta los resultados de cada etapa finalizada.
+          - paragraph [ref=e16]: Aún no hay resultados disponibles. Vuelve a consultar después de la carrera.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e22] [cursor=pointer]:
+    - img [ref=e23]
+  - alert [ref=e26]

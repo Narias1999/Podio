@@ -55,6 +55,39 @@ import type { createAdminClient } from "@/lib/supabase/admin";
 
 type Admin = ReturnType<typeof createAdminClient>;
 
+/**
+ * Postgres transient-conflict SQLSTATEs (serialization failure / deadlock).
+ * Group saves flush one POST per rider concurrently; two upserts into the same
+ * stage's `results` table can briefly collide and Postgres aborts one of them.
+ * The upsert is idempotent on (stage_id, registration_id), so re-running it is
+ * safe and resolves the conflict without surfacing a hard error to the queue
+ * (which would otherwise leave that rider unsynced until a later retry).
+ */
+const TRANSIENT_PG_CODES = new Set(["40001", "40P01"]);
+
+/**
+ * Run an idempotent Supabase write, retrying a few times on a transient
+ * serialization/deadlock error. The factory is re-invoked each attempt because
+ * Supabase query builders are single-use.
+ */
+async function withTransientRetry<T extends { error: { code?: string | null } | null }>(
+  run: () => PromiseLike<T>,
+  attempts = 4,
+): Promise<T> {
+  let result = await run();
+  for (
+    let i = 1;
+    i < attempts &&
+    !!result.error?.code &&
+    TRANSIENT_PG_CODES.has(result.error.code);
+    i++
+  ) {
+    await new Promise((resolve) => setTimeout(resolve, 25 * i + Math.random() * 25));
+    result = await run();
+  }
+  return result;
+}
+
 export type GroupFinishResolve =
   | {
       ok: true;
@@ -157,21 +190,23 @@ export async function resolveGroupFinish(
   // flag so the organizer screen warns (Story 22 §edge cases). Excluded from
   // ranking (null net_seconds) until the start is recorded.
   if (!start || !start.started_at) {
-    const { error } = await admin.from("results").upsert(
-      {
-        stage_id: stageId,
-        registration_id: registration.id,
-        status: "finished",
-        finish_time: new Date(finishMs).toISOString(),
-        elapsed_seconds: null,
-        net_seconds: null,
-        position: null,
-        group_position: params.group_position,
-        dnf_reason: null,
-        dsq_reason: null,
-        captured_at: params.captured_at,
-      },
-      { onConflict: "stage_id,registration_id" },
+    const { error } = await withTransientRetry(() =>
+      admin.from("results").upsert(
+        {
+          stage_id: stageId,
+          registration_id: registration.id,
+          status: "finished",
+          finish_time: new Date(finishMs).toISOString(),
+          elapsed_seconds: null,
+          net_seconds: null,
+          position: null,
+          group_position: params.group_position,
+          dnf_reason: null,
+          dsq_reason: null,
+          captured_at: params.captured_at,
+        },
+        { onConflict: "stage_id,registration_id" },
+      ),
     );
 
     if (error) {
@@ -214,21 +249,23 @@ export async function resolveGroupFinish(
     (finishMs - (Number.isNaN(anchorMs) ? startMs : anchorMs)) / 1000,
   );
 
-  const { error } = await admin.from("results").upsert(
-    {
-      stage_id: stageId,
-      registration_id: registration.id,
-      status: "finished",
-      finish_time: new Date(finishMs).toISOString(),
-      elapsed_seconds: elapsedSeconds,
-      net_seconds: netSeconds,
-      position: null,
-      group_position: params.group_position,
-      dnf_reason: null,
-      dsq_reason: null,
-      captured_at: params.captured_at,
-    },
-    { onConflict: "stage_id,registration_id" },
+  const { error } = await withTransientRetry(() =>
+    admin.from("results").upsert(
+      {
+        stage_id: stageId,
+        registration_id: registration.id,
+        status: "finished",
+        finish_time: new Date(finishMs).toISOString(),
+        elapsed_seconds: elapsedSeconds,
+        net_seconds: netSeconds,
+        position: null,
+        group_position: params.group_position,
+        dnf_reason: null,
+        dsq_reason: null,
+        captured_at: params.captured_at,
+      },
+      { onConflict: "stage_id,registration_id" },
+    ),
   );
 
   if (error) {

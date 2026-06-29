@@ -1,0 +1,76 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Podio" [level=1] [ref=e4]
+      - link "Volver al panel" [ref=e5] [cursor=pointer]:
+        - /url: /dashboard
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - heading "Organización - Nicolás Arias" [level=2] [ref=e8]
+        - paragraph [ref=e9]: 5 / 5 usuarios
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - generic [ref=e12]: Miembros
+          - generic [ref=e13]: Todos los miembros pueden crear y gestionar las carreras de la organización.
+        - table [ref=e16]:
+          - rowgroup [ref=e17]:
+            - row "Correo electrónico Rol" [ref=e18]:
+              - columnheader "Correo electrónico" [ref=e19]
+              - columnheader "Rol" [ref=e20]
+          - rowgroup [ref=e21]:
+            - row "nicolasarias870@gmail.com Super administrador" [ref=e22]:
+              - cell "nicolasarias870@gmail.com" [ref=e23]
+              - cell "Super administrador" [ref=e24]:
+                - generic [ref=e25]: Super administrador
+            - row "nicolasarias870+podiotest@gmail.com Operador" [ref=e26]:
+              - cell "nicolasarias870+podiotest@gmail.com" [ref=e27]
+              - cell "Operador" [ref=e28]:
+                - generic [ref=e29]: Operador
+            - row "nicolasarias870+podiotest2@gmail.com Operador" [ref=e30]:
+              - cell "nicolasarias870+podiotest2@gmail.com" [ref=e31]
+              - cell "Operador" [ref=e32]:
+                - generic [ref=e33]: Operador
+            - row "nicolasarias870+podiotest3@gmail.com Operador" [ref=e34]:
+              - cell "nicolasarias870+podiotest3@gmail.com" [ref=e35]
+              - cell "Operador" [ref=e36]:
+                - generic [ref=e37]: Operador
+            - row "nicolasarias870+podiotest4@gmail.com Operador" [ref=e38]:
+              - cell "nicolasarias870+podiotest4@gmail.com" [ref=e39]
+              - cell "Operador" [ref=e40]:
+                - generic [ref=e41]: Operador
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: Invitar usuario
+          - generic [ref=e45]: Envía una invitación por correo para que un nuevo usuario se una a tu organización.
+        - generic [ref=e46]:
+          - status [ref=e47]: Tu organización alcanzó el máximo de 5 usuarios. No puedes invitar a nadie más.
+          - generic [ref=e48]:
+            - generic [ref=e49]:
+              - generic [ref=e50]: Correo electrónico
+              - textbox "Correo electrónico" [disabled]:
+                - /placeholder: usuario@correo.com
+            - generic [ref=e51]:
+              - generic [ref=e52]: Rol
+              - combobox "Rol" [disabled] [ref=e53]:
+                - generic: Operador
+                - img
+              - combobox [disabled] [ref=e54]
+            - button "Invitar usuario" [disabled]
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - generic [ref=e57]: Crear organización
+          - generic [ref=e58]: Crea una nueva organización e invita a su administrador.
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: Nombre de la organización
+            - textbox "Nombre de la organización" [ref=e63]:
+              - /placeholder: Liga de Ciclismo
+          - generic [ref=e64]:
+            - generic [ref=e65]: Correo del administrador
+            - textbox "Correo del administrador" [ref=e66]:
+              - /placeholder: admin@correo.com
+          - button "Crear organización" [ref=e67]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e73] [cursor=pointer]:
+    - img [ref=e74]
+  - alert [ref=e77]

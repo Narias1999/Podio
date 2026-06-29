@@ -1,0 +1,46 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - link "← Resultados de la carrera" [ref=e4] [cursor=pointer]:
+      - /url: /races/clasica-de-prueba-qa/results
+    - generic [ref=e5]:
+      - heading "Etapa 1 – Contrarreloj" [level=1] [ref=e6]
+      - paragraph [ref=e7]: Clásica de Prueba QA
+      - paragraph [ref=e8]: Contrarreloj · sábado 4 de julio de 2026
+    - generic [ref=e9]:
+      - combobox [ref=e11]:
+        - generic: Todas las categorías
+        - img
+      - generic [ref=e12]:
+        - heading "Elite Masculino" [level=2] [ref=e13]
+        - generic [ref=e15]:
+          - generic [ref=e16]: "1"
+          - generic [ref=e17]:
+            - paragraph [ref=e18]: Juan Pérez
+            - paragraph [ref=e19]: Dorsal 1
+          - generic [ref=e20]:
+            - paragraph [ref=e21]: 0:32:15
+            - paragraph [ref=e22]: —
+      - generic [ref=e23]:
+        - heading "Elite Femenino" [level=2] [ref=e24]
+        - generic [ref=e26]:
+          - generic [ref=e27]: "1"
+          - generic [ref=e28]:
+            - paragraph [ref=e29]: Laura Restrepo
+            - paragraph [ref=e30]: Dorsal 2
+          - generic [ref=e31]:
+            - paragraph [ref=e32]: 0:38:40
+            - paragraph [ref=e33]: —
+      - generic [ref=e34]:
+        - heading "Master 30+" [level=2] [ref=e35]
+        - generic [ref=e37]:
+          - generic [ref=e38]: "1"
+          - generic [ref=e39]:
+            - paragraph [ref=e40]: Carlos Gómez
+            - paragraph [ref=e41]: Dorsal 3
+          - generic [ref=e42]:
+            - paragraph [ref=e43]: 0:35:30
+            - paragraph [ref=e44]: —
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e50] [cursor=pointer]:
+    - img [ref=e51]
+  - alert [ref=e54]

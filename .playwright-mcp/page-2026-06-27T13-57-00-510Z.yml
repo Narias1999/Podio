@@ -1,0 +1,26 @@
+- generic [active] [ref=e1]:
+  - main [ref=e356]:
+    - link "← Volver" [ref=e357] [cursor=pointer]:
+      - /url: /races/clasica-de-prueba-qa/manage
+    - generic [ref=e358]:
+      - heading "Etapa 1 – Contrarreloj" [level=1] [ref=e359]
+      - paragraph [ref=e360]: Elige la pantalla para este dispositivo. Abre la de salida en la partida y la de meta en la llegada.
+    - generic [ref=e361]:
+      - link "Pantalla de salida Cuenta regresiva que avisa cuándo sale cada corredor. Ábrela en la línea de partida." [ref=e362] [cursor=pointer]:
+        - /url: /races/clasica-de-prueba-qa/stages/1/live/tt/start
+        - generic [ref=e364]:
+          - generic [ref=e365]:
+            - img [ref=e367]
+            - generic [ref=e369]: Pantalla de salida
+          - generic [ref=e370]: Cuenta regresiva que avisa cuándo sale cada corredor. Ábrela en la línea de partida.
+      - link "Pantalla de meta Toca STOP en cada llegada y asigna el dorsal. Ábrela en la meta." [ref=e371] [cursor=pointer]:
+        - /url: /races/clasica-de-prueba-qa/stages/1/live/tt/finish
+        - generic [ref=e373]:
+          - generic [ref=e374]:
+            - img [ref=e376]
+            - generic [ref=e379]: Pantalla de meta
+          - generic [ref=e380]: Toca STOP en cada llegada y asigna el dorsal. Ábrela en la meta.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e351] [cursor=pointer]:
+    - img [ref=e352]
+  - alert [ref=e355]: En vivo — Podio

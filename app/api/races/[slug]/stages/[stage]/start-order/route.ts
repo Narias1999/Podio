@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { loadOwnedRace } from "@/lib/races";
+import { getOrganizationId } from "@/lib/organizations";
 import type { GcResult, GcStage } from "@/lib/gc";
 import {
   computeStartOrder,
@@ -16,17 +17,17 @@ import {
 // regenerates) the TT start order for a stage (Story 11). Blocked unless the
 // stage is a time trial and registration is closed (bibs assigned). Opening
 // TTs use random within-category order; mid-race TTs use inverse GC computed
-// from prior completed (locked) stages. Authenticates the session, confirms
-// `races.organizer_id` matches, then writes with the service-role client
-// (RLS is off — Story 01).
+// from prior completed (locked) stages. Authenticates the session, confirms the
+// race belongs to the caller's organization, then writes with the service-role
+// client (RLS is off — Story 01).
 
 async function loadOwnedStageByNumber(
   admin: ReturnType<typeof createAdminClient>,
   slug: string,
   stageNumber: number,
-  userId: string,
+  organizationId: string,
 ) {
-  const race = await loadOwnedRace(admin, slug, userId);
+  const race = await loadOwnedRace(admin, slug, organizationId);
   if (!race) {
     return { race: null, stage: null } as const;
   }
@@ -55,11 +56,15 @@ export async function POST(
   }
 
   const admin = createAdminClient();
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
   const { race, stage } = await loadOwnedStageByNumber(
     admin,
     slug,
     stageNumber,
-    user.id,
+    organizationId,
   );
   if (!race || !stage) {
     return NextResponse.json({ error: "Etapa no encontrada." }, { status: 404 });

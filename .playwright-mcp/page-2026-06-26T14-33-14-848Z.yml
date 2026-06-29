@@ -1,0 +1,30 @@
+- generic [ref=e1]:
+  - status [ref=e2]:
+    - img [ref=e3]
+    - generic [ref=e7]: Conectado
+  - main [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]: Etapa 2 – Ruta
+      - generic "Tiempo transcurrido" [ref=e11]: 0:28:45
+    - button "STOP" [ref=e12]
+    - region "Grupos por asignar" [ref=e13]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: 0:28:28
+          - textbox "Número de dorsal" [ref=e28]:
+            - /placeholder: Dorsal
+          - button "Agregar" [active] [ref=e29]
+        - list "Corredores del grupo" [ref=e32]:
+          - listitem "Juan Pérez" [ref=e33]:
+            - generic "Posición 1" [ref=e34]: "1"
+            - generic [ref=e35]: ⚠ Dorsal 1
+            - button "Mover dorsal 1 antes" [disabled] [ref=e36]: ‹
+            - button "Mover dorsal 1 después" [disabled] [ref=e37]: ›
+            - button "Quitar dorsal 1" [ref=e38]: ×
+        - generic [ref=e30]:
+          - button "Descartar" [ref=e31]
+          - button "Guardar grupo" [ref=e39]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e20] [cursor=pointer]:
+    - img [ref=e21]
+  - alert [ref=e24]

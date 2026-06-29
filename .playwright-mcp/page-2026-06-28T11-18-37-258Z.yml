@@ -1,0 +1,34 @@
+- generic [active] [ref=e1]:
+  - main [ref=e35]:
+    - generic [ref=e36]:
+      - heading "Podio" [level=1] [ref=e37]
+      - generic [ref=e38]:
+        - link "Organización" [ref=e39] [cursor=pointer]:
+          - /url: /organization
+        - button "Cerrar sesión" [ref=e41]
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - heading "Tus carreras" [level=2] [ref=e44]
+        - link "Crear nueva carrera" [ref=e45] [cursor=pointer]:
+          - /url: /races/new
+          - img
+          - text: Crear nueva carrera
+      - generic [ref=e46]:
+        - link "Clásica de Prueba QA Publicada 4 de julio de 2026 · Ciclismo" [ref=e47] [cursor=pointer]:
+          - /url: /races/clasica-de-prueba-qa/manage
+          - generic [ref=e49]:
+            - generic [ref=e50]:
+              - generic [ref=e51]: Clásica de Prueba QA
+              - generic [ref=e52]: Publicada
+            - generic [ref=e53]: 4 de julio de 2026 · Ciclismo
+        - link "Vuelta a Colombia Publicada 27 de junio de 2026 – 28 de junio de 2026 · Ciclismo" [ref=e54] [cursor=pointer]:
+          - /url: /races/vuelta-a-colombia/manage
+          - generic [ref=e56]:
+            - generic [ref=e57]:
+              - generic [ref=e58]: Vuelta a Colombia
+              - generic [ref=e59]: Publicada
+            - generic [ref=e60]: 27 de junio de 2026 – 28 de junio de 2026 · Ciclismo
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert [ref=e34]: Panel — Podio

@@ -1,0 +1,45 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e6] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e7]:
+      - img [ref=e8]
+    - generic [ref=e11]:
+      - button "Open issues overlay" [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: "0"
+          - generic [ref=e15]: "1"
+        - generic [ref=e16]: Issue
+      - button "Collapse issues badge" [ref=e17]:
+        - img [ref=e18]
+  - status [ref=e20]:
+    - img [ref=e21]
+    - generic [ref=e25]: Conectado
+  - main [ref=e26]:
+    - generic [ref=e27]:
+      - generic [ref=e28]: Etapa 2 – Ruta
+      - generic "Tiempo transcurrido" [ref=e29]: 0:02:46
+    - button "STOP" [ref=e30]
+    - region "Grupos por asignar" [ref=e31]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]: 0:01:37
+          - textbox "Número de dorsal" [ref=e37]:
+            - /placeholder: Dorsal
+          - button "Agregar" [ref=e38]
+        - list "Corredores del grupo" [ref=e42]:
+          - listitem "Laura Restrepo" [ref=e50]:
+            - generic "Posición 1" [ref=e56]: "1"
+            - generic [ref=e52]: "#2"
+            - button "Mover dorsal 2 antes" [disabled] [ref=e53]: ‹
+            - button "Mover dorsal 2 después" [ref=e54]: ›
+            - button "Quitar dorsal 2" [ref=e55]: ×
+          - listitem "Juan Pérez" [ref=e43]:
+            - generic "Posición 2" [ref=e57]: "2"
+            - generic [ref=e45]: "#1"
+            - button "Mover dorsal 1 antes" [ref=e46]: ‹
+            - button "Mover dorsal 1 después" [disabled] [ref=e47]: ›
+            - button "Quitar dorsal 1" [ref=e48]: ×
+        - generic [ref=e39]:
+          - button "Descartar" [ref=e40]
+          - button "Guardar grupo" [ref=e49]
+  - region "Notifications alt+T"
+  - alert [ref=e33]

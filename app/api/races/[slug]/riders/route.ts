@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { getCurrentUser } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getOrganizationId } from "@/lib/organizations";
 import { loadOwnedRace } from "@/lib/races";
 import {
   createRiderRegistration,
@@ -13,8 +14,8 @@ import {
 // session user. Creates (or reuses by document_number) the global rider
 // profile and links a confirmed registration with the chosen category and an
 // empty bib (bibs are assigned later via the close-registration action).
-// Authenticates the session, confirms `races.organizer_id` matches, then
-// writes with the service-role client (RLS is off — Story 01).
+// Authenticates the session, confirms the race belongs to the caller's
+// organization, then writes with the service-role client (RLS is off — Story 01).
 
 export async function POST(
   request: Request,
@@ -27,7 +28,11 @@ export async function POST(
 
   const { slug } = await params;
   const admin = createAdminClient();
-  const race = await loadOwnedRace(admin, slug, user.id);
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
+  const race = await loadOwnedRace(admin, slug, organizationId);
   if (!race) {
     return NextResponse.json(
       { error: "Carrera no encontrada." },

@@ -85,6 +85,56 @@ export type Database = {
           },
         ]
       }
+      organizations: {
+        Row: {
+          created_at: string
+          id: string
+          max_users: number
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          max_users?: number
+          name: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          max_users?: number
+          name?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          id: string
+          organization_id: string
+          role: Database["public"]["Enums"]["user_role"]
+        }
+        Insert: {
+          created_at?: string
+          id: string
+          organization_id: string
+          role?: Database["public"]["Enums"]["user_role"]
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          organization_id?: string
+          role?: Database["public"]["Enums"]["user_role"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profiles_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       races: {
         Row: {
           banner_url: string | null
@@ -96,6 +146,7 @@ export type Database = {
           is_multi_stage: boolean
           location: string
           name: string
+          organization_id: string
           organizer_id: string
           registrations_closed: boolean
           slug: string
@@ -112,6 +163,7 @@ export type Database = {
           is_multi_stage?: boolean
           location: string
           name: string
+          organization_id: string
           organizer_id: string
           registrations_closed?: boolean
           slug: string
@@ -128,13 +180,22 @@ export type Database = {
           is_multi_stage?: boolean
           location?: string
           name?: string
+          organization_id?: string
           organizer_id?: string
           registrations_closed?: boolean
           slug?: string
           starts_at?: string
           status?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "races_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       registrations: {
         Row: {
@@ -405,7 +466,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      user_role: "super_admin" | "admin" | "operator"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -532,6 +593,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      user_role: ["super_admin", "admin", "operator"],
+    },
   },
 } as const

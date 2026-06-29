@@ -1,0 +1,23 @@
+- generic [ref=e1]:
+  - status [ref=e2]:
+    - img [ref=e3]
+    - generic [ref=e7]: Conectado
+  - main [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]: Etapa 3 – CRI Final
+        - generic "Tiempo transcurrido" [ref=e12]: 27:54:21
+      - generic [ref=e13]:
+        - button "En pista (3)" [ref=e14]
+        - button "Finalizar sesión" [ref=e15]
+    - button "STOP" [active] [ref=e16]
+    - region "Llegadas por asignar" [ref=e17]:
+      - generic [ref=e60]:
+        - generic [ref=e61]: 27:54:20
+        - combobox "Número de dorsal" [ref=e63]
+        - button "Descartar" [ref=e64]
+        - button "Guardar" [ref=e65]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e24] [cursor=pointer]:
+    - img [ref=e25]
+  - alert [ref=e28]

@@ -23,6 +23,16 @@ import { es } from "date-fns/locale";
 
 import { Button } from "@/components/ui/button";
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import {
   Card,
   CardContent,
   CardDescription,
@@ -109,6 +119,12 @@ export function TtStartLineView({
 
   // Wake Lock tip visibility (shown once if wake lock is unavailable/denied).
   const [showWakeTip, setShowWakeTip] = useState(false);
+
+  // Accidental-start protection (Story 17 usability):
+  //  - `confirmOpen` gates `handleStart` behind a confirmation dialog.
+  //  - `showUndo` exposes a short-lived "undo start" escape right after starting.
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [showUndo, setShowUndo] = useState(false);
 
   // ---------------------------------------------------------------------------
   // Endpoint registration (once)
@@ -251,7 +267,32 @@ export function TtStartLineView({
     }
 
     setAnchor(startedAt);
+    // Open the short undo window so an accidental start can be reverted.
+    setShowUndo(true);
   }, [stageId]);
+
+  // Revert an accidental start back to the pre-start screen.
+  //
+  // The write queue exposes no removal/cancel API (see `lib/write-queue.ts` —
+  // only enqueue/flush/subscribe/getState/registerEndpoint are public), so we
+  // cannot pull the already-queued start write out of the queue. Instead we keep
+  // the undo purely client-side: resetting `anchor` to null shows the pre-start
+  // screen again, and re-pressing "Iniciar contrarreloj" re-enqueues the start.
+  // That write is an idempotent `upsert` keyed by stage, so the re-press simply
+  // overwrites the previous anchor server-side with the new one.
+  const handleUndoStart = useCallback(() => {
+    // Best-effort: re-broadcast a fresh start event on the next real start.
+    // Here we only revert local state so the operator can start again cleanly.
+    setShowUndo(false);
+    setAnchor(null);
+  }, []);
+
+  // Auto-dismiss the undo control after a short window.
+  useEffect(() => {
+    if (!showUndo) return;
+    const id = window.setTimeout(() => setShowUndo(false), 10_000);
+    return () => window.clearTimeout(id);
+  }, [showUndo]);
 
   const hasStartOrder = riders.length > 0;
 
@@ -291,16 +332,37 @@ export function TtStartLineView({
             intervalSeconds={intervalSeconds}
             categoryGapSeconds={categoryGapSeconds}
             hasStartOrder={hasStartOrder}
-            onStart={handleStart}
+            riders={riders}
+            onStart={() => setConfirmOpen(true)}
           />
         ) : (
           <LiveCountdown
             stageName={stageName}
             scheduled={scheduled}
             nowMs={nowMs}
+            showUndo={showUndo}
+            onUndoStart={handleUndoStart}
           />
         )}
       </main>
+
+      {/* Confirmation step — guards against an accidental anchor (Story 17). */}
+      <AlertDialog open={confirmOpen} onOpenChange={setConfirmOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>¿Iniciar la contrarreloj?</AlertDialogTitle>
+            <AlertDialogDescription>
+              El cronómetro se anclará a este momento y definirá las horas de
+              salida de todos los corredores. Hazlo cuando salga el primer
+              corredor.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancelar</AlertDialogCancel>
+            <AlertDialogAction onClick={handleStart}>Iniciar</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </>
   );
 }
@@ -309,6 +371,16 @@ export function TtStartLineView({
 // Pre-start state
 // ---------------------------------------------------------------------------
 
+// Format an ISO `start_time` string as `HH:mm:ss` (es locale), or "—" when the
+// value is null/unparseable. Mirrors `formatClock` but for ISO inputs (the
+// pre-start preview uses the configured planned times directly, not ms anchors).
+function formatPlannedClock(startTime: string | null): string {
+  if (!startTime) return "—";
+  const d = new Date(startTime);
+  if (Number.isNaN(d.getTime())) return "—";
+  return format(d, "HH:mm:ss", { locale: es });
+}
+
 function PreStart({
   stageName,
   stageDateLabel,
@@ -316,6 +388,7 @@ function PreStart({
   intervalSeconds,
   categoryGapSeconds,
   hasStartOrder,
+  riders,
   onStart,
 }: {
   stageName: string;
@@ -324,8 +397,16 @@ function PreStart({
   intervalSeconds: number | null;
   categoryGapSeconds: number | null;
   hasStartOrder: boolean;
+  riders: TtStartLineRider[];
   onStart: () => void;
 }) {
+  // Preview the first riders due to start, by `position` ascending. We take the
+  // first 5 by position regardless of `start_time` (rendering "—" for missing
+  // times) so the preview faithfully mirrors the start order's leading rows.
+  const firstRiders = [...riders]
+    .sort((a, b) => a.position - b.position)
+    .slice(0, 5);
+
   return (
     <div className="flex flex-1 flex-col gap-8">
       <div className="flex flex-col gap-1">
@@ -371,6 +452,41 @@ function PreStart({
           de iniciar la salida en vivo.
         </p>
       )}
+
+      {/* Preview: first riders due to start (read-only, pre-start only). */}
+      {hasStartOrder && firstRiders.length > 0 && (
+        <div className="flex flex-col gap-2">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+            Primeros en salir
+          </h2>
+          <ul className="flex flex-col gap-2">
+            {firstRiders.map((r, i) => (
+              <li
+                key={r.registration_id}
+                className={cn(
+                  "flex items-center gap-4 rounded-lg border px-4",
+                  i === 0
+                    ? "border-primary/40 bg-primary/5 py-4 text-lg"
+                    : "border-border py-3 text-base",
+                )}
+              >
+                <span className="w-20 shrink-0 font-semibold tabular-nums text-muted-foreground">
+                  {formatPlannedClock(r.start_time)}
+                </span>
+                <span className="w-12 shrink-0 font-bold tabular-nums">
+                  {r.bib_number ?? "—"}
+                </span>
+                <span className="flex-1 truncate font-medium">
+                  {r.rider_name}
+                </span>
+                <span className="shrink-0 text-sm text-muted-foreground">
+                  {r.category_name}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
@@ -394,10 +510,14 @@ function LiveCountdown({
   stageName,
   scheduled,
   nowMs,
+  showUndo,
+  onUndoStart,
 }: {
   stageName: string;
   scheduled: ReturnType<typeof computeScheduledDepartures>;
   nowMs: number;
+  showUndo: boolean;
+  onUndoStart: () => void;
 }) {
   const idx = currentRiderIndex(scheduled, nowMs);
   const finished = idx >= scheduled.length;
@@ -415,13 +535,30 @@ function LiveCountdown({
   const flashing =
     lastDeparted != null && nowMs - lastDeparted.scheduledAt < 800;
 
+  // Short-lived "undo start" escape, shown for a few seconds after starting so
+  // an accidental start can be reverted to the pre-start screen.
+  const undoNotice = showUndo ? (
+    <div
+      role="status"
+      className="flex items-center justify-between gap-3 rounded-md border border-border bg-muted px-4 py-3 text-sm"
+    >
+      <span className="text-muted-foreground">¿Iniciaste por error?</span>
+      <Button type="button" size="sm" variant="outline" onClick={onUndoStart}>
+        Deshacer inicio
+      </Button>
+    </div>
+  ) : null;
+
   if (scheduled.length === 0) {
     return (
-      <div className="flex flex-1 flex-col items-center justify-center gap-3 text-center">
-        <h1 className="text-2xl font-semibold">{stageName}</h1>
-        <p className="text-muted-foreground">
-          No hay corredores con hora de salida en el orden de esta etapa.
-        </p>
+      <div className="flex flex-1 flex-col gap-6">
+        {undoNotice}
+        <div className="flex flex-1 flex-col items-center justify-center gap-3 text-center">
+          <h1 className="text-2xl font-semibold">{stageName}</h1>
+          <p className="text-muted-foreground">
+            No hay corredores con hora de salida en el orden de esta etapa.
+          </p>
+        </div>
       </div>
     );
   }
@@ -429,12 +566,15 @@ function LiveCountdown({
   if (finished) {
     const last = scheduled[scheduled.length - 1];
     return (
-      <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
-        <h1 className="text-2xl font-semibold">{stageName}</h1>
-        <p className="text-4xl font-bold">Todos los corredores han salido</p>
-        <p className="text-xl text-muted-foreground">
-          Última salida a las {formatClock(last.scheduledAt)}
-        </p>
+      <div className="flex flex-1 flex-col gap-6">
+        {undoNotice}
+        <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
+          <h1 className="text-2xl font-semibold">{stageName}</h1>
+          <p className="text-4xl font-bold">Todos los corredores han salido</p>
+          <p className="text-xl text-muted-foreground">
+            Última salida a las {formatClock(last.scheduledAt)}
+          </p>
+        </div>
       </div>
     );
   }
@@ -445,6 +585,7 @@ function LiveCountdown({
 
   return (
     <div className="flex flex-1 flex-col gap-6">
+      {undoNotice}
       {/* Primary: countdown + current rider */}
       <div
         className={cn(

@@ -1,0 +1,62 @@
+- generic [active] [ref=e1]:
+  - main [ref=e939]:
+    - link "← Gestionar carrera" [ref=e941] [cursor=pointer]:
+      - /url: /races/clasica-de-prueba-qa/manage
+    - generic [ref=e942]:
+      - heading "Corredores" [level=1] [ref=e943]
+      - paragraph [ref=e944]: Clásica de Prueba QA
+    - generic [ref=e945]:
+      - generic [ref=e947]:
+        - generic [ref=e948]:
+          - generic [ref=e949]: Inscripciones
+          - generic [ref=e950]: 3 corredores en 3 categorías
+        - button "Agregar corredor" [ref=e953]:
+          - img
+          - text: Agregar corredor
+      - generic [ref=e954]:
+        - generic [ref=e955]:
+          - textbox "Buscar por nombre, documento o dorsal" [ref=e956]
+          - combobox [ref=e957]:
+            - generic: Todas las categorías
+            - img
+        - table [ref=e959]:
+          - rowgroup [ref=e960]:
+            - row "Dorsal Nombre Equipo Categoría Estado Acciones" [ref=e961]:
+              - columnheader "Dorsal" [ref=e962]
+              - columnheader "Nombre" [ref=e963]
+              - columnheader "Equipo" [ref=e964]
+              - columnheader "Categoría" [ref=e965]
+              - columnheader "Estado" [ref=e966]
+              - columnheader "Acciones" [ref=e967]
+          - rowgroup [ref=e968]:
+            - row "1 Juan Pérez — Elite Masculino Confirmado Marcar DNS" [ref=e1167] [cursor=pointer]:
+              - cell "1" [ref=e1168]
+              - cell "Juan Pérez" [ref=e1017]
+              - cell "—" [ref=e1018]
+              - cell "Elite Masculino" [ref=e1019]
+              - cell "Confirmado" [ref=e1020]:
+                - generic [ref=e1021]: Confirmado
+              - cell "Marcar DNS" [ref=e1022]:
+                - button "Marcar DNS" [ref=e1023]
+            - row "3 Carlos Gómez — Master 30+ Confirmado Marcar DNS" [ref=e1169] [cursor=pointer]:
+              - cell "3" [ref=e1170]
+              - cell "Carlos Gómez" [ref=e1076]
+              - cell "—" [ref=e1077]
+              - cell "Master 30+" [ref=e1078]
+              - cell "Confirmado" [ref=e1079]:
+                - generic [ref=e1080]: Confirmado
+              - cell "Marcar DNS" [ref=e1081]:
+                - button "Marcar DNS" [ref=e1082]
+            - row "2 Laura Restrepo — Elite Femenino Confirmado Marcar DNS" [ref=e1171] [cursor=pointer]:
+              - cell "2" [ref=e1172]
+              - cell "Laura Restrepo" [ref=e1135]
+              - cell "—" [ref=e1136]
+              - cell "Elite Femenino" [ref=e1137]
+              - cell "Confirmado" [ref=e1138]:
+                - generic [ref=e1139]: Confirmado
+              - cell "Marcar DNS" [ref=e1140]:
+                - button "Marcar DNS" [ref=e1141]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert [ref=e34]: Corredores — Podio

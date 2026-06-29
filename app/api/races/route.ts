@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { getCurrentUser } from "@/lib/auth";
+import { getOrganizationId } from "@/lib/organizations";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { uniqueSlug } from "@/lib/slug";
 import {
@@ -13,11 +14,22 @@ import type { StageType } from "@/types/app";
 // categories and (for single-stage races) an auto-generated first stage.
 // Writes go through the service-role admin client AFTER authenticating the
 // session; organizer_id is forced to the session user (never trusted from the
-// client). RLS is off — see the authorization model in Story 01.
+// client). RLS is off — see the authorization model in Story 01. The race is
+// attached to the creator's organization (organization_id); organizer_id is
+// kept for provenance. All roles (operator and up) may create races.
 export async function POST(request: Request) {
   const user = await getCurrentUser();
   if (!user) {
     return NextResponse.json({ error: "No autenticado." }, { status: 401 });
+  }
+
+  const admin = createAdminClient();
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json(
+      { error: "No perteneces a ninguna organización." },
+      { status: 403 },
+    );
   }
 
   let payload: CreateRacePayload;
@@ -34,8 +46,6 @@ export async function POST(request: Request) {
   if (validationError) {
     return NextResponse.json({ error: validationError }, { status: 400 });
   }
-
-  const admin = createAdminClient();
 
   // Resolve a unique slug against existing races.
   const { data: existing, error: slugLookupError } = await admin
@@ -56,6 +66,7 @@ export async function POST(request: Request) {
   const { data: race, error: raceError } = await admin
     .from("races")
     .insert({
+      organization_id: organizationId,
       organizer_id: user.id,
       name: payload.name.trim(),
       slug,

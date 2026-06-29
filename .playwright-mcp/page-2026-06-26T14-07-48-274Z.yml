@@ -1,0 +1,30 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e6] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e7]:
+      - img [ref=e8]
+    - generic [ref=e11]:
+      - button "Open issues overlay" [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: "0"
+          - generic [ref=e15]: "1"
+        - generic [ref=e16]: Issue
+      - button "Collapse issues badge" [ref=e17]:
+        - img [ref=e18]
+  - alert [ref=e58]:
+    - generic [ref=e59]:
+      - img [ref=e60]
+      - generic [ref=e67]: Error al sincronizar — 1 actualización pendiente de enviar
+    - generic [ref=e68]:
+      - generic [ref=e69]: Reintentando en 60 s
+      - button "Reintentar sincronización ahora" [ref=e70]:
+        - img
+        - text: Reintentar ahora
+  - main [ref=e26]:
+    - generic [ref=e27]:
+      - generic [ref=e28]: Etapa 2 – Ruta
+      - generic "Tiempo transcurrido" [ref=e29]: 0:03:19
+    - button "STOP" [ref=e30]
+    - region "Grupos por asignar" [ref=e31]:
+      - paragraph [ref=e71]: No hay grupos por asignar. Presiona STOP cuando un grupo cruce la meta.
+  - region "Notifications alt+T"
+  - alert [ref=e33]

@@ -46,6 +46,42 @@ import { rankByNetSeconds } from "@/lib/tt-classification";
 
 type Admin = ReturnType<typeof createAdminClient>;
 
+/**
+ * Postgres transient-conflict SQLSTATEs. When several riders of one group are
+ * saved, the write queue flushes their POSTs concurrently; each POST upserts a
+ * `results` row and then re-ranks its category by reading every `finished` row
+ * in the stage. Two such requests touching the same stage's `results` table can
+ * briefly collide and Postgres aborts one with a serialization failure
+ * (`40001`) or deadlock (`40P01`). These are safe to retry — re-running the
+ * read/compute/persist is idempotent (positions are derived from stored
+ * `net_seconds`, never write order). Retrying here keeps the route from
+ * surfacing a hard 500 for a self-healing conflict, so every rider in the group
+ * lands on the first flush instead of waiting for a later retry.
+ */
+const TRANSIENT_PG_CODES = new Set(["40001", "40P01"]);
+
+function isTransientDbError(error: { code?: string | null } | null): boolean {
+  return !!error?.code && TRANSIENT_PG_CODES.has(error.code);
+}
+
+/**
+ * Run a Supabase query builder with a few short retries when it fails with a
+ * transient serialization/deadlock error. The builder factory is re-invoked on
+ * each attempt (Supabase query builders are single-use / thenable).
+ */
+async function withTransientRetry<T>(
+  run: () => PromiseLike<{ data: T; error: { code?: string | null } | null }>,
+  attempts = 4,
+): Promise<{ data: T; error: { code?: string | null } | null }> {
+  let result = await run();
+  for (let i = 1; i < attempts && isTransientDbError(result.error); i++) {
+    // Small jittered backoff so the two colliding requests don't lockstep-retry.
+    await new Promise((resolve) => setTimeout(resolve, 25 * i + Math.random() * 25));
+    result = await run();
+  }
+  return result;
+}
+
 export type ReclassifyGroupResult =
   | { ok: true; categoryIds: string[] }
   | { ok: false; error: string };
@@ -68,13 +104,15 @@ export async function reclassifyGroupCategories(
 
   // Load every finished result in the stage joined with the rider's category +
   // bib so we can filter to each touched category and rank deterministically.
-  const { data, error } = await admin
-    .from("results")
-    .select(
-      "registration_id, net_seconds, group_position, captured_at, position, registrations(bib_number, category_id)",
-    )
-    .eq("stage_id", stageId)
-    .eq("status", "finished");
+  const { data, error } = await withTransientRetry(() =>
+    admin
+      .from("results")
+      .select(
+        "registration_id, net_seconds, group_position, captured_at, position, registrations(bib_number, category_id)",
+      )
+      .eq("stage_id", stageId)
+      .eq("status", "finished"),
+  );
 
   if (error || !data) {
     return { ok: false, error: "No se pudo clasificar el resultado." };
@@ -119,11 +157,13 @@ export async function reclassifyGroupCategories(
     for (let i = 0; i < ranked.length; i++) {
       const desiredPosition = i + 1;
       if (ranked[i].position === desiredPosition) continue;
-      const { error: updateError } = await admin
-        .from("results")
-        .update({ position: desiredPosition })
-        .eq("stage_id", stageId)
-        .eq("registration_id", ranked[i].registration_id);
+      const { error: updateError } = await withTransientRetry(() =>
+        admin
+          .from("results")
+          .update({ position: desiredPosition })
+          .eq("stage_id", stageId)
+          .eq("registration_id", ranked[i].registration_id),
+      );
       if (updateError) {
         return { ok: false, error: "No se pudo clasificar el resultado." };
       }

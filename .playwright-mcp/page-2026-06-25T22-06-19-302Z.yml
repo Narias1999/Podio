@@ -1,0 +1,74 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - link "← Gestionar carrera" [ref=e4] [cursor=pointer]:
+      - /url: /races/clasica-de-prueba-qa/manage
+    - generic [ref=e5]:
+      - heading "Orden de salida — Etapa 1 – Contrarreloj" [level=1] [ref=e6]
+      - paragraph [ref=e7]: Clásica de Prueba QA
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - generic [ref=e11]: Configuración
+          - generic [ref=e12]: Define los intervalos y la hora de salida del primer corredor antes de generar el orden.
+        - generic [ref=e13]:
+          - generic [ref=e14]:
+            - generic [ref=e15]:
+              - generic [ref=e16]: Intervalo entre corredores (s)
+              - spinbutton "Intervalo entre corredores (s)" [ref=e17]: "60"
+            - generic [ref=e18]:
+              - generic [ref=e19]: Intervalo entre categorías (s)
+              - spinbutton "Intervalo entre categorías (s)" [ref=e20]: "300"
+            - generic [ref=e21]:
+              - generic [ref=e22]: Hora del primer corredor
+              - textbox "Hora del primer corredor" [ref=e23]: 10:00:00
+          - button "Regenerar orden de salida" [ref=e25]
+      - generic [ref=e26]:
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - generic [ref=e30]: Orden de salida
+            - generic [ref=e31]: 3 corredores · arrastra para reordenar dentro de cada categoría
+          - button "Deshacer" [disabled]:
+            - img
+            - text: Deshacer
+        - table [ref=e34]:
+          - rowgroup [ref=e35]:
+            - row "Pos. Hora Dorsal Corredor Equipo Categoría" [ref=e36]:
+              - columnheader [ref=e37]
+              - columnheader "Pos." [ref=e38]
+              - columnheader "Hora" [ref=e39]
+              - columnheader "Dorsal" [ref=e40]
+              - columnheader "Corredor" [ref=e41]
+              - columnheader "Equipo" [ref=e42]
+              - columnheader "Categoría" [ref=e43]
+          - rowgroup [ref=e44]:
+            - row "1 10:00:00 1 Juan Pérez — Elite Masculino" [ref=e45]:
+              - cell [ref=e46]:
+                - img [ref=e47]
+              - cell "1" [ref=e54]
+              - cell "10:00:00" [ref=e55]
+              - cell "1" [ref=e56]
+              - cell "Juan Pérez" [ref=e57]
+              - cell "—" [ref=e58]
+              - cell "Elite Masculino" [ref=e59]
+            - row "2 10:06:00 2 Laura Restrepo — Elite Femenino" [ref=e60]:
+              - cell [ref=e61]:
+                - img [ref=e62]
+              - cell "2" [ref=e69]
+              - cell "10:06:00" [ref=e70]
+              - cell "2" [ref=e71]
+              - cell "Laura Restrepo" [ref=e72]
+              - cell "—" [ref=e73]
+              - cell "Elite Femenino" [ref=e74]
+            - row "3 10:12:00 3 Carlos Gómez — Master 30+" [ref=e75]:
+              - cell [ref=e76]:
+                - img [ref=e77]
+              - cell "3" [ref=e84]
+              - cell "10:12:00" [ref=e85]
+              - cell "3" [ref=e86]
+              - cell "Carlos Gómez" [ref=e87]
+              - cell "—" [ref=e88]
+              - cell "Master 30+" [ref=e89]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e95] [cursor=pointer]:
+    - img [ref=e96]
+  - alert [ref=e99]

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { getCurrentUser } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getOrganizationId } from "@/lib/organizations";
 import { loadOwnedRace } from "@/lib/races";
 import { planBibAssignments } from "@/lib/riders";
 import type { Category } from "@/types/app";
@@ -10,8 +11,8 @@ import type { Category } from "@/types/app";
 // assigns bibs. Each category (in sort_order) gets a contiguous range sized to
 // its confirmed-rider count; bibs are randomised within each range. DNS riders
 // keep a null bib. Sets `races.registrations_closed = true`. Authenticates the
-// session, confirms `races.organizer_id` matches, then writes with the
-// service-role client (RLS is off — Story 01).
+// session, confirms the race belongs to the caller's organization, then writes
+// with the service-role client (RLS is off — Story 01).
 
 export async function POST(
   _request: Request,
@@ -24,7 +25,11 @@ export async function POST(
 
   const { slug } = await params;
   const admin = createAdminClient();
-  const race = await loadOwnedRace(admin, slug, user.id);
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
+  const race = await loadOwnedRace(admin, slug, organizationId);
   if (!race) {
     return NextResponse.json(
       { error: "Carrera no encontrada." },

@@ -1,0 +1,43 @@
+- generic [active] [ref=e1]:
+  - status [ref=e37]:
+    - img [ref=e38]
+    - generic [ref=e42]: Conectado
+  - main [ref=e43]:
+    - generic [ref=e44]:
+      - heading "Etapa 2 – Ruta" [level=1] [ref=e45]
+      - paragraph [ref=e46]: sábado 4 de julio de 2026
+    - region "Categorías" [ref=e47]:
+      - generic [ref=e48]:
+        - heading "Categorías" [level=2] [ref=e49]
+        - paragraph [ref=e50]: Selecciona todas las categorías que saldrán juntas y presiona Iniciar.
+      - group "Selección de categorías" [ref=e51]:
+        - button "Infantil" [ref=e52]
+        - button "Prejuvenil" [ref=e53]
+        - button "Juvenil" [ref=e54]
+        - button "Sub-23 Masculino" [ref=e55]
+        - button "Sub-23 Femenino" [ref=e56]
+        - button "Elite Masculino — Iniciada" [disabled] [ref=e57]:
+          - generic [ref=e58]: ✓
+          - text: Elite Masculino
+          - generic [ref=e59]: Iniciada
+        - button "Elite Femenino — Iniciada" [disabled] [ref=e60]:
+          - generic [ref=e61]: ✓
+          - text: Elite Femenino
+          - generic [ref=e62]: Iniciada
+        - button "Master 30+" [ref=e63]
+        - button "Master 40+" [ref=e64]
+        - button "Master 50+" [ref=e65]
+    - button "Iniciar" [disabled]
+    - region "Historial de salidas" [ref=e66]:
+      - heading "Historial de salidas" [level=2] [ref=e67]
+      - list [ref=e68]:
+        - listitem [ref=e69]:
+          - generic [ref=e70]: Ola 1
+          - generic [ref=e71]:
+            - generic [ref=e72]: Elite Masculino,
+            - generic [ref=e73]: Elite Femenino
+            - generic [ref=e74]: — iniciada a las 09:04:28
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e32] [cursor=pointer]:
+    - img [ref=e33]
+  - alert [ref=e36]: Salida — Etapa por Grupos — Podio

@@ -1,0 +1,32 @@
+- generic [ref=e1]:
+  - generic [ref=e6] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e7]:
+      - img [ref=e8]
+    - generic [ref=e11]:
+      - button "Open issues overlay" [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: "0"
+          - generic [ref=e15]: "1"
+        - generic [ref=e16]: Issue
+      - button "Collapse issues badge" [ref=e17]:
+        - img [ref=e18]
+  - status [ref=e20]:
+    - img [ref=e21]
+    - generic [ref=e25]: Conectado
+  - main [ref=e26]:
+    - generic [ref=e27]:
+      - generic [ref=e28]: Etapa 2 – Ruta
+      - generic "Tiempo transcurrido" [ref=e29]: 0:01:37
+    - button "STOP" [active] [ref=e30]
+    - region "Grupos por asignar" [ref=e31]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]: 0:01:37
+          - textbox "Número de dorsal" [ref=e37]:
+            - /placeholder: Dorsal
+          - button "Agregar" [ref=e38]
+        - generic [ref=e39]:
+          - button "Descartar" [ref=e40]
+          - button "Guardar grupo" [disabled]
+  - region "Notifications alt+T"
+  - alert [ref=e33]

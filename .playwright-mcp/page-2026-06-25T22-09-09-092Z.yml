@@ -1,0 +1,17 @@
+- generic [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Clásica de Prueba QA" [level=1] [ref=e4]
+      - paragraph [ref=e5]: Ciclismo · Medellín, Colombia · 3 de julio de 2026
+    - generic [ref=e6]:
+      - tablist [ref=e7]:
+        - tab "Etapas" [ref=e8]
+        - tab "Clasificación general" [active] [selected] [ref=e9]
+      - tabpanel "Clasificación general" [ref=e27]:
+        - generic [ref=e29]:
+          - generic [ref=e30]: Clasificación general
+          - generic [ref=e31]: La clasificación general aparecerá cuando se complete al menos una etapa.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e22] [cursor=pointer]:
+    - img [ref=e23]
+  - alert [ref=e26]

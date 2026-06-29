@@ -3,11 +3,12 @@ import { notFound } from "next/navigation";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 
-import { requireUser } from "@/lib/auth";
+import { requireProfile } from "@/lib/organizations";
 import { createAdminClient } from "@/lib/supabase/admin";
 import {
   GroupStartLineView,
   type GroupStartLineCategory,
+  type Wave as InitialWave,
 } from "@/components/group-start-line-view";
 
 export const metadata: Metadata = {
@@ -19,7 +20,8 @@ export const metadata: Metadata = {
  * the start gate. Fetches the race, stage, all race categories, and any
  * existing `stage_category_starts` rows so an already-started session resumes
  * with the correct locked state. Authorization follows the no-RLS model (Story
- * 01): authenticate → verify ownership → read with service-role client.
+ * 01): authenticate → verify the caller's organization → read with
+ * service-role client.
  */
 export default async function GroupStartLinePage({
   params,
@@ -28,7 +30,7 @@ export default async function GroupStartLinePage({
 }) {
   const { slug, stage: stageParam } = await params;
   const stageNumber = Number.parseInt(stageParam, 10);
-  const user = await requireUser();
+  const { organization_id } = await requireProfile();
 
   if (!Number.isInteger(stageNumber)) {
     notFound();
@@ -38,11 +40,11 @@ export default async function GroupStartLinePage({
 
   const { data: race } = await admin
     .from("races")
-    .select("id, name, organizer_id")
+    .select("id, name, organization_id")
     .eq("slug", slug)
     .maybeSingle();
 
-  if (!race || race.organizer_id !== user.id) {
+  if (!race || race.organization_id !== organization_id) {
     notFound();
   }
 
@@ -65,11 +67,12 @@ export default async function GroupStartLinePage({
     .eq("race_id", race.id)
     .order("sort_order", { ascending: true });
 
-  // Existing starts — used to restore locked state on resume.
+  // Existing starts — used to restore locked state and the wave log on resume.
   const { data: existingStarts } = await admin
     .from("stage_category_starts")
-    .select("category_id")
-    .eq("stage_id", stage.id);
+    .select("category_id, started_at")
+    .eq("stage_id", stage.id)
+    .order("started_at", { ascending: true });
 
   const alreadyStartedCategoryIds = (existingStarts ?? []).map(
     (row) => row.category_id,
@@ -83,6 +86,24 @@ export default async function GroupStartLinePage({
     }),
   );
 
+  // Group existing starts into waves by their shared `started_at` instant
+  // (rows with the same ISO timestamp = one wave), ordered chronologically.
+  const categoriesById = new Map(categoryList.map((c) => [c.id, c]));
+  const wavesByStartedAt = new Map<string, GroupStartLineCategory[]>();
+  for (const row of existingStarts ?? []) {
+    const category = categoriesById.get(row.category_id);
+    if (!category) continue;
+    const bucket = wavesByStartedAt.get(row.started_at);
+    if (bucket) {
+      bucket.push(category);
+    } else {
+      wavesByStartedAt.set(row.started_at, [category]);
+    }
+  }
+  const initialWaves: InitialWave[] = [...wavesByStartedAt.entries()]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([startedAt, waveCategories]) => ({ startedAt, categories: waveCategories }));
+
   const stageDateLabel = formatStageDate(stage.date);
 
   return (
@@ -94,6 +115,7 @@ export default async function GroupStartLinePage({
       stageDateLabel={stageDateLabel}
       categories={categoryList}
       alreadyStartedCategoryIds={alreadyStartedCategoryIds}
+      initialWaves={initialWaves}
     />
   );
 }

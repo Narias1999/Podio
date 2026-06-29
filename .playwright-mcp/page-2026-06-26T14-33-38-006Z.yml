@@ -1,0 +1,43 @@
+- generic:
+  - status:
+    - img
+    - generic: Conectado
+  - main:
+    - generic:
+      - generic: Etapa 2 – Ruta
+      - generic: 0:29:09
+    - button: STOP
+    - region:
+      - generic:
+        - generic:
+          - generic: 0:28:28
+          - textbox:
+            - /placeholder: Dorsal
+          - button: Agregar
+        - list:
+          - listitem:
+            - generic: "1"
+            - generic: ⚠ Dorsal 1
+            - button [disabled]: ‹
+            - button: ›
+            - button: ×
+          - listitem:
+            - generic: "2"
+            - generic: ⚠ Dorsal 2
+            - button: ‹
+            - button [disabled]: ›
+            - button: ×
+        - generic:
+          - button: Descartar
+          - button: Guardar grupo
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e20] [cursor=pointer]:
+    - img [ref=e21]
+  - alert
+  - alertdialog "El dorsal 1 ya tiene un resultado en esta etapa. ¿Sobrescribir?" [ref=e47]:
+    - generic [ref=e48]:
+      - heading "El dorsal 1 ya tiene un resultado en esta etapa. ¿Sobrescribir?" [level=2] [ref=e49]
+      - paragraph [ref=e50]: Se reemplazará el resultado registrado anteriormente con la llegada capturada para este grupo.
+    - generic [ref=e51]:
+      - button "Cancelar" [active] [ref=e52]
+      - button "Sobrescribir" [ref=e53]

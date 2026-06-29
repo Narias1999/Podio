@@ -15,9 +15,11 @@
 //     work, creates a pending GROUP entry, and fires beep/vibrate feedback;
 //   - each pending entry is a group: the operator types bibs (each becomes a
 //     reorderable chip setting within-group order), then taps "Guardar grupo".
-//     Saving enqueues ONE result write per rider (shared captured time + their
-//     1-based `group_position`) through the write queue (Story 15) → the group
-//     finish endpoint.
+//     Saving enqueues ONE batched result write for the WHOLE group (shared
+//     captured time + a `riders` array of { bib_number, group_position }) through
+//     the write queue (Story 15) → the group finish endpoint, which upserts every
+//     rider sequentially and re-ranks once in a single request. Batching removes
+//     the concurrency that previously let a group save land partially.
 //
 // Pending (captured-but-unsaved) groups live in their own localStorage key
 // (`group_finish_pending:<stageId>`) — distinct from the write queue's own key
@@ -420,26 +422,30 @@ export function GroupFinishLineView({
   );
 
   // ---------------------------------------------------------------------------
-  // Save a group → enqueue one result write per rider
+  // Save a group → enqueue ONE batched result write for the whole group
   // ---------------------------------------------------------------------------
   const commitSave = useCallback(
     (group: PendingGroup) => {
       const finishIso = new Date(group.finishMs).toISOString();
       const endpoint = finishEndpoint(slug, stageNumber);
-      group.bibs.forEach((entry, index) => {
-        writeQueue.enqueue({
-          table: "results",
-          operation: "upsert",
-          payload: {
-            stage_id: stageId,
+      // Enqueue a SINGLE entry carrying every rider in the group. The server
+      // processes them sequentially in one route invocation, so concurrent
+      // same-stage `results` upserts (the prior cause of partial group saves)
+      // cannot happen within a group. `captured_at` is still added by the queue.
+      writeQueue.enqueue({
+        table: "results",
+        operation: "upsert",
+        payload: {
+          stage_id: stageId,
+          finish_at: finishIso,
+          riders: group.bibs.map((entry, index) => ({
             bib_number: entry.bib,
-            finish_at: finishIso,
             group_position: index + 1,
-          },
-          // Explicit override — avoids colliding with the TT finish endpoint
-          // registered globally for `results:upsert`.
-          endpoint,
-        });
+          })),
+        },
+        // Explicit override — avoids colliding with the TT finish endpoint
+        // registered globally for `results:upsert`.
+        endpoint,
       });
       setSavedBibs((prev) => {
         const next = new Set(prev);
@@ -503,6 +509,7 @@ export function GroupFinishLineView({
               <span
                 className="text-4xl font-bold tabular-nums sm:text-5xl"
                 aria-label="Tiempo transcurrido"
+                suppressHydrationWarning
               >
                 {formatElapsed(anchorMs !== null ? nowMs - anchorMs : 0)}
               </span>
@@ -665,7 +672,10 @@ function PendingGroupCard({
       )}
     >
       <div className="flex items-center gap-3">
-        <span className="shrink-0 text-2xl font-bold tabular-nums">
+        <span
+          className="shrink-0 text-2xl font-bold tabular-nums"
+          suppressHydrationWarning
+        >
           {elapsedLabel}
         </span>
         <Input

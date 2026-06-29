@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
-import { requireUser } from "@/lib/auth";
+import { requireProfile } from "@/lib/organizations";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { RACE_STATUS_LABELS } from "@/lib/race-status";
 import { StagesManager } from "@/components/stages-manager";
 import { CategoriesManager } from "@/components/categories-manager";
+import { CopyResultsLinkButton } from "@/components/copy-results-link-button";
 import { GcStandings } from "@/components/gc-standings";
 import {
   computeGc,
@@ -29,25 +30,25 @@ export default async function ManageRacePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const user = await requireUser();
+  const { organization_id } = await requireProfile();
 
-  // Organizer read scoped to the session user. Service-role client + explicit
-  // organizer_id filter (RLS is off — Story 01 authorization model).
+  // Organizer read scoped to the caller's organization. Service-role client +
+  // explicit organization_id filter (RLS is off — Story 01 authorization model).
   const admin = createAdminClient();
   const { data: race } = await admin
     .from("races")
-    .select("id, name, status, organizer_id, is_multi_stage")
+    .select("id, name, status, organization_id, is_multi_stage")
     .eq("slug", slug)
     .maybeSingle();
 
-  if (!race || race.organizer_id !== user.id) {
+  if (!race || race.organization_id !== organization_id) {
     notFound();
   }
 
   const status = race.status as RaceStatus;
 
-  // Stages section (Story 04). Organizer read scoped to the session user via
-  // the ownership check above; service-role client (RLS is off — Story 01).
+  // Stages section (Story 04). Organizer read scoped to the caller's
+  // organization via the check above; service-role client (RLS is off — Story 01).
   const { data: stages } = await admin
     .from("stages")
     .select("*")
@@ -64,8 +65,8 @@ export default async function ManageRacePage({
     stagesWithResultsList = (resultRows ?? []).map((r) => r.stage_id);
   }
 
-  // Categories section (Story 05). Organizer read scoped to the session user
-  // via the ownership check above; service-role client (RLS is off — Story 01).
+  // Categories section (Story 05). Organizer read scoped to the caller's
+  // organization via the check above; service-role client (RLS is off — Story 01).
   const { data: categories } = await admin
     .from("categories")
     .select("*")
@@ -156,13 +157,18 @@ export default async function ManageRacePage({
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-3xl flex-col gap-6 p-4 md:py-10">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <Button asChild variant="outline">
           <Link href="/dashboard">← Panel</Link>
         </Button>
-        <Button asChild variant="outline">
-          <Link href={`/races/${slug}/manage/riders`}>Corredores</Link>
-        </Button>
+        <div className="flex flex-wrap items-center gap-2">
+          {(status === "published" || status === "completed") && (
+            <CopyResultsLinkButton slug={slug} />
+          )}
+          <Button asChild variant="outline">
+            <Link href={`/races/${slug}/manage/riders`}>Corredores</Link>
+          </Button>
+        </div>
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex flex-wrap items-center gap-3">

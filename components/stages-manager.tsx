@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import Link from "next/link";
 import { format, parse } from "date-fns";
 import { es } from "date-fns/locale";
-import { GripVertical, Plus, Trash2 } from "lucide-react";
+import { GripVertical, Plus, Radio, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
@@ -413,6 +413,14 @@ export function StagesManager({
                     </>
                   ) : (
                     <>
+                      <Button asChild type="button" size="sm">
+                        <Link
+                          href={`/races/${slug}/stages/${stage.stage_number}/live`}
+                        >
+                          <Radio className="size-4" />
+                          En vivo
+                        </Link>
+                      </Button>
                       {stage.stage_type === "time_trial" && (
                         <Button asChild type="button" size="sm" variant="outline">
                           <Link

@@ -1,0 +1,25 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - link "← Volver" [ref=e3] [cursor=pointer]:
+      - /url: /races/clasica-de-prueba-qa/manage
+    - generic [ref=e4]:
+      - heading "Etapa 2 – Ruta" [level=1] [ref=e5]
+      - paragraph [ref=e6]: Elige la pantalla para este dispositivo. Abre la de salida en la partida y la de meta en la llegada.
+    - generic [ref=e7]:
+      - link "Pantalla de salida Selecciona las categorías que salen juntas y da la largada. Ábrela en la línea de partida." [ref=e8] [cursor=pointer]:
+        - /url: /races/clasica-de-prueba-qa/stages/2/live/group/start
+        - generic [ref=e10]:
+          - generic [ref=e11]:
+            - img [ref=e13]
+            - generic [ref=e15]: Pantalla de salida
+          - generic [ref=e16]: Selecciona las categorías que salen juntas y da la largada. Ábrela en la línea de partida.
+      - link "Pantalla de meta Toca STOP por cada grupo que llega y registra sus dorsales. Ábrela en la meta." [ref=e17] [cursor=pointer]:
+        - /url: /races/clasica-de-prueba-qa/stages/2/live/group/finish
+        - generic [ref=e19]:
+          - generic [ref=e20]:
+            - img [ref=e22]
+            - generic [ref=e25]: Pantalla de meta
+          - generic [ref=e26]: Toca STOP por cada grupo que llega y registra sus dorsales. Ábrela en la meta.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e32] [cursor=pointer]:
+    - img [ref=e33]

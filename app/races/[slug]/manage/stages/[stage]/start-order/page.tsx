@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
-import { requireUser } from "@/lib/auth";
+import { requireProfile } from "@/lib/organizations";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { Button } from "@/components/ui/button";
 import {
@@ -29,22 +29,22 @@ export default async function StartOrderPage({
 }) {
   const { slug, stage: stageParam } = await params;
   const stageNumber = Number.parseInt(stageParam, 10);
-  const user = await requireUser();
+  const { organization_id } = await requireProfile();
 
   if (!Number.isInteger(stageNumber)) {
     notFound();
   }
 
-  // Organizer read scoped to the session user. Service-role client + explicit
-  // organizer_id check (RLS is off — Story 01 authorization model).
+  // Organizer read scoped to the caller's organization. Service-role client +
+  // explicit organization_id check (RLS is off — Story 01 authorization model).
   const admin = createAdminClient();
   const { data: race } = await admin
     .from("races")
-    .select("id, name, organizer_id, registrations_closed")
+    .select("id, name, organization_id, registrations_closed")
     .eq("slug", slug)
     .maybeSingle();
 
-  if (!race || race.organizer_id !== user.id) {
+  if (!race || race.organization_id !== organization_id) {
     notFound();
   }
 

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { getCurrentUser } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getOrganizationId } from "@/lib/organizations";
 import { loadOwnedRace } from "@/lib/races";
 import type { RegistrationUpdatePayload } from "@/lib/riders";
 
@@ -10,16 +11,16 @@ import type { RegistrationUpdatePayload } from "@/lib/riders";
 // profile, status, and — once registration is closed — the bib number).
 // DELETE /api/races/[slug]/riders/[registrationId] — removes a registration,
 // blocked when the rider has results recorded for any stage of the race.
-// Both authenticate the session, confirm `races.organizer_id` matches, then
-// write with the service-role client (RLS is off — Story 01).
+// Both authenticate the session, confirm the race belongs to the caller's
+// organization, then write with the service-role client (RLS is off — Story 01).
 
 async function loadOwnedRegistration(
   admin: ReturnType<typeof createAdminClient>,
   slug: string,
   registrationId: string,
-  userId: string,
+  organizationId: string,
 ) {
-  const race = await loadOwnedRace(admin, slug, userId);
+  const race = await loadOwnedRace(admin, slug, organizationId);
   if (!race) {
     return { race: null, registration: null } as const;
   }
@@ -45,11 +46,15 @@ export async function PATCH(
 
   const { slug, registrationId } = await params;
   const admin = createAdminClient();
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
   const { race, registration } = await loadOwnedRegistration(
     admin,
     slug,
     registrationId,
-    user.id,
+    organizationId,
   );
 
   if (!race || !registration) {
@@ -185,11 +190,15 @@ export async function DELETE(
 
   const { slug, registrationId } = await params;
   const admin = createAdminClient();
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
   const { race, registration } = await loadOwnedRegistration(
     admin,
     slug,
     registrationId,
-    user.id,
+    organizationId,
   );
 
   if (!race || !registration) {

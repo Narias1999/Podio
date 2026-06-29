@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { getCurrentUser } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getOrganizationId } from "@/lib/organizations";
 import { loadOwnedRace } from "@/lib/races";
 
 // POST /api/races/[slug]/stages/[stage]/complete — marks the stage's results
@@ -10,16 +11,16 @@ import { loadOwnedRace } from "@/lib/races";
 // re-checks the precondition to avoid a stale-client race.
 // DELETE — unlocks the stage's results for further editing ("Unlock
 // results"), with the confirmation step handled client-side.
-// Both authenticate the session, confirm `races.organizer_id` matches, then
-// write with the service-role client (RLS is off — Story 01).
+// Both authenticate the session, confirm the race belongs to the caller's
+// organization, then write with the service-role client (RLS is off — Story 01).
 
 async function loadOwnedStageByNumber(
   admin: ReturnType<typeof createAdminClient>,
   slug: string,
   stageNumber: number,
-  userId: string,
+  organizationId: string,
 ) {
-  const race = await loadOwnedRace(admin, slug, userId);
+  const race = await loadOwnedRace(admin, slug, organizationId);
   if (!race) {
     return { race: null, stage: null } as const;
   }
@@ -48,11 +49,15 @@ export async function POST(
   }
 
   const admin = createAdminClient();
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
   const { race, stage } = await loadOwnedStageByNumber(
     admin,
     slug,
     stageNumber,
-    user.id,
+    organizationId,
   );
   if (!race || !stage) {
     return NextResponse.json({ error: "Etapa no encontrada." }, { status: 404 });
@@ -128,11 +133,15 @@ export async function DELETE(
   }
 
   const admin = createAdminClient();
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
   const { race, stage } = await loadOwnedStageByNumber(
     admin,
     slug,
     stageNumber,
-    user.id,
+    organizationId,
   );
   if (!race || !stage) {
     return NextResponse.json({ error: "Etapa no encontrada." }, { status: 404 });

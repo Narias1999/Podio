@@ -1,0 +1,57 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Etapa 1 – Contrarreloj" [level=1] [ref=e4]
+      - paragraph [ref=e5]: Clásica de Prueba QA
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - generic [ref=e9]: Información de la etapa
+          - generic [ref=e10]: sábado 4 de julio de 2026
+        - generic [ref=e11]:
+          - generic [ref=e12]:
+            - generic [ref=e13]:
+              - generic [ref=e14]: Categoría
+              - combobox [ref=e15]:
+                - generic: Todas las categorías
+                - img
+            - generic [ref=e16]:
+              - generic [ref=e17]: Ordenar por
+              - combobox [ref=e18]:
+                - generic: Hora de salida
+                - img
+          - generic [ref=e19]:
+            - button "Descargar CSV" [ref=e20]
+            - button "Descargar PDF" [ref=e21]
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - heading "Elite Masculino" [level=2] [ref=e24]
+          - generic [ref=e26]:
+            - generic [ref=e27]:
+              - generic [ref=e28]: Juan Pérez
+              - generic [ref=e29]: Pos. 1
+            - generic [ref=e30]:
+              - generic [ref=e31]: Dorsal 1
+              - generic [ref=e32]: 10:00:00
+        - generic [ref=e33]:
+          - heading "Elite Femenino" [level=2] [ref=e34]
+          - generic [ref=e36]:
+            - generic [ref=e37]:
+              - generic [ref=e38]: Laura Restrepo
+              - generic [ref=e39]: Pos. 2
+            - generic [ref=e40]:
+              - generic [ref=e41]: Dorsal 2
+              - generic [ref=e42]: 10:06:00
+        - generic [ref=e43]:
+          - heading "Master 30+" [level=2] [ref=e44]
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - generic [ref=e48]: Carlos Gómez
+              - generic [ref=e49]: Pos. 3
+            - generic [ref=e50]:
+              - generic [ref=e51]: Dorsal 3
+              - generic [ref=e52]: 10:12:00
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e58] [cursor=pointer]:
+    - img [ref=e59]
+  - alert [ref=e62]

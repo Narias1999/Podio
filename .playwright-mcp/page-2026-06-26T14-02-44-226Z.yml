@@ -1,0 +1,22 @@
+- generic [active] [ref=e1]:
+  - status [ref=e2]:
+    - img [ref=e3]
+    - generic [ref=e7]: Conectado
+  - main [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]: Etapa 1 – Contrarreloj
+        - generic "Tiempo transcurrido" [ref=e12]: 15:46:42
+      - button "Finalizar sesión" [ref=e13]
+    - button "STOP" [ref=e14]
+    - region "Llegadas por asignar" [ref=e15]:
+      - generic [ref=e28]:
+        - generic [ref=e29]: 0:00:40
+        - textbox "Número de dorsal" [ref=e30]:
+          - /placeholder: Dorsal
+          - text: "1"
+        - button "Guardar" [ref=e31]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e22] [cursor=pointer]:
+    - img [ref=e23]
+  - alert [ref=e26]

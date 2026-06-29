@@ -1,6 +1,7 @@
 // Server-only helpers for resolving the current authenticated organizer.
 // Reused by route handlers and server components in later stories to identify
-// the session user before scoping reads/writes to `races.organizer_id`.
+// the session user before scoping reads/writes to their organization's races
+// (see lib/organizations.ts for org/role resolution).
 import "server-only";
 
 import { redirect } from "next/navigation";

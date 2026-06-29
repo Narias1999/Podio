@@ -1,0 +1,31 @@
+- generic:
+  - status:
+    - img
+    - generic: Conectado
+  - main:
+    - generic:
+      - generic:
+        - generic: Etapa 1 – Contrarreloj
+        - generic: 16:12:28
+      - button: Finalizar sesión
+    - button: STOP
+    - region:
+      - generic:
+        - generic:
+          - generic: 0:00:40
+          - textbox:
+            - /placeholder: Dorsal
+            - text: "1"
+          - button: Descartar
+          - button: Guardar
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e27] [cursor=pointer]:
+    - img [ref=e28]
+  - alert
+  - alertdialog "¿Descartar esta llegada?" [ref=e33]:
+    - generic [ref=e34]:
+      - heading "¿Descartar esta llegada?" [level=2] [ref=e35]
+      - paragraph [ref=e36]: El tiempo capturado se perderá.
+    - generic [ref=e37]:
+      - button "Cancelar" [active] [ref=e38]
+      - button "Descartar" [ref=e39]

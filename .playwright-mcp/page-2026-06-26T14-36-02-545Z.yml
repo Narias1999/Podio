@@ -1,0 +1,102 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - link "← Gestionar carrera" [ref=e4] [cursor=pointer]:
+      - /url: /races/clasica-de-prueba-qa/manage
+    - generic [ref=e5]:
+      - heading "Resultados — Etapa 2 – Ruta" [level=1] [ref=e6]
+      - paragraph [ref=e7]: Clásica de Prueba QA
+    - generic [ref=e8]:
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - generic [ref=e12]: Resultados
+          - generic [ref=e13]: 3 corredores
+        - generic [ref=e14]:
+          - button "Importar CSV" [ref=e15]:
+            - img
+            - text: Importar CSV
+          - button "Guardar todo" [ref=e16]
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - heading "Elite Masculino" [level=3] [ref=e19]
+          - table [ref=e21]:
+            - rowgroup [ref=e22]:
+              - row "Dorsal Corredor Estado Tiempo Posición Motivo Guardado" [ref=e23]:
+                - columnheader "Dorsal" [ref=e24]
+                - columnheader "Corredor" [ref=e25]
+                - columnheader "Estado" [ref=e26]
+                - columnheader "Tiempo" [ref=e27]
+                - columnheader "Posición" [ref=e28]
+                - columnheader "Motivo" [ref=e29]
+                - columnheader "Guardado" [ref=e30]
+            - rowgroup [ref=e31]:
+              - row "1 Juan Pérez 0:28:29 1" [ref=e32]:
+                - cell "1" [ref=e33]
+                - cell "Juan Pérez" [ref=e34]
+                - cell [ref=e35]:
+                  - combobox [ref=e36]:
+                    - img
+                  - combobox [ref=e37]
+                - cell "0:28:29" [ref=e38]:
+                  - textbox "ej. 3:42:15" [ref=e39]: 0:28:29
+                - cell "1" [ref=e40]:
+                  - spinbutton [ref=e41]: "1"
+                - cell [ref=e42]
+                - cell [ref=e43]:
+                  - img [ref=e44]
+        - generic [ref=e46]:
+          - heading "Elite Femenino" [level=3] [ref=e47]
+          - table [ref=e49]:
+            - rowgroup [ref=e50]:
+              - row "Dorsal Corredor Estado Tiempo Posición Motivo Guardado" [ref=e51]:
+                - columnheader "Dorsal" [ref=e52]
+                - columnheader "Corredor" [ref=e53]
+                - columnheader "Estado" [ref=e54]
+                - columnheader "Tiempo" [ref=e55]
+                - columnheader "Posición" [ref=e56]
+                - columnheader "Motivo" [ref=e57]
+                - columnheader "Guardado" [ref=e58]
+            - rowgroup [ref=e59]:
+              - row "2 Laura Restrepo 0:28:29 1" [ref=e60]:
+                - cell "2" [ref=e61]
+                - cell "Laura Restrepo" [ref=e62]
+                - cell [ref=e63]:
+                  - combobox [ref=e64]:
+                    - img
+                  - combobox [ref=e65]
+                - cell "0:28:29" [ref=e66]:
+                  - textbox "ej. 3:42:15" [ref=e67]: 0:28:29
+                - cell "1" [ref=e68]:
+                  - spinbutton [ref=e69]: "1"
+                - cell [ref=e70]
+                - cell [ref=e71]:
+                  - img [ref=e72]
+        - generic [ref=e74]:
+          - heading "Master 30+" [level=3] [ref=e75]
+          - table [ref=e77]:
+            - rowgroup [ref=e78]:
+              - row "Dorsal Corredor Estado Tiempo Posición Motivo Guardado" [ref=e79]:
+                - columnheader "Dorsal" [ref=e80]
+                - columnheader "Corredor" [ref=e81]
+                - columnheader "Estado" [ref=e82]
+                - columnheader "Tiempo" [ref=e83]
+                - columnheader "Posición" [ref=e84]
+                - columnheader "Motivo" [ref=e85]
+                - columnheader "Guardado" [ref=e86]
+            - rowgroup [ref=e87]:
+              - row "3 Carlos Gómez Guardar" [ref=e88]:
+                - cell "3" [ref=e89]
+                - cell "Carlos Gómez" [ref=e90]
+                - cell [ref=e91]:
+                  - combobox [ref=e92]:
+                    - img
+                  - combobox [ref=e93]
+                - cell [ref=e94]:
+                  - textbox "ej. 3:42:15" [ref=e95]
+                - cell [ref=e96]:
+                  - spinbutton [ref=e97]
+                - cell [ref=e98]
+                - cell "Guardar" [ref=e99]:
+                  - button "Guardar" [ref=e100]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e106] [cursor=pointer]:
+    - img [ref=e107]

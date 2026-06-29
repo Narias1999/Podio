@@ -1,0 +1,14 @@
+- generic [active] [ref=e1]:
+  - status [ref=e2]:
+    - img [ref=e3]
+    - generic [ref=e7]: Conectado
+  - main [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]: Etapa 2 – Ruta
+      - generic "Tiempo transcurrido" [ref=e11]: 1:58:15
+    - button "STOP" [ref=e12]
+    - region "Grupos por asignar" [ref=e13]:
+      - paragraph [ref=e14]: No hay grupos por asignar. Presiona STOP cuando un grupo cruce la meta.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e20] [cursor=pointer]:
+    - img [ref=e21]

@@ -1,0 +1,623 @@
+[      40ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[      73ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[     202ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[     283ms] [LOG] [Fast Refresh] done in 182ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[    5640ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[    5772ms] [LOG] [Fast Refresh] done in 235ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   21457ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   21499ms] [LOG] [Fast Refresh] done in 143ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[26694556ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[26694563ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8435:25
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6198:20)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[26844513ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[26844514ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[26994515ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[26994516ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[27144507ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[27144508ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[27294511ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[27294511ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[27444514ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[27444515ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[27594513ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[27594514ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[27744517ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[27744518ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[27894521ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[27894522ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[28044520ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[28044521ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[28194525ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[28194526ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[28344526ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[28344527ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[28494502ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[28494503ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[28644501ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[28644502ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[28794525ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[28794526ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[28944528ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[28944529ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[29094530ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[29094531ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[29244522ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[29244522ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[29394536ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[29394536ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[29544535ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[29544536ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[29694528ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[29694529ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[29844533ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[29844535ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[29994535ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[29994536ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[30144537ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[30144538ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[30294534ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[30294536ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[30444541ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[30444542ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[30594544ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[30594545ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[30744541ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[30744542ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[30894547ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[30894548ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[31044544ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[31044545ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[31194550ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[31194551ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[31344543ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[31344543ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[31494551ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[31494552ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[31644545ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[31644546ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[31794553ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[31794554ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[31944553ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[31944555ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[32094555ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[32094556ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[32244556ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[32244556ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[32394556ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[32394557ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[32544558ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[32544559ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318
+[32694558ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://xpjempabfpwzmxejmyir.supabase.co/auth/v1/token?grant_type=refresh_token:0
+[32694558ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:621:23
+    at _handleRequest (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:1010:24)
+    at _request (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:997:24)
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7814:248
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:696:42
+    at http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:708:11
+    at new Promise (<anonymous>)
+    at retryable (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:690:21)
+    at SupabaseAuthClient._refreshAccessToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:7809:247)
+    at SupabaseAuthClient._callRefreshToken (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8000:48)
+    at async SupabaseAuthClient.__loadSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6268:46)
+    at async SupabaseAuthClient._useSession (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:6197:28)
+    at async SupabaseAuthClient._autoRefreshTokenTick (http://localhost:3000/_next/static/chunks/0pm6_%40supabase_auth-js_dist_module_1pmat3a._.js:8425:17) @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:3318

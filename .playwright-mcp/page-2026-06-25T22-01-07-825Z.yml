@@ -1,0 +1,86 @@
+- generic:
+  - main:
+    - generic:
+      - link:
+        - /url: /races/clasica-de-prueba-qa/manage
+        - text: ← Gestionar carrera
+    - generic:
+      - heading [level=1]: Corredores
+      - paragraph: Clásica de Prueba QA
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Inscripciones
+            - generic: 0 corredores en 0 categorías
+          - generic:
+            - button:
+              - img
+              - text: Importar CSV
+            - button:
+              - img
+              - text: Agregar corredor
+      - generic:
+        - generic:
+          - textbox:
+            - /placeholder: Buscar por nombre, documento o dorsal
+          - combobox:
+            - generic: Todas las categorías
+            - img
+        - generic:
+          - table:
+            - rowgroup:
+              - row:
+                - columnheader: Dorsal
+                - columnheader: Nombre
+                - columnheader: Equipo
+                - columnheader: Categoría
+                - columnheader: Estado
+                - columnheader: Acciones
+            - rowgroup:
+              - row:
+                - cell: No hay corredores que coincidan.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert: Corredores — Podio
+  - dialog "Agregar corredor" [ref=e972]:
+    - generic [ref=e973]:
+      - heading "Agregar corredor" [level=2] [ref=e974]
+      - paragraph [ref=e975]: El dorsal se asigna al cerrar la inscripción.
+    - generic [ref=e976]:
+      - generic [ref=e977]:
+        - generic [ref=e978]: Número de documento
+        - textbox "Número de documento" [active] [ref=e979]
+      - generic [ref=e980]:
+        - generic [ref=e981]: Nombre completo
+        - textbox "Nombre completo" [ref=e982]
+      - generic [ref=e983]:
+        - generic [ref=e984]:
+          - generic [ref=e985]: Sexo
+          - combobox "Sexo" [ref=e986]:
+            - generic: Selecciona
+            - img
+        - generic [ref=e987]:
+          - generic [ref=e988]: Fecha de nacimiento
+          - textbox "Fecha de nacimiento" [ref=e989]
+      - generic [ref=e990]:
+        - generic [ref=e991]: Categoría
+        - combobox "Categoría" [ref=e992]:
+          - img
+      - generic [ref=e993]:
+        - generic [ref=e994]: Equipo / club (opcional)
+        - textbox "Equipo / club (opcional)" [ref=e995]
+      - generic [ref=e996]:
+        - generic [ref=e997]: Nacionalidad (opcional)
+        - textbox "Nacionalidad (opcional)" [ref=e998]
+      - generic [ref=e999]:
+        - generic [ref=e1000]: EPS (opcional)
+        - textbox "EPS (opcional)" [ref=e1001]
+      - generic [ref=e1002]:
+        - generic [ref=e1003]: Teléfono (opcional)
+        - textbox "Teléfono (opcional)" [ref=e1004]
+    - button "Inscribir corredor" [ref=e1006]
+    - button "Close" [ref=e1007]:
+      - img
+      - generic [ref=e1008]: Close

@@ -1,0 +1,145 @@
+- generic [ref=e1]:
+  - main [ref=e52]:
+    - generic [ref=e53]:
+      - generic [ref=e54]:
+        - generic [ref=e55]: Crear carrera
+        - generic [ref=e56]: "Paso 1 de 4: Información básica"
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - text: Nombre de la carrera
+              - generic [ref=e66]: "*"
+            - textbox "Nombre de la carrera *" [ref=e67]:
+              - /placeholder: "Ej: Vuelta a Colombia 2026"
+              - text: Clásica de Prueba QA
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - text: Ubicación
+              - generic [ref=e70]: "*"
+            - textbox "Ubicación *" [ref=e71]:
+              - /placeholder: "Ej: Bogotá, Colombia"
+              - text: Medellín, Colombia
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - text: Fecha de inicio
+                - generic [ref=e75]: "*"
+              - button "Fecha de inicio *" [expanded] [ref=e76]:
+                - img
+                - generic [ref=e77]: Selecciona una fecha
+            - generic [ref=e78]:
+              - generic [ref=e79]: Fecha de finalización
+              - button "Fecha de finalización" [ref=e80]:
+                - img
+                - generic [ref=e81]: Opcional (evento de un día)
+          - generic [ref=e82]:
+            - generic [ref=e83]: Descripción
+            - textbox "Descripción" [ref=e84]:
+              - /placeholder: Describe la carrera (opcional)
+          - generic [ref=e85]:
+            - generic [ref=e86]: Imagen del banner
+            - button "Imagen del banner" [disabled]
+            - paragraph [ref=e87]: La carga de imágenes estará disponible pronto.
+        - generic [ref=e88]:
+          - button "Atrás" [disabled]
+          - button "Siguiente" [ref=e89]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert [ref=e34]: Crear carrera — Podio
+  - dialog [ref=e91]:
+    - generic [ref=e93]:
+      - navigation "Navigation bar" [ref=e94]:
+        - button "Go to the Previous Month" [active] [ref=e95]:
+          - img
+        - button "Go to the Next Month" [ref=e96]:
+          - img
+      - generic [ref=e97]:
+        - status [ref=e99]: junio 2026
+        - grid "junio 2026" [ref=e100]:
+          - rowgroup [ref=e101]:
+            - row [ref=e102]:
+              - columnheader [ref=e103]: lu
+              - columnheader [ref=e104]: ma
+              - columnheader [ref=e105]: mi
+              - columnheader [ref=e106]: ju
+              - columnheader [ref=e107]: vi
+              - columnheader [ref=e108]: sá
+              - columnheader [ref=e109]: do
+          - rowgroup [ref=e110]:
+            - row "lunes, 1 de junio de 2026 martes, 2 de junio de 2026 miércoles, 3 de junio de 2026 jueves, 4 de junio de 2026 viernes, 5 de junio de 2026 sábado, 6 de junio de 2026 domingo, 7 de junio de 2026" [ref=e111]:
+              - gridcell "lunes, 1 de junio de 2026" [ref=e112]:
+                - button "lunes, 1 de junio de 2026" [ref=e113]: "1"
+              - gridcell "martes, 2 de junio de 2026" [ref=e114]:
+                - button "martes, 2 de junio de 2026" [ref=e115]: "2"
+              - gridcell "miércoles, 3 de junio de 2026" [ref=e116]:
+                - button "miércoles, 3 de junio de 2026" [ref=e117]: "3"
+              - gridcell "jueves, 4 de junio de 2026" [ref=e118]:
+                - button "jueves, 4 de junio de 2026" [ref=e119]: "4"
+              - gridcell "viernes, 5 de junio de 2026" [ref=e120]:
+                - button "viernes, 5 de junio de 2026" [ref=e121]: "5"
+              - gridcell "sábado, 6 de junio de 2026" [ref=e122]:
+                - button "sábado, 6 de junio de 2026" [ref=e123]: "6"
+              - gridcell "domingo, 7 de junio de 2026" [ref=e124]:
+                - button "domingo, 7 de junio de 2026" [ref=e125]: "7"
+            - row "lunes, 8 de junio de 2026 martes, 9 de junio de 2026 miércoles, 10 de junio de 2026 jueves, 11 de junio de 2026 viernes, 12 de junio de 2026 sábado, 13 de junio de 2026 domingo, 14 de junio de 2026" [ref=e126]:
+              - gridcell "lunes, 8 de junio de 2026" [ref=e127]:
+                - button "lunes, 8 de junio de 2026" [ref=e128]: "8"
+              - gridcell "martes, 9 de junio de 2026" [ref=e129]:
+                - button "martes, 9 de junio de 2026" [ref=e130]: "9"
+              - gridcell "miércoles, 10 de junio de 2026" [ref=e131]:
+                - button "miércoles, 10 de junio de 2026" [ref=e132]: "10"
+              - gridcell "jueves, 11 de junio de 2026" [ref=e133]:
+                - button "jueves, 11 de junio de 2026" [ref=e134]: "11"
+              - gridcell "viernes, 12 de junio de 2026" [ref=e135]:
+                - button "viernes, 12 de junio de 2026" [ref=e136]: "12"
+              - gridcell "sábado, 13 de junio de 2026" [ref=e137]:
+                - button "sábado, 13 de junio de 2026" [ref=e138]: "13"
+              - gridcell "domingo, 14 de junio de 2026" [ref=e139]:
+                - button "domingo, 14 de junio de 2026" [ref=e140]: "14"
+            - row "lunes, 15 de junio de 2026 martes, 16 de junio de 2026 miércoles, 17 de junio de 2026 jueves, 18 de junio de 2026 viernes, 19 de junio de 2026 sábado, 20 de junio de 2026 domingo, 21 de junio de 2026" [ref=e141]:
+              - gridcell "lunes, 15 de junio de 2026" [ref=e142]:
+                - button "lunes, 15 de junio de 2026" [ref=e143]: "15"
+              - gridcell "martes, 16 de junio de 2026" [ref=e144]:
+                - button "martes, 16 de junio de 2026" [ref=e145]: "16"
+              - gridcell "miércoles, 17 de junio de 2026" [ref=e146]:
+                - button "miércoles, 17 de junio de 2026" [ref=e147]: "17"
+              - gridcell "jueves, 18 de junio de 2026" [ref=e148]:
+                - button "jueves, 18 de junio de 2026" [ref=e149]: "18"
+              - gridcell "viernes, 19 de junio de 2026" [ref=e150]:
+                - button "viernes, 19 de junio de 2026" [ref=e151]: "19"
+              - gridcell "sábado, 20 de junio de 2026" [ref=e152]:
+                - button "sábado, 20 de junio de 2026" [ref=e153]: "20"
+              - gridcell "domingo, 21 de junio de 2026" [ref=e154]:
+                - button "domingo, 21 de junio de 2026" [ref=e155]: "21"
+            - row "lunes, 22 de junio de 2026 martes, 23 de junio de 2026 miércoles, 24 de junio de 2026 Today, jueves, 25 de junio de 2026 viernes, 26 de junio de 2026 sábado, 27 de junio de 2026 domingo, 28 de junio de 2026" [ref=e156]:
+              - gridcell "lunes, 22 de junio de 2026" [ref=e157]:
+                - button "lunes, 22 de junio de 2026" [ref=e158]: "22"
+              - gridcell "martes, 23 de junio de 2026" [ref=e159]:
+                - button "martes, 23 de junio de 2026" [ref=e160]: "23"
+              - gridcell "miércoles, 24 de junio de 2026" [ref=e161]:
+                - button "miércoles, 24 de junio de 2026" [ref=e162]: "24"
+              - gridcell "Today, jueves, 25 de junio de 2026" [ref=e163]:
+                - button "Today, jueves, 25 de junio de 2026" [ref=e164]: "25"
+              - gridcell "viernes, 26 de junio de 2026" [ref=e165]:
+                - button "viernes, 26 de junio de 2026" [ref=e166]: "26"
+              - gridcell "sábado, 27 de junio de 2026" [ref=e167]:
+                - button "sábado, 27 de junio de 2026" [ref=e168]: "27"
+              - gridcell "domingo, 28 de junio de 2026" [ref=e169]:
+                - button "domingo, 28 de junio de 2026" [ref=e170]: "28"
+            - row "lunes, 29 de junio de 2026 martes, 30 de junio de 2026 miércoles, 1 de julio de 2026 jueves, 2 de julio de 2026 viernes, 3 de julio de 2026 sábado, 4 de julio de 2026 domingo, 5 de julio de 2026" [ref=e171]:
+              - gridcell "lunes, 29 de junio de 2026" [ref=e172]:
+                - button "lunes, 29 de junio de 2026" [ref=e173]: "29"
+              - gridcell "martes, 30 de junio de 2026" [ref=e174]:
+                - button "martes, 30 de junio de 2026" [ref=e175]: "30"
+              - gridcell "miércoles, 1 de julio de 2026" [ref=e176]:
+                - button "miércoles, 1 de julio de 2026" [ref=e177]: "1"
+              - gridcell "jueves, 2 de julio de 2026" [ref=e178]:
+                - button "jueves, 2 de julio de 2026" [ref=e179]: "2"
+              - gridcell "viernes, 3 de julio de 2026" [ref=e180]:
+                - button "viernes, 3 de julio de 2026" [ref=e181]: "3"
+              - gridcell "sábado, 4 de julio de 2026" [ref=e182]:
+                - button "sábado, 4 de julio de 2026" [ref=e183]: "4"
+              - gridcell "domingo, 5 de julio de 2026" [ref=e184]:
+                - button "domingo, 5 de julio de 2026" [ref=e185]: "5"

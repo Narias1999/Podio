@@ -1,0 +1,104 @@
+- generic:
+  - main:
+    - generic:
+      - link:
+        - /url: /races/clasica-de-prueba-qa/manage
+        - text: ← Gestionar carrera
+    - generic:
+      - heading [level=1]: Corredores
+      - paragraph: Clásica de Prueba QA
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Inscripciones
+            - generic: 2 corredores en 2 categorías
+          - generic:
+            - button:
+              - img
+              - text: Importar CSV
+            - button: Cerrar inscripción y asignar dorsales
+            - button:
+              - img
+              - text: Agregar corredor
+      - generic:
+        - generic:
+          - textbox:
+            - /placeholder: Buscar por nombre, documento o dorsal
+          - combobox:
+            - generic: Todas las categorías
+            - img
+        - generic:
+          - table:
+            - rowgroup:
+              - row:
+                - columnheader: Dorsal
+                - columnheader: Nombre
+                - columnheader: Equipo
+                - columnheader: Categoría
+                - columnheader: Estado
+                - columnheader: Acciones
+            - rowgroup:
+              - row:
+                - cell: —
+                - cell: Juan Pérez
+                - cell: —
+                - cell: Elite Masculino
+                - cell:
+                  - generic: Confirmado
+                - cell:
+                  - button: Marcar DNS
+              - row:
+                - cell: —
+                - cell: Carlos Gómez
+                - cell: —
+                - cell: Master 30+
+                - cell:
+                  - generic: Confirmado
+                - cell:
+                  - button: Marcar DNS
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert: Corredores — Podio
+  - dialog "Agregar corredor" [ref=e1091]:
+    - generic [ref=e1092]:
+      - heading "Agregar corredor" [level=2] [ref=e1093]
+      - paragraph [ref=e1094]: El dorsal se asigna al cerrar la inscripción.
+    - generic [ref=e1095]:
+      - generic [ref=e1096]:
+        - generic [ref=e1097]: Número de documento
+        - textbox "Número de documento" [ref=e1098]: "1003"
+      - generic [ref=e1099]:
+        - generic [ref=e1100]: Nombre completo
+        - textbox "Nombre completo" [ref=e1101]: Laura Restrepo
+      - generic [ref=e1102]:
+        - generic [ref=e1103]:
+          - generic [ref=e1104]: Sexo
+          - combobox "Sexo" [active] [ref=e1105]:
+            - generic: Femenino
+            - img
+        - generic [ref=e1106]:
+          - generic [ref=e1107]: Fecha de nacimiento
+          - textbox "Fecha de nacimiento" [ref=e1108]: 2000-08-10
+      - generic [ref=e1109]:
+        - generic [ref=e1110]: Categoría
+        - combobox "Categoría" [ref=e1111]:
+          - generic: Elite Femenino
+          - img
+      - generic [ref=e1112]:
+        - generic [ref=e1113]: Equipo / club (opcional)
+        - textbox "Equipo / club (opcional)" [ref=e1114]
+      - generic [ref=e1115]:
+        - generic [ref=e1116]: Nacionalidad (opcional)
+        - textbox "Nacionalidad (opcional)" [ref=e1117]
+      - generic [ref=e1118]:
+        - generic [ref=e1119]: EPS (opcional)
+        - textbox "EPS (opcional)" [ref=e1120]
+      - generic [ref=e1121]:
+        - generic [ref=e1122]: Teléfono (opcional)
+        - textbox "Teléfono (opcional)" [ref=e1123]
+    - button "Inscribir corredor" [ref=e1125]
+    - button "Close" [ref=e1126]:
+      - img
+      - generic [ref=e1127]: Close

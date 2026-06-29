@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { requireUser } from "@/lib/auth";
+import { requireProfile } from "@/lib/organizations";
 import { createAdminClient } from "@/lib/supabase/admin";
 import {
   GroupFinishLineView,
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
  *   - the bibs that already have a saved result (so cross-group duplicate
  *     detection survives a refresh).
  *
- * The `/live` route is auth-gated in middleware; ownership is re-checked here
- * (RLS is off — Story 01).
+ * The `/live` route is auth-gated in middleware; the caller's organization is
+ * re-checked here (RLS is off — Story 01).
  */
 export default async function GroupFinishLinePage({
   params,
@@ -33,7 +33,7 @@ export default async function GroupFinishLinePage({
 }) {
   const { slug, stage: stageParam } = await params;
   const stageNumber = Number.parseInt(stageParam, 10);
-  const user = await requireUser();
+  const { organization_id } = await requireProfile();
 
   if (!Number.isInteger(stageNumber)) {
     notFound();
@@ -42,11 +42,11 @@ export default async function GroupFinishLinePage({
   const admin = createAdminClient();
   const { data: race } = await admin
     .from("races")
-    .select("id, name, organizer_id")
+    .select("id, name, organization_id")
     .eq("slug", slug)
     .maybeSingle();
 
-  if (!race || race.organizer_id !== user.id) {
+  if (!race || race.organization_id !== organization_id) {
     notFound();
   }
 

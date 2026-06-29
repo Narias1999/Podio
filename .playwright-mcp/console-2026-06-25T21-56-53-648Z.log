@@ -1,0 +1,35 @@
+[     426ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[     444ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   13722ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   13729ms] [LOG] [Fast Refresh] done in 108ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   26686ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   27408ms] [LOG] [Fast Refresh] done in 823ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   28262ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   28267ms] [LOG] [Fast Refresh] done in 107ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   61420ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   61446ms] [LOG] [Fast Refresh] done in 127ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  119948ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  120190ms] [LOG] [Fast Refresh] done in 343ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  121637ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  121651ms] [LOG] [Fast Refresh] done in 116ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  142243ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  142281ms] [LOG] [Fast Refresh] done in 141ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  169389ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  169394ms] [LOG] [Fast Refresh] done in 108ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  224782ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  224956ms] [LOG] [Fast Refresh] done in 276ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  227476ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  227478ms] [LOG] [Fast Refresh] done in 103ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  240080ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  240111ms] [LOG] [Fast Refresh] done in 132ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  241600ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  241620ms] [LOG] [Fast Refresh] done in 120ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  254329ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  254331ms] [LOG] [Fast Refresh] done in 103ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  289363ms] [WARNING] The specified value "15/05/1998" does not conform to the required format, "yyyy-MM-dd". @ :7226
+[  304099ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  304108ms] [LOG] [Fast Refresh] done in 112ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  323609ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  323679ms] [LOG] [Fast Refresh] done in 171ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  426913ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  426960ms] [LOG] [Fast Refresh] done in 148ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477

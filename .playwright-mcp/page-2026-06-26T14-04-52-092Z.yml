@@ -1,0 +1,34 @@
+- generic [active] [ref=e1]:
+  - status [ref=e2]:
+    - img [ref=e3]
+    - generic [ref=e7]: Conectado
+  - main [ref=e8]:
+    - generic [ref=e9]:
+      - heading "Etapa 2 – Ruta" [level=1] [ref=e10]
+      - paragraph [ref=e11]: sábado 4 de julio de 2026
+    - region "Categorías" [ref=e12]:
+      - generic [ref=e13]:
+        - heading "Categorías" [level=2] [ref=e14]
+        - paragraph [ref=e15]: Selecciona todas las categorías que saldrán juntas y presiona Iniciar.
+      - group "Selección de categorías" [ref=e16]:
+        - button "Infantil" [ref=e17]
+        - button "Prejuvenil" [ref=e18]
+        - button "Juvenil" [ref=e19]
+        - button "Sub-23 Masculino" [ref=e20]
+        - button "Sub-23 Femenino" [ref=e21]
+        - button "Elite Masculino — Iniciada" [disabled] [ref=e22]:
+          - generic [ref=e23]: ✓
+          - text: Elite Masculino
+          - generic [ref=e24]: Iniciada
+        - button "Elite Femenino — Iniciada" [disabled] [ref=e25]:
+          - generic [ref=e26]: ✓
+          - text: Elite Femenino
+          - generic [ref=e27]: Iniciada
+        - button "Master 30+" [ref=e28]
+        - button "Master 40+" [ref=e29]
+        - button "Master 50+" [ref=e30]
+    - button "Iniciar" [disabled]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e36] [cursor=pointer]:
+    - img [ref=e37]
+  - alert [ref=e40]

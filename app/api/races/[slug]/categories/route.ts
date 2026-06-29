@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { getCurrentUser } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getOrganizationId } from "@/lib/organizations";
 import { loadOwnedRace } from "@/lib/races";
 import { validateCategoryPayload, type CategoryPayload } from "@/lib/categories";
 
@@ -10,8 +11,9 @@ import { validateCategoryPayload, type CategoryPayload } from "@/lib/categories"
 // POST /api/races/[slug]/categories — adds a new category to a race owned by
 // the session user. The new category is appended at the end (highest
 // sort_order + 1); reordering is handled by the separate reorder endpoint.
-// Both authenticate the session, then confirm `races.organizer_id` matches
-// before reading/writing with the service-role client (RLS is off — Story 01).
+// Both authenticate the session, then confirm the race belongs to the caller's
+// organization before reading/writing with the service-role client (RLS is off
+// — Story 01).
 
 export async function GET(
   _request: Request,
@@ -24,7 +26,11 @@ export async function GET(
 
   const { slug } = await params;
   const admin = createAdminClient();
-  const race = await loadOwnedRace(admin, slug, user.id);
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
+  const race = await loadOwnedRace(admin, slug, organizationId);
   if (!race) {
     return NextResponse.json(
       { error: "Carrera no encontrada." },
@@ -59,7 +65,11 @@ export async function POST(
 
   const { slug } = await params;
   const admin = createAdminClient();
-  const race = await loadOwnedRace(admin, slug, user.id);
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
+  const race = await loadOwnedRace(admin, slug, organizationId);
   if (!race) {
     return NextResponse.json(
       { error: "Carrera no encontrada." },

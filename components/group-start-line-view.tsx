@@ -61,7 +61,7 @@ const WAKELOCK_TIP_STORAGE_KEY = "group_wakelock_tip_dismissed";
 export type GroupStartLineCategory = Pick<Category, "id" | "name" | "sort_order">;
 
 /** One completed wave, kept in the wave log. */
-type Wave = {
+export type Wave = {
   categories: GroupStartLineCategory[];
   startedAt: string; // UTC ISO
 };
@@ -75,6 +75,8 @@ type Props = {
   categories: GroupStartLineCategory[];
   /** Categories already started (from existing DB rows on resume). */
   alreadyStartedCategoryIds: string[];
+  /** Waves reconstructed from existing DB rows on resume (chronological). */
+  initialWaves?: Wave[];
 };
 
 // ---------------------------------------------------------------------------
@@ -89,6 +91,7 @@ export function GroupStartLineView({
   stageDateLabel,
   categories,
   alreadyStartedCategoryIds,
+  initialWaves = [],
 }: Props) {
   // Drive the write-queue 60s retry loop (Story 15 boundary).
   useWriteQueueSync();
@@ -101,8 +104,9 @@ export function GroupStartLineView({
   // Currently selected (but not yet started) category ids.
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
 
-  // Wave log (most recent last).
-  const [waves, setWaves] = useState<Wave[]>([]);
+  // Wave log (most recent last). Hydrated from server-provided history
+  // (existing DB rows) so it survives a refresh; live waves append below.
+  const [waves, setWaves] = useState<Wave[]>(() => initialWaves);
 
   // Wake lock tip visibility (once if unsupported/denied).
   const [showWakeTip, setShowWakeTip] = useState(false);

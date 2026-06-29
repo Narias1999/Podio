@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { getCurrentUser } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getOrganizationId } from "@/lib/organizations";
 import { loadOwnedRace } from "@/lib/races";
 import { validateStagePayload, type StagePayload } from "@/lib/stages";
 
@@ -10,8 +11,8 @@ import { validateStagePayload, type StagePayload } from "@/lib/stages";
 // DELETE /api/races/[slug]/stages/[stage] — deletes a stage, blocked if the
 // stage has results or if it is the race's only stage; remaining stages are
 // renumbered to stay contiguous.
-// Both authenticate the session, confirm `races.organizer_id` matches, then
-// write with the service-role client (RLS is off — Story 01).
+// Both authenticate the session, confirm the race belongs to the caller's
+// organization, then write with the service-role client (RLS is off — Story 01).
 // The [stage] dynamic segment carries the stage id (UUID), matching the URL
 // built by components/stages-manager.tsx (`/stages/${stage.id}`).
 
@@ -19,9 +20,9 @@ async function loadOwnedStage(
   admin: ReturnType<typeof createAdminClient>,
   slug: string,
   stageId: string,
-  userId: string,
+  organizationId: string,
 ) {
-  const race = await loadOwnedRace(admin, slug, userId);
+  const race = await loadOwnedRace(admin, slug, organizationId);
   if (!race) {
     return { race: null, stage: null } as const;
   }
@@ -47,7 +48,16 @@ export async function PATCH(
 
   const { slug, stage: stageId } = await params;
   const admin = createAdminClient();
-  const { race, stage } = await loadOwnedStage(admin, slug, stageId, user.id);
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
+  const { race, stage } = await loadOwnedStage(
+    admin,
+    slug,
+    stageId,
+    organizationId,
+  );
 
   if (!race || !stage) {
     return NextResponse.json(
@@ -104,7 +114,16 @@ export async function DELETE(
 
   const { slug, stage: stageId } = await params;
   const admin = createAdminClient();
-  const { race, stage } = await loadOwnedStage(admin, slug, stageId, user.id);
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
+  const { race, stage } = await loadOwnedStage(
+    admin,
+    slug,
+    stageId,
+    organizationId,
+  );
 
   if (!race || !stage) {
     return NextResponse.json(

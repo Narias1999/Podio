@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import { Plus } from "lucide-react";
 
-import { requireUser } from "@/lib/auth";
+import { requireProfile } from "@/lib/organizations";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -31,14 +31,15 @@ function formatRaceDates(startsAt: string, endsAt: string | null): string {
 }
 
 export default async function DashboardPage() {
-  const user = await requireUser();
+  const { organization_id } = await requireProfile();
 
-  // Organizer read scoped to the session user (RLS off — Story 01 model).
+  // Organizer read scoped to the caller's organization (RLS off — Story 01
+  // model). All members of the organization see its races.
   const admin = createAdminClient();
   const { data: races } = await admin
     .from("races")
     .select("id, name, slug, discipline, status, starts_at, ends_at")
-    .eq("organizer_id", user.id)
+    .eq("organization_id", organization_id)
     .order("starts_at", { ascending: false });
 
   const raceList = races ?? [];
@@ -47,7 +48,12 @@ export default async function DashboardPage() {
     <main className="flex min-h-screen flex-col">
       <header className="flex items-center justify-between border-b p-4">
         <h1 className="text-lg font-medium">Podio</h1>
-        <SignOutButton />
+        <div className="flex items-center gap-2">
+          <Button asChild variant="ghost" size="sm">
+            <Link href="/organization">Organización</Link>
+          </Button>
+          <SignOutButton />
+        </div>
       </header>
 
       <section className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 p-4 md:py-10">

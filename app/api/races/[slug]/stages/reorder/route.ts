@@ -2,15 +2,16 @@ import { NextResponse } from "next/server";
 
 import { getCurrentUser } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getOrganizationId } from "@/lib/organizations";
 import { loadOwnedRace } from "@/lib/races";
 import { validateReorderPayload, type ReorderPayload } from "@/lib/stages";
 
 // POST /api/races/[slug]/stages/reorder — applies a new stage order for a
 // multi-stage race owned by the session user. Body is `{ stage_ids: string[] }`
 // listing every stage id of the race in the desired order; stage_number is
-// recalculated as 1..N to match. Authenticates the session, confirms
-// `races.organizer_id` matches, then writes with the service-role client
-// (RLS is off — Story 01).
+// recalculated as 1..N to match. Authenticates the session, confirms the race
+// belongs to the caller's organization, then writes with the service-role
+// client (RLS is off — Story 01).
 export async function POST(
   request: Request,
   { params }: { params: Promise<{ slug: string }> },
@@ -22,7 +23,11 @@ export async function POST(
 
   const { slug } = await params;
   const admin = createAdminClient();
-  const race = await loadOwnedRace(admin, slug, user.id);
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
+  const race = await loadOwnedRace(admin, slug, organizationId);
 
   if (!race) {
     return NextResponse.json(

@@ -1,0 +1,28 @@
+- generic [active] [ref=e1]:
+  - status [ref=e2]:
+    - img [ref=e3]
+    - generic [ref=e7]: Conectado
+  - main [ref=e8]:
+    - generic [ref=e66]:
+      - generic [ref=e67]:
+        - heading "Etapa 4 – CRI Undo" [level=1] [ref=e68]
+        - paragraph [ref=e69]: sábado 4 de julio de 2026
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - generic [ref=e72]: Configuración de salida
+          - generic [ref=e73]: Cuando salga el primer corredor, presiona Iniciar contrarreloj.
+        - generic [ref=e74]:
+          - generic [ref=e75]:
+            - generic [ref=e76]: Salida del primer corredor
+            - generic [ref=e77]: 10:00:00
+          - generic [ref=e78]:
+            - generic [ref=e79]: Intervalo entre corredores
+            - generic [ref=e80]: —
+          - generic [ref=e81]:
+            - generic [ref=e82]: Intervalo entre categorías
+            - generic [ref=e83]: —
+      - button "Iniciar contrarreloj" [ref=e84]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e33] [cursor=pointer]:
+    - img [ref=e34]
+  - alert [ref=e37]

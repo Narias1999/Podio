@@ -1,0 +1,134 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Podio" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+          - generic [ref=e13]: Podio
+        - link "Iniciar sesión" [ref=e14] [cursor=pointer]:
+          - /url: /login
+    - main [ref=e15]:
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - img [ref=e19]
+          - text: Cronometraje y resultados en vivo
+        - heading "La forma moderna de cronometrar tus carreras" [level=1] [ref=e25]
+        - paragraph [ref=e26]: Podio reúne inscripciones, cronometraje en vivo, clasificación general automática y resultados públicos en tiempo real para carreras de ciclismo y running. Todo en una sola plataforma.
+        - generic [ref=e27]:
+          - link "Solicitar una demo" [ref=e28] [cursor=pointer]:
+            - /url: "#contacto"
+            - text: Solicitar una demo
+            - img
+          - link "Hablar por WhatsApp" [ref=e29] [cursor=pointer]:
+            - /url: https://wa.me/573222497943?text=Hola%2C%20me%20interesa%20usar%20Podio%20para%20cronometrar%20mi%20carrera.
+            - img
+            - text: Hablar por WhatsApp
+        - paragraph [ref=e30]: Hecho para organizadores en Colombia 🇨🇴
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - heading "Todo lo que necesitas el día de la carrera" [level=2] [ref=e33]
+          - paragraph [ref=e34]: Una herramienta diseñada con organizadores, para organizadores.
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - img [ref=e38]
+            - heading "Cronometraje en vivo" [level=3] [ref=e41]
+            - paragraph [ref=e42]: Pantallas de salida y meta para contrarreloj y ruta. Un toque captura el tiempo de cada corredor, incluso con varios llegando juntos.
+          - generic [ref=e43]:
+            - img [ref=e45]
+            - heading "Clasificación general automática" [level=3] [ref=e51]
+            - paragraph [ref=e52]: La GC se calcula sola sumando los tiempos de cada etapa. Sin hojas de cálculo ni cuentas manuales.
+          - generic [ref=e53]:
+            - img [ref=e55]
+            - heading "Resultados públicos en tiempo real" [level=3] [ref=e61]
+            - paragraph [ref=e62]: Cada tiempo guardado aparece al instante en la página pública. Espectadores y corredores siguen la carrera sin que publiques nada.
+          - generic [ref=e63]:
+            - img [ref=e65]
+            - heading "Funciona sin conexión" [level=3] [ref=e72]
+            - paragraph [ref=e73]: Los datos se guardan en el dispositivo y se sincronizan solos cuando vuelve la señal. Nada se pierde en zonas sin cobertura.
+          - generic [ref=e74]:
+            - img [ref=e76]
+            - heading "Inscripciones y categorías" [level=3] [ref=e81]
+            - paragraph [ref=e82]: Registra corredores uno a uno o importa cientos desde un archivo. Las categorías se asignan automáticamente por edad y sexo.
+          - generic [ref=e83]:
+            - img [ref=e85]
+            - heading "Orden de salida inteligente" [level=3] [ref=e88]
+            - paragraph [ref=e89]: Genera el orden de salida de las contrarrelojes (aleatorio o por GC inversa) y ajústalo manualmente cuando lo necesites.
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - heading "¿Qué ganas con Podio?" [level=2] [ref=e93]
+          - paragraph [ref=e94]: "Menos estrés operativo, más tiempo para lo que importa: tu evento y tus corredores."
+        - generic [ref=e95]:
+          - generic [ref=e96]:
+            - img [ref=e98]
+            - heading "Ahorra horas de trabajo" [level=3] [ref=e101]
+            - paragraph [ref=e102]: Olvídate de cronómetros, planillas y digitar tiempos a mano. Todo el flujo —de la inscripción a la clasificación— vive en un solo lugar.
+          - generic [ref=e103]:
+            - img [ref=e105]
+            - heading "Pensado para el día de la carrera" [level=3] [ref=e107]
+            - paragraph [ref=e108]: Pantallas grandes y táctiles para operar bajo presión, con un indicador permanente que te avisa si hay datos pendientes por enviar.
+          - generic [ref=e109]:
+            - img [ref=e111]
+            - heading "Una experiencia profesional" [level=3] [ref=e113]
+            - paragraph [ref=e114]: Ofrece a tus corredores y patrocinadores resultados públicos en vivo con la imagen de un evento serio y bien organizado.
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - heading "Cómo funciona" [level=2] [ref=e117]
+          - paragraph [ref=e118]: De la inscripción a la clasificación general en tres pasos.
+        - generic [ref=e119]:
+          - generic [ref=e120]:
+            - generic [ref=e121]: "1"
+            - heading "Crea tu carrera" [level=3] [ref=e122]
+            - paragraph [ref=e123]: Configura disciplina, etapas y categorías en minutos. Inscribe a los corredores manualmente o por importación masiva.
+          - generic [ref=e124]:
+            - generic [ref=e125]: "2"
+            - heading "Cronometra en vivo" [level=3] [ref=e126]
+            - paragraph [ref=e127]: El día del evento, el operador de meta captura cada tiempo con un toque. Los datos se guardan aunque falle la conexión.
+          - generic [ref=e128]:
+            - generic [ref=e129]: "3"
+            - heading "Publica los resultados" [level=3] [ref=e130]
+            - paragraph [ref=e131]: La clasificación por etapa y la general se actualizan solas en la página pública, en tiempo real y sin pasos extra.
+      - generic [ref=e133]:
+        - generic [ref=e134]:
+          - heading "Hablemos de tu próxima carrera" [level=2] [ref=e135]
+          - paragraph [ref=e136]: Déjanos tus datos y te contactaremos para mostrarte cómo Podio puede ayudarte a organizar tu evento. ¿Prefieres una respuesta inmediata? Escríbenos directamente por WhatsApp.
+          - link "Hablar por WhatsApp" [ref=e138] [cursor=pointer]:
+            - /url: https://wa.me/573222497943?text=Hola%2C%20me%20interesa%20usar%20Podio%20para%20cronometrar%20mi%20carrera.
+            - img
+            - text: Hablar por WhatsApp
+          - paragraph [ref=e139]: +57 322 249 7943
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - generic [ref=e143]:
+              - generic [ref=e144]: Nombre *
+              - textbox "Nombre *" [ref=e145]:
+                - /placeholder: Tu nombre
+            - generic [ref=e146]:
+              - generic [ref=e147]: Correo electrónico *
+              - textbox "Correo electrónico *" [ref=e148]:
+                - /placeholder: tu@correo.com
+            - generic [ref=e149]:
+              - generic [ref=e150]: Organización o carrera
+              - textbox "Organización o carrera" [ref=e151]:
+                - /placeholder: Nombre de tu evento (opcional)
+            - generic [ref=e152]:
+              - generic [ref=e153]: Teléfono
+              - textbox "Teléfono" [ref=e154]:
+                - /placeholder: Opcional
+          - generic [ref=e155]:
+            - generic [ref=e156]: Mensaje *
+            - textbox "Mensaje *" [ref=e157]:
+              - /placeholder: "Cuéntanos sobre tu carrera: disciplina, número de etapas y cuántos corredores esperas."
+          - button "Enviar mensaje" [ref=e158]:
+            - img
+            - text: Enviar mensaje
+          - paragraph [ref=e159]: Revisamos cada solicitud personalmente. Tus datos solo se usan para contactarte sobre Podio.
+    - contentinfo [ref=e160]:
+      - generic [ref=e161]:
+        - generic [ref=e162]:
+          - img [ref=e164]
+          - generic [ref=e170]: Podio
+        - paragraph [ref=e171]: © 2026 Podio. Cronometraje y resultados para carreras.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e177] [cursor=pointer]:
+    - img [ref=e178]

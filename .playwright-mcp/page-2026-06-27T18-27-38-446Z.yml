@@ -1,0 +1,45 @@
+- generic [active] [ref=e1]:
+  - status [ref=e2]:
+    - img [ref=e3]
+    - generic [ref=e7]: Conectado
+  - main [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]: Próxima salida en
+        - generic [ref=e12]: 0:24
+        - generic [ref=e13]:
+          - generic [ref=e14]:
+            - generic [ref=e15]: "1"
+            - generic [ref=e16]: Tomás González
+          - generic [ref=e17]: Infantil Masculina · salida 13:28:02
+      - generic [ref=e18]:
+        - heading "A continuación" [level=2] [ref=e19]
+        - list [ref=e20]:
+          - listitem [ref=e21]:
+            - generic [ref=e22]: 13:29:02
+            - generic [ref=e23]: "3"
+            - generic [ref=e24]: Simón Suárez
+            - generic [ref=e25]: Infantil Masculina
+          - listitem [ref=e26]:
+            - generic [ref=e27]: 13:30:02
+            - generic [ref=e28]: "10"
+            - generic [ref=e29]: Sebastián Martínez
+            - generic [ref=e30]: Infantil Masculina
+          - listitem [ref=e31]:
+            - generic [ref=e32]: 13:31:02
+            - generic [ref=e33]: "14"
+            - generic [ref=e34]: David Moreno
+            - generic [ref=e35]: Infantil Masculina
+          - listitem [ref=e36]:
+            - generic [ref=e37]: 13:32:02
+            - generic [ref=e38]: "18"
+            - generic [ref=e39]: Nicolás López
+            - generic [ref=e40]: Infantil Masculina
+          - listitem [ref=e41]:
+            - generic [ref=e42]: 13:33:02
+            - generic [ref=e43]: "11"
+            - generic [ref=e44]: Emiliano Muñoz
+            - generic [ref=e45]: Infantil Masculina
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e51] [cursor=pointer]:
+    - img [ref=e52]

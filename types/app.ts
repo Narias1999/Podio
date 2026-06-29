@@ -11,6 +11,11 @@ export type Registration =
 export type TtStartOrder =
   Database["public"]["Tables"]["tt_start_order"]["Row"];
 export type Result = Database["public"]["Tables"]["results"]["Row"];
+export type Organization =
+  Database["public"]["Tables"]["organizations"]["Row"];
+export type Profile = Database["public"]["Tables"]["profiles"]["Row"];
+// Alias used wherever a profile represents the caller's org membership.
+export type Membership = Profile;
 
 export type StageType =
   | "road"
@@ -22,3 +27,4 @@ export type RaceStatus = "draft" | "published" | "completed";
 export type ResultStatus = "finished" | "dnf" | "dsq" | "dns";
 export type Discipline = "cycling" | "running";
 export type Sex = "male" | "female";
+export type UserRole = "super_admin" | "admin" | "operator";

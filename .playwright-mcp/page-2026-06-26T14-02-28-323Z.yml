@@ -1,0 +1,30 @@
+- generic:
+  - status:
+    - img
+    - generic: Conectado
+  - main:
+    - generic:
+      - generic:
+        - generic: Etapa 1 – Contrarreloj
+        - generic: 15:46:26
+      - button: Finalizar sesión
+    - button: STOP
+    - region:
+      - generic:
+        - generic:
+          - generic: 0:00:40
+          - textbox:
+            - /placeholder: Dorsal
+            - text: "1"
+          - button: Guardar
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e22] [cursor=pointer]:
+    - img [ref=e23]
+  - alert
+  - alertdialog "Finalizar sesión" [ref=e33]:
+    - generic [ref=e34]:
+      - heading "Finalizar sesión" [level=2] [ref=e35]
+      - paragraph [ref=e36]: Tienes 1 entrada sin asignar. Termina de asignar los dorsales antes de finalizar la sesión.
+    - generic [ref=e37]:
+      - button "Cancelar" [active] [ref=e38]
+      - button "Finalizar" [disabled]

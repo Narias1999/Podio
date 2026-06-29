@@ -1,0 +1,37 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - link "← Gestionar carrera" [ref=e4] [cursor=pointer]:
+      - /url: /races/clasica-de-prueba-qa/manage
+    - generic [ref=e5]:
+      - heading "Orden de salida — Etapa 4 – CRI Undo" [level=1] [ref=e6]
+      - paragraph [ref=e7]: Clásica de Prueba QA
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]: Configuración
+        - generic [ref=e12]: Define los intervalos y la hora de salida del primer corredor antes de generar el orden.
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - generic [ref=e15]:
+            - generic [ref=e16]: Intervalo entre corredores (s)
+            - spinbutton "Intervalo entre corredores (s)" [disabled]: "60"
+          - generic [ref=e18]:
+            - generic [ref=e19]: Intervalo entre categorías (s)
+            - spinbutton "Intervalo entre categorías (s)" [disabled]: "300"
+          - generic [ref=e21]:
+            - generic [ref=e22]: Hora del primer corredor
+            - textbox "Hora del primer corredor" [disabled]: 10:00:00
+        - generic [ref=e24]:
+          - button "Generar orden de salida" [disabled]
+  - region "Notifications alt+T":
+    - list:
+      - listitem [ref=e36]:
+        - img [ref=e38]
+        - generic [ref=e42]: Orden de salida generado (orden aleatorio).
+  - button "Open Next.js Dev Tools" [ref=e43] [cursor=pointer]:
+    - generic [ref=e46]:
+      - text: Rendering
+      - generic [ref=e47]:
+        - generic [ref=e48]: .
+        - generic [ref=e49]: .
+        - generic [ref=e50]: .
+  - alert [ref=e35]

@@ -1,0 +1,24 @@
+- generic:
+  - status:
+    - img
+    - generic: Conectado
+  - main:
+    - generic:
+      - generic:
+        - generic: Etapa 1 – Contrarreloj
+        - generic: 16:12:53
+      - button: Finalizar sesión
+    - button: STOP
+    - region:
+      - paragraph: No hay llegadas por asignar. Presiona STOP cuando un corredor cruce la meta.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e27] [cursor=pointer]:
+    - img [ref=e28]
+  - alert
+  - alertdialog "Finalizar sesión" [ref=e42]:
+    - generic [ref=e43]:
+      - heading "Finalizar sesión" [level=2] [ref=e44]
+      - paragraph [ref=e45]: Se marcará la etapa como completada y sus resultados quedarán bloqueados.
+    - generic [ref=e46]:
+      - button "Cancelar" [active] [ref=e47]
+      - button "Finalizar" [ref=e48]

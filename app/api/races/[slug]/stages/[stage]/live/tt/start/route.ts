@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { loadOwnedRace } from "@/lib/races";
+import { getOrganizationId } from "@/lib/organizations";
 import { loadStartOrder } from "@/lib/tt-start-order";
 
 // POST /api/races/[slug]/stages/[stage]/live/tt/start — records the live TT
@@ -11,8 +12,9 @@ import { loadStartOrder } from "@/lib/tt-start-order";
 // row per category present in the stage's start order, all sharing the same
 // authoritative `started_at` instant (the client-captured `captured_at`).
 //
-// Authorization: authenticate the session, confirm `races.organizer_id`
-// matches, then write with the service-role client (RLS is off — Story 01).
+// Authorization: authenticate the session, confirm the race belongs to the
+// caller's organization, then write with the service-role client (RLS is off —
+// Story 01).
 //
 // Idempotent: `stage_category_starts` has `unique (stage_id, category_id)`, so
 // re-pressing Start (or a queue retry) upserts on that constraint rather than
@@ -41,7 +43,11 @@ export async function POST(
   }
 
   const admin = createAdminClient();
-  const race = await loadOwnedRace(admin, slug, user.id);
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
+  const race = await loadOwnedRace(admin, slug, organizationId);
   if (!race) {
     return NextResponse.json({ error: "Etapa no encontrada." }, { status: 404 });
   }

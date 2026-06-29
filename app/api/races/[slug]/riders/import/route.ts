@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { getCurrentUser } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getOrganizationId } from "@/lib/organizations";
 import { loadOwnedRace } from "@/lib/races";
 import {
   createRiderRegistration,
@@ -17,8 +18,8 @@ import type { Category, Sex } from "@/types/app";
 // auto-suggested from age + sex), and only then writes. The import is atomic:
 // if any row fails to write, every rider/registration created in this request
 // is rolled back so partial imports never reach the database (Story 07 rule).
-// Authenticates the session, confirms `races.organizer_id` matches, then
-// writes with the service-role client (RLS is off — Story 01).
+// Authenticates the session, confirms the race belongs to the caller's
+// organization, then writes with the service-role client (RLS is off — Story 01).
 
 // One row as sent by the client (post-normalization, pre-write).
 type ImportRow = {
@@ -48,7 +49,11 @@ export async function POST(
 
   const { slug } = await params;
   const admin = createAdminClient();
-  const race = await loadOwnedRace(admin, slug, user.id);
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
+  const race = await loadOwnedRace(admin, slug, organizationId);
   if (!race) {
     return NextResponse.json(
       { error: "Carrera no encontrada." },

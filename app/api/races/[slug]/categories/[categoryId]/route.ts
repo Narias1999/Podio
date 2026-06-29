@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { getCurrentUser } from "@/lib/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { getOrganizationId } from "@/lib/organizations";
 import { loadOwnedRace } from "@/lib/races";
 import { validateCategoryPayload, type CategoryPayload } from "@/lib/categories";
 
@@ -11,16 +12,16 @@ import { validateCategoryPayload, type CategoryPayload } from "@/lib/categories"
 // DELETE /api/races/[slug]/categories/[categoryId] — deletes a category,
 // blocked when it has registrations, with the registered-rider count in the
 // error message.
-// Both authenticate the session, confirm `races.organizer_id` matches, then
-// write with the service-role client (RLS is off — Story 01).
+// Both authenticate the session, confirm the race belongs to the caller's
+// organization, then write with the service-role client (RLS is off — Story 01).
 
 async function loadOwnedCategory(
   admin: ReturnType<typeof createAdminClient>,
   slug: string,
   categoryId: string,
-  userId: string,
+  organizationId: string,
 ) {
-  const race = await loadOwnedRace(admin, slug, userId);
+  const race = await loadOwnedRace(admin, slug, organizationId);
   if (!race) {
     return { race: null, category: null } as const;
   }
@@ -46,11 +47,15 @@ export async function PATCH(
 
   const { slug, categoryId } = await params;
   const admin = createAdminClient();
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
   const { race, category } = await loadOwnedCategory(
     admin,
     slug,
     categoryId,
-    user.id,
+    organizationId,
   );
 
   if (!race || !category) {
@@ -124,11 +129,15 @@ export async function DELETE(
 
   const { slug, categoryId } = await params;
   const admin = createAdminClient();
+  const organizationId = await getOrganizationId(admin, user.id);
+  if (!organizationId) {
+    return NextResponse.json({ error: "Carrera no encontrada." }, { status: 404 });
+  }
   const { race, category } = await loadOwnedCategory(
     admin,
     slug,
     categoryId,
-    user.id,
+    organizationId,
   );
 
   if (!race || !category) {

@@ -1,0 +1,328 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - link "← Panel" [ref=e4] [cursor=pointer]:
+        - /url: /dashboard
+      - generic [ref=e5]:
+        - button "Compartir resultados" [ref=e6]:
+          - img
+          - text: Compartir resultados
+        - link "Corredores" [ref=e7] [cursor=pointer]:
+          - /url: /races/clasica-de-prueba-qa/manage/riders
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - heading "Clásica de Prueba QA" [level=1] [ref=e10]
+        - generic [ref=e11]: Publicada
+      - paragraph [ref=e12]: La gestión de inscripciones y resultados se habilitará en los próximos pasos.
+    - generic [ref=e13]:
+      - tablist [ref=e14]:
+        - tab "Gestión" [selected] [ref=e15]
+        - tab "Clasificación general" [ref=e16]
+      - tabpanel "Gestión" [ref=e17]:
+        - generic [ref=e18]:
+          - generic [ref=e19]:
+            - generic [ref=e20]: Etapas
+            - generic [ref=e21]: Agrega, edita, reordena y elimina las etapas de la carrera.
+          - generic [ref=e22]:
+            - generic [ref=e24]:
+              - generic [ref=e25]:
+                - generic "Reordenar etapa" [ref=e26]:
+                  - img [ref=e27]
+                - generic [ref=e34]:
+                  - generic [ref=e35]:
+                    - generic [ref=e36]: Etapa 1
+                    - generic [ref=e37]: Finalizada
+                  - generic [ref=e38]:
+                    - generic [ref=e39]: Etapa 1 – Contrarreloj
+                    - generic [ref=e40]: 4 de julio de 2026
+                    - generic [ref=e41]: Contrarreloj
+              - generic [ref=e42]:
+                - link "En vivo" [ref=e43] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/stages/1/live
+                  - img
+                  - text: En vivo
+                - link "Orden de salida" [ref=e44] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/manage/stages/1/start-order
+                - link "Resultados" [ref=e45] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/manage/stages/1/results
+                - button "Editar" [ref=e46]
+                - button "Eliminar etapa" [ref=e47]:
+                  - img
+            - generic [ref=e49]:
+              - generic [ref=e50]:
+                - generic "Reordenar etapa" [ref=e51]:
+                  - img [ref=e52]
+                - generic [ref=e59]:
+                  - generic [ref=e60]:
+                    - generic [ref=e61]: Etapa 2
+                    - generic [ref=e62]: Finalizada
+                  - generic [ref=e63]:
+                    - generic [ref=e64]: Etapa 2 – Ruta
+                    - generic [ref=e65]: 4 de julio de 2026
+                    - generic [ref=e66]: Ruta
+              - generic [ref=e67]:
+                - link "En vivo" [ref=e68] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/stages/2/live
+                  - img
+                  - text: En vivo
+                - link "Resultados" [ref=e69] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/manage/stages/2/results
+                - button "Editar" [ref=e70]
+                - button "Eliminar etapa" [ref=e71]:
+                  - img
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - generic "Reordenar etapa" [ref=e75]:
+                  - img [ref=e76]
+                - generic [ref=e83]:
+                  - generic [ref=e84]:
+                    - generic [ref=e85]: Etapa 3
+                    - generic [ref=e86]: Finalizada
+                  - generic [ref=e87]:
+                    - generic [ref=e88]: Etapa 3 – CRI Final
+                    - generic [ref=e89]: 4 de julio de 2026
+                    - generic [ref=e90]: Contrarreloj
+              - generic [ref=e91]:
+                - link "En vivo" [ref=e92] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/stages/3/live
+                  - img
+                  - text: En vivo
+                - link "Orden de salida" [ref=e93] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/manage/stages/3/start-order
+                - link "Resultados" [ref=e94] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/manage/stages/3/results
+                - button "Editar" [ref=e95]
+                - button "Eliminar etapa" [ref=e96]:
+                  - img
+            - generic [ref=e98]:
+              - generic [ref=e99]:
+                - generic "Reordenar etapa" [ref=e100]:
+                  - img [ref=e101]
+                - generic [ref=e108]:
+                  - generic [ref=e109]:
+                    - generic [ref=e110]: Etapa 4
+                    - generic [ref=e111]: Próxima
+                  - generic [ref=e112]:
+                    - generic [ref=e113]: Etapa 4 – CRI Undo
+                    - generic [ref=e114]: 4 de julio de 2026
+                    - generic [ref=e115]: Contrarreloj
+              - generic [ref=e116]:
+                - link "En vivo" [ref=e117] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/stages/4/live
+                  - img
+                  - text: En vivo
+                - link "Orden de salida" [ref=e118] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/manage/stages/4/start-order
+                - link "Resultados" [ref=e119] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/manage/stages/4/results
+                - button "Editar" [ref=e120]
+                - button "Eliminar etapa" [ref=e121]:
+                  - img
+            - generic [ref=e123]:
+              - generic [ref=e124]:
+                - generic "Reordenar etapa" [ref=e125]:
+                  - img [ref=e126]
+                - generic [ref=e133]:
+                  - generic [ref=e134]:
+                    - generic [ref=e135]: Etapa 5
+                    - generic [ref=e136]: Próxima
+                  - generic [ref=e137]:
+                    - generic [ref=e138]: Etapa 5 – CRI Preview
+                    - generic [ref=e139]: 4 de julio de 2026
+                    - generic [ref=e140]: Contrarreloj
+              - generic [ref=e141]:
+                - link "En vivo" [ref=e142] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/stages/5/live
+                  - img
+                  - text: En vivo
+                - link "Orden de salida" [ref=e143] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/manage/stages/5/start-order
+                - link "Resultados" [ref=e144] [cursor=pointer]:
+                  - /url: /races/clasica-de-prueba-qa/manage/stages/5/results
+                - button "Editar" [ref=e145]
+                - button "Eliminar etapa" [ref=e146]:
+                  - img
+            - button "Agregar etapa" [ref=e147]:
+              - img
+              - text: Agregar etapa
+        - generic [ref=e148]:
+          - generic [ref=e149]:
+            - generic [ref=e150]: Categorías
+            - generic [ref=e151]: Agrega, edita, reordena y elimina las categorías de la carrera.
+          - generic [ref=e152]:
+            - paragraph [ref=e153]: Las categorías al inicio de esta lista salen primero en las contrarreloj. Coloca tu categoría más lenta primero.
+            - generic [ref=e155]:
+              - generic "Reordenar categoría" [ref=e156]:
+                - img [ref=e157]
+              - generic [ref=e164]:
+                - generic [ref=e166]: Posición 1
+                - generic [ref=e167]:
+                  - generic [ref=e168]: Infantil
+                  - generic [ref=e169]: hasta 12 años
+              - generic [ref=e170]:
+                - button "Editar" [ref=e171]
+                - button "Eliminar categoría" [ref=e172]:
+                  - img
+            - generic [ref=e174]:
+              - generic "Reordenar categoría" [ref=e175]:
+                - img [ref=e176]
+              - generic [ref=e183]:
+                - generic [ref=e185]: Posición 2
+                - generic [ref=e186]:
+                  - generic [ref=e187]: Prejuvenil
+                  - generic [ref=e188]: 13–14 años
+              - generic [ref=e189]:
+                - button "Editar" [ref=e190]
+                - button "Eliminar categoría" [ref=e191]:
+                  - img
+            - generic [ref=e193]:
+              - generic "Reordenar categoría" [ref=e194]:
+                - img [ref=e195]
+              - generic [ref=e202]:
+                - generic [ref=e204]: Posición 3
+                - generic [ref=e205]:
+                  - generic [ref=e206]: Juvenil
+                  - generic [ref=e207]: 15–16 años
+              - generic [ref=e208]:
+                - button "Editar" [ref=e209]
+                - button "Eliminar categoría" [ref=e210]:
+                  - img
+            - generic [ref=e212]:
+              - generic "Reordenar categoría" [ref=e213]:
+                - img [ref=e214]
+              - generic [ref=e221]:
+                - generic [ref=e223]: Posición 4
+                - generic [ref=e224]:
+                  - generic [ref=e225]: Sub-23 Masculino
+                  - generic [ref=e226]: 17–22 años · Masculino
+              - generic [ref=e227]:
+                - button "Editar" [ref=e228]
+                - button "Eliminar categoría" [ref=e229]:
+                  - img
+            - generic [ref=e231]:
+              - generic "Reordenar categoría" [ref=e232]:
+                - img [ref=e233]
+              - generic [ref=e240]:
+                - generic [ref=e242]: Posición 5
+                - generic [ref=e243]:
+                  - generic [ref=e244]: Sub-23 Femenino
+                  - generic [ref=e245]: 17–22 años · Femenino
+              - generic [ref=e246]:
+                - button "Editar" [ref=e247]
+                - button "Eliminar categoría" [ref=e248]:
+                  - img
+            - generic [ref=e250]:
+              - generic "Reordenar categoría" [ref=e251]:
+                - img [ref=e252]
+              - generic [ref=e259]:
+                - generic [ref=e260]:
+                  - generic [ref=e261]: Posición 6
+                  - generic [ref=e262]: 1 inscritos
+                - generic [ref=e263]:
+                  - generic [ref=e264]: Elite Masculino
+                  - generic [ref=e265]: 23–29 años · Masculino
+              - generic [ref=e266]:
+                - button "Editar" [ref=e267]
+                - button "Eliminar categoría" [ref=e268]:
+                  - img
+            - generic [ref=e270]:
+              - generic "Reordenar categoría" [ref=e271]:
+                - img [ref=e272]
+              - generic [ref=e279]:
+                - generic [ref=e280]:
+                  - generic [ref=e281]: Posición 7
+                  - generic [ref=e282]: 1 inscritos
+                - generic [ref=e283]:
+                  - generic [ref=e284]: Elite Femenino
+                  - generic [ref=e285]: 23–29 años · Femenino
+              - generic [ref=e286]:
+                - button "Editar" [ref=e287]
+                - button "Eliminar categoría" [ref=e288]:
+                  - img
+            - generic [ref=e290]:
+              - generic "Reordenar categoría" [ref=e291]:
+                - img [ref=e292]
+              - generic [ref=e299]:
+                - generic [ref=e300]:
+                  - generic [ref=e301]: Posición 8
+                  - generic [ref=e302]: 1 inscritos
+                - generic [ref=e303]:
+                  - generic [ref=e304]: Master 30+
+                  - generic [ref=e305]: 30–39 años
+              - generic [ref=e306]:
+                - button "Editar" [ref=e307]
+                - button "Eliminar categoría" [ref=e308]:
+                  - img
+            - generic [ref=e310]:
+              - generic "Reordenar categoría" [ref=e311]:
+                - img [ref=e312]
+              - generic [ref=e319]:
+                - generic [ref=e321]: Posición 9
+                - generic [ref=e322]:
+                  - generic [ref=e323]: Master 40+
+                  - generic [ref=e324]: 40–49 años
+              - generic [ref=e325]:
+                - button "Editar" [ref=e326]
+                - button "Eliminar categoría" [ref=e327]:
+                  - img
+            - generic [ref=e329]:
+              - generic "Reordenar categoría" [ref=e330]:
+                - img [ref=e331]
+              - generic [ref=e338]:
+                - generic [ref=e340]: Posición 10
+                - generic [ref=e341]:
+                  - generic [ref=e342]: Master 50+
+                  - generic [ref=e343]: 50+ años
+              - generic [ref=e344]:
+                - button "Editar" [ref=e345]
+                - button "Eliminar categoría" [ref=e346]:
+                  - img
+            - button "Agregar categoría" [ref=e347]:
+              - img
+              - text: Agregar categoría
+            - generic [ref=e348]:
+              - paragraph [ref=e349]: Accesos rápidos
+              - generic [ref=e350]:
+                - button "Infantil" [ref=e351] [cursor=pointer]:
+                  - generic [ref=e352]:
+                    - img
+                    - text: Infantil
+                - button "Prejuvenil" [ref=e353] [cursor=pointer]:
+                  - generic [ref=e354]:
+                    - img
+                    - text: Prejuvenil
+                - button "Juvenil" [ref=e355] [cursor=pointer]:
+                  - generic [ref=e356]:
+                    - img
+                    - text: Juvenil
+                - button "Sub-23 Masculino" [ref=e357] [cursor=pointer]:
+                  - generic [ref=e358]:
+                    - img
+                    - text: Sub-23 Masculino
+                - button "Sub-23 Femenino" [ref=e359] [cursor=pointer]:
+                  - generic [ref=e360]:
+                    - img
+                    - text: Sub-23 Femenino
+                - button "Elite Masculino" [ref=e361] [cursor=pointer]:
+                  - generic [ref=e362]:
+                    - img
+                    - text: Elite Masculino
+                - button "Elite Femenino" [ref=e363] [cursor=pointer]:
+                  - generic [ref=e364]:
+                    - img
+                    - text: Elite Femenino
+                - button "Master 30+" [ref=e365] [cursor=pointer]:
+                  - generic [ref=e366]:
+                    - img
+                    - text: Master 30+
+                - button "Master 40+" [ref=e367] [cursor=pointer]:
+                  - generic [ref=e368]:
+                    - img
+                    - text: Master 40+
+                - button "Master 50+" [ref=e369] [cursor=pointer]:
+                  - generic [ref=e370]:
+                    - img
+                    - text: Master 50+
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e376] [cursor=pointer]:
+    - img [ref=e377]

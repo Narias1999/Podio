@@ -1,0 +1,18 @@
+- generic [active] [ref=e1]:
+  - main [ref=e35]:
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]: Recuperar contraseña
+        - generic [ref=e39]: Ingresa tu correo y te enviaremos un enlace para crear una nueva contraseña.
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e43]: Correo electrónico
+          - textbox "Correo electrónico" [ref=e44]:
+            - /placeholder: organizador@correo.com
+        - button "Enviar enlace" [ref=e45]
+        - link "Volver a iniciar sesión" [ref=e46] [cursor=pointer]:
+          - /url: /login
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e30] [cursor=pointer]:
+    - img [ref=e31]
+  - alert [ref=e34]: Recuperar contraseña — Podio

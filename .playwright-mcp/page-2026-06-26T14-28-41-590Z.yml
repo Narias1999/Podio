@@ -1,0 +1,17 @@
+- generic [active] [ref=e1]:
+  - status [ref=e2]:
+    - img [ref=e3]
+    - generic [ref=e7]: Conectado
+  - main [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]: Etapa 1 – Contrarreloj
+        - generic "Tiempo transcurrido" [ref=e12]: 16:12:40
+      - button "Finalizar sesión" [ref=e13]
+    - button "STOP" [ref=e14]
+    - region "Llegadas por asignar" [ref=e15]:
+      - paragraph [ref=e40]: No hay llegadas por asignar. Presiona STOP cuando un corredor cruce la meta.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e27] [cursor=pointer]:
+    - img [ref=e28]
+  - alert [ref=e31]

@@ -1,0 +1,71 @@
+[     691ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[    2150ms] [LOG] [Fast Refresh] done in 1560ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[    5076ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[    5144ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[    5615ms] Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollAndFocusHandlerOld focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="finish/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/races/cla..." tree={[...]} params={{slug:"clas...", ...}} ...>
+                      <SegmentViewNode type="page" pagePath="races/[slu...">
+                        <SegmentTrieNode>
+                        <GroupFinishLinePage>
+                          <GroupFinishLineView slug="clasica-de..." stageNumber={2} stageId="7d19b20b-1..." ...>
+                            <ConnectivityIndicator>
+                            <main className="mx-auto fl...">
+                              <header className="flex flex-col">
+                                <span>
+                                <span
+                                  className="text-4xl font-bold tabular-nums sm:text-5xl"
+                                  aria-label="Tiempo transcurrido"
+                                >
++                                 0:00:45
+-                                 0:00:44
+                              ...
+                            ...
+                      ...
+                    ...
+          ...
+
+    at throwOnHydrationMismatch (http://localhost:3000/_next/static/chunks/0pm6_next_dist_compiled_react-dom_0fbp_9s._.js:3318:56)
+    at prepareToHydrateHostInstance (http://localhost:3000/_next/static/chunks/0pm6_next_dist_compiled_react-dom_0fbp_9s._.js:3372:23)
+    at completeWork (http://localhost:3000/_next/static/chunks/0pm6_next_dist_compiled_react-dom_0fbp_9s._.js:6922:60)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/0pm6_next_dist_compiled_react-dom_0fbp_9s._.js:965:74)
+    at completeUnitOfWork (http://localhost:3000/_next/static/chunks/0pm6_next_dist_compiled_react-dom_0fbp_9s._.js:9622:23)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/0pm6_next_dist_compiled_react-dom_0fbp_9s._.js:9557:28)
+    at workLoopConcurrentByScheduler (http://localhost:3000/_next/static/chunks/0pm6_next_dist_compiled_react-dom_0fbp_9s._.js:9551:58)
+    at renderRootConcurrent (http://localhost:3000/_next/static/chunks/0pm6_next_dist_compiled_react-dom_0fbp_9s._.js:9534:71)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/0pm6_next_dist_compiled_react-dom_0fbp_9s._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3000/_next/static/chunks/0pm6_next_dist_compiled_react-dom_0fbp_9s._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3000/_next/static/chunks/0pm6_next_dist_compiled_1dr1xfr._.js:2647:64)
+[    5382ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[    5987ms] [LOG] [Fast Refresh] done in 744ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[    6348ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[    6426ms] [LOG] [Fast Refresh] done in 179ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   58497ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   58503ms] [LOG] [Fast Refresh] done in 108ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   86416ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[   86428ms] [LOG] [Fast Refresh] done in 113ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  127352ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  127441ms] [LOG] [Fast Refresh] done in 191ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  156188ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  156616ms] [LOG] [Fast Refresh] done in 532ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  159882ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
+[  159884ms] [LOG] [Fast Refresh] done in 104ms @ http://localhost:3000/_next/static/chunks/0pm6_next_dist_0-h5wgb._.js:2477
